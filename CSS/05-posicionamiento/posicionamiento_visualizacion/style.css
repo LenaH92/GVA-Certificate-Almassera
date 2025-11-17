@@ -253,21 +253,40 @@ summary {
     font-size: 20px;
     flex-wrap: wrap;
     align-items: center;
-    /* MIRar DE PORNER EL TRIANGULITO */
+    position: relative;
+    margin-top: 2rem;
 }
 
-.imgContain.small {
-    width: 10%;
+/* haciendo que el triengulito aparezca que s elo ha llevado flex */
+summary::before {
+    content: "▶";
+    display: inline-block;
+    margin-right: 0.5em;
+    transition: transform 0.3s ease;
+    font-size: 15px;
+}
+
+summary details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+summary .imgContain.small {
+    width: 40px;
     aspect-ratio: 1 / 1;
     overflow: hidden;
     position: relative;
     border-radius: 50%;
 }
 
-.imgContain.small img {
+summary .imgContain.small img {
     width: 100%;
     height: auto;
     display: block;
     object-position: top;
     object-fit: cover;
+}
+
+details>table {
+    margin-left: 60px;
+    margin-top: 1rem;
 }
