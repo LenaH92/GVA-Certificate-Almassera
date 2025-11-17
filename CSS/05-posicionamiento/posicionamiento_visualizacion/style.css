@@ -1,0 +1,273 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+html {
+    background-color: white;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --colorPrincipal: #00aa9f;
+    --colorOscuro: #3C5449;
+    --colorSecundario: #efdcb3;
+    --colorTercero: #f1bfd6;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 100px max-content;
+    grid-template-areas: "header header"
+        "aside main";
+    padding-bottom: 2rem;
+}
+
+/* ---------HEADER----------- */
+header {
+    grid-area: header;
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    border: 1px solid black;
+    padding: 10px 2vw;
+    background-color: var(--colorTercero);
+    color: var(--colorOscuro);
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 500;
+}
+
+header img {
+    height: 4rem;
+    border-radius: 49%;
+}
+
+header>ul {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+header a {
+    color: var(--colorOscuro);
+    text-decoration: none;
+}
+
+header li i {
+    font-size: 20px;
+}
+
+header>ul:nth-of-type(2) i {
+    margin-right: 5px;
+}
+
+header li:hover * {
+    color: var(--colorPrincipal);
+}
+
+
+/* navBTN */
+#navBTN {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: fixed;
+    right: 15px;
+    bottom: 30px;
+}
+
+#navBTN>a {
+    width: 30px;
+    height: 30px;
+    background-color: var(--colorTercero);
+    border-radius: 50%;
+    color: var(--colorOscuro);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: all 300ms;
+}
+
+#navBTN>a:hover {
+    background-color: var(--colorPrincipal);
+    color: var(--colorTercero);
+}
+
+/* -----------ASIDE------------- */
+
+aside {
+    grid-area: aside;
+    min-width: 200px;
+    margin: 5%;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-right: 1px solid var(--colorPrincipal);
+}
+
+aside li a {
+    text-decoration: none;
+    color: black;
+    padding-top: 5px;
+}
+
+
+aside li:hover a {
+    color: var(--colorPrincipal);
+    padding-left: 6px;
+    text-decoration: underline;
+}
+
+
+aside img {
+    width: 80%;
+    margin: 10px auto;
+    box-shadow: 0 0 15px var(--colorSecundario);
+    border-radius: 10px;
+    border: 2px dashed var(--colorSecundario);
+}
+
+aside>.contactForm {
+    height: 40vh;
+    padding: 5%;
+    border: 1px solid var(--colorTercero);
+}
+
+/* -------------MAIN-------------- */
+
+main {
+    width: 90%;
+    margin: 0 auto;
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    margin: 1rem;
+    transition: text-decoration 0.3s ease;
+    text-decoration: none;
+}
+
+main:hover h1 {
+    text-decoration: overline underline var(--colorPrincipal);
+}
+
+main>div {
+    width: 100%;
+}
+
+main>div>img {
+    width: 30%;
+    float: left;
+    margin-right: 20px;
+}
+
+main>div::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.equipos {
+    padding: 5%;
+}
+
+.equipos>.tarjeta {
+    float: left;
+    min-width: 200px;
+    max-width: 30%;
+    padding: 5px 5px 5px 40px;
+    margin: 1%;
+    box-shadow: 0 0 10px var(--colorPrincipal);
+    background-image: url(img/color-test.png);
+    background-size: 10px 10px;
+    background-repeat: repeat-y;
+    background-position: 10px 0;
+    list-style: none;
+}
+
+.equipos:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.equipos>.tarjeta>.info {
+    padding-bottom: 5px;
+}
+
+.equipos>.tarjeta>.info>div {
+    margin-top: 5px;
+}
+
+.equipos>.tarjeta .imgContain {
+    width: 90%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    position: relative;
+    border-radius: 50%;
+}
+
+.equipos>.tarjeta img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-position: top;
+    object-fit: cover;
+}
+
+.equipos>.tarjeta>h3 {
+    margin: 1rem 0;
+    color: var(--colorOscuro);
+}
+
+.equipos>.tarjeta ul {
+    margin: 1rem 0 5px;
+}
+
+.equipos>.tarjeta li {
+    display: inline-block;
+    margin: 0 5%;
+}
+
+.equipos>.tarjeta a {
+    color: var(--colorOscuro);
+}
+
+
+
+/* Seccion de los horarios */
+summary {
+    display: flex;
+    font-size: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    /* MIRar DE PORNER EL TRIANGULITO */
+}
+
+.imgContain.small {
+    width: 10%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    position: relative;
+    border-radius: 50%;
+}
+
+.imgContain.small img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-position: top;
+    object-fit: cover;
+}

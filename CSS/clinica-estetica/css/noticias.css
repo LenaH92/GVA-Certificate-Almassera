@@ -1,0 +1,206 @@
+.blog-layout h1 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.blog-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+/* lista noticias*/
+
+.blog-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.noticia-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    padding-bottom: 1rem;
+    overflow: hidden;
+}
+
+.noticia-card>div:first-child {
+    width: 100%;
+    height: 200px;
+    overflow: hidden
+}
+
+.noticia-card img {
+    width: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.noticia-card:hover {
+    box-shadow: 0 0 10px var(--colorSecundario);
+}
+
+.noticia-card:hover img {
+    transform: scale(1.1);
+}
+
+.noticia-card h2 {
+    font-size: 1.3rem;
+    margin: 1rem;
+}
+
+.noticia-card .fecha {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    margin: 0 1rem 0.5rem;
+}
+
+.noticia-card p {
+    margin: 0 1rem 1rem;
+    line-height: 1.4;
+}
+
+.noticia-card .btn {
+    margin-left: 1rem;
+}
+
+/* sidebar*/
+
+.blog-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* BANNERS */
+.sidebar-banners img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    transition: transform 0.2s;
+}
+
+.sidebar-banners img:hover {
+    transform: scale(1.03);
+}
+
+.sidebar-banners h3,
+.sidebar-destacadas h3 {
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+/* DESTACADAS */
+.sidebar-destacadas ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-destacadas li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.sidebar-destacadas img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.sidebar-destacadas a {
+    font-size: 0.95rem;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.2s;
+}
+
+.sidebar-destacadas a:hover {
+    color: var(--accent-color, #c27a7a);
+}
+
+/**********************************
+**********************************
+**********************************
+**********************************
+***********************************
+**********PAGINA CONTACTO******** */
+.contactInfo {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.contactInfo article {
+    flex: 1;
+    background: #fff;
+    padding: 1.2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.contactInfo h2 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+/* Lista datos */
+.contactInfo ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.contactInfo li {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    font-size: 1rem;
+}
+
+.contactInfo a {
+    color: inherit;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.contactInfo a:hover {
+    color: var(--accent-color, #c27a7a);
+}
+
+/* Iconos */
+.contactInfo i {
+    color: var(--accent-color, #c27a7a);
+    font-size: 1.1rem;
+}
+
+/* Mapa */
+.contactInfo iframe {
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* FORMULARIO */
+.contactForm {
+    background: #fff;
+    height: 25vh;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.contactForm h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.6rem;
+}
+
+.contactForm p {
+    opacity: 0.7;
+    font-size: 0.95rem;
+}

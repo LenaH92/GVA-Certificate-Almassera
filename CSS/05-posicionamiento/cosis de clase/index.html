@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicionamineto y visualización</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            width: 80vw;
+            margin: auto;
+            text-align: justify;
+        }
+
+        #navBTN {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            position: fixed;
+            right: 0;
+            bottom: 30px;
+        }
+
+        #navBTN>a {
+            width: 30px;
+            height: 30px;
+            background-color: aqua;
+            border-radius: 50%;
+            color: brown;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            transition: all 300ms;
+        }
+
+        #navBTN>a:hover {
+            background-color: brown;
+            color: aqua;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/ca1b506d98.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>Posicionamineto y visualización</h1>
+    <a href="practica.html">Link a la practica</a>
+    <p>en teoria vamos a ver todas las formas de cposicionar, para "maquetar bien" lol</p>
+    <p>Propiedades de posicionamiento que vamos a ver: </p>
+    <ul>
+        <li><a href="#position">position</a><br>top right bottom left</li>
+        <li><a href="#flotante">float</a></li>
+        <li><a href="#">clear</a></li>
+        <li><a href="#display">display</a></li>
+        <ul>
+            <li><a href="#flex">Flexbox</a></li>
+            <li><a href="#grid">Grid</a></li>
+        </ul>
+    </ul>
+    Propiedades de visualizacion que veremos: <ul>
+        <li><a href="#opcidad">opacity</a><br>- establece la trasnparecnia siendo los posibles valores entre 0 (aka
+            totalmente transparente) a 1 (totalemtne opaco). <br>!!! NO admite numeros fuera de ese rango.</li>
+        <li><a href="#">visibility</a><br>- hace visible <code>visible</code> uy oculto <code>hidden</code> el elemento.
+            El elemento mantiene su sitio, aunque
+            este oculto, el hueco se queda, no es sustituido por otrs hermanos.</li>
+        <li><a href="#">z-index </a><br> - Hace referencia a la capa en la que está el elemento, cuanto más alto es el
+            numero</li>
+    </ul>
+    <section id="posicionBasico">
+        <h2>Posicionamineto Básico</h2>
+        <p>No obsoleto necesariamente.</p>
+        <section id="position">
+            <p>A la propiedad <strong>position</strong> se le da uno de los siguientes valores:</p>
+            <ul>
+                <li><code>static</code> - valor por defecto para la propiedadposition. <br>- Ubica la caja segun su tip
+                    (sea
+                    inline o
+                    block) siguiendo el orden del código. <br>!! las propiedades de top, right bottom or left dont work
+                    if
+                    static is on.
+                </li>
+                <li><code>relative</code> <br>las cajas se posicionana igual al static. Se puede modificar la posicion
+                    del
+                    contenodor relativo usando <code>top right left bottom</code>. Toman una distancia qeu puedes ser
+                    positiva o negativa. UN valor positivo irá hacia el centro del elemento, por lo que si le pones
+                    <code>50 left</code>
+                    se desplaza hacia 50 a la derecha<br>!! el lugar que deja NO es usado por sus hermanos ni empuja a
+                    otros
+                    elementos.
+                </li>
+                <li><code> absolute </code><br>toma como referencia el elemento padre que no tenga el posicionamiento
+                    estático. De no haberlo, coge el body. <br> El elemento se posiciona de forma que flota, dejando de
+                    ocupar su espacio, el cual ocupará el elemento que venga (hermano). <br>Funciona igual que el de
+                    antes pro con la diferencia de que puierde su ssitio y el 0 0 es el del padre que no tenga una
+                    posicion estática.</li>
+                <li><code> fixed </code><br>la referencia es la pantalla del ordenador, necesita de estar posicionado bc
+                    otherwise desparece. <br>el 0 0 es la esquina superior izquierda de la pantalla. <br>!! Se queda en
+                    una posicion fija en la ventana del navegador sobre todo</li>
+                <li><code> sticky</code> <br>Una vez llega a la posicion en vertical que se especifique en top, se qeuda
+                    ahi para el resto de la pagina.
+                    <pre>
+                        position: sticky;
+                        top: 0;
+                        z-index: 500;
+                    </pre>
+                </li>
+            </ul>
+        </section>
+    </section>
+    <section id="flotante">
+        <h2>Elementos Flotantes - posicionamiento</h2>
+        <p>evitamos usarlo tbh con grid o flex al parecer se puede hacer mejor. Afecta al resto ponienodse el. Modo una
+            imagen empuja el texxto que la envuelve, supera los limites de su ascendiente.
+            <br>
+        <pre>
+                float: right||left</pre>
+        </p>
+        <p>con la propiedad <strong>clear</strong> se deja de afectar el elemento po cualquier flotante. Puede limpiar a
+            la derecha, a la izqu o todos
+        <pre>
+                clear: right || left || both
+            </pre>Esto tambien se puede aplicar al elemento ::after para que el elemento float ya no afecte a mas
+        elementos.
+        </p>
+    </section>
+    <section id="display">
+        <h2>Visibilidad</h2>
+        <a href="practica.html#visibilidad" target="_blank">practica</a>
+        <p>La propiedad DISPLAY determina el comportamiento de un elemento. </p>
+        Valores de Display: <ul>
+            <li><code>none</code> - Desparese del flujo del codigo. aka no se ve ni ocupa hueco.</li>
+            <li><code>inline</code> - se comporta en elemento enlinea. porops de width y height no se aplican</li>
+            <li><code>inline-block</code>- se comporta en elemento enlinea. !!! PERO porops de width y height SÍ aplican
+            </li>
+            <li><code>block</code> - elemento se comporta conmo modo bloqeu</li>
+            <li><code>inline-flex</code> - el contenedor se comporta inline block y los hijos (flexitems) se comportan
+                según flex.</li>
+            <li><code>flex</code> - el contenedor se comporta block y los hijos (flexitems) se comportan según flex.
+            </li>
+            <li><code>inline-grid</code> - el contenedor se comporta inline block y los hijos (flexitems) se comportan
+                según grid.</li>
+            <li><code>grid</code> - el contenedor se comporta block y los hijos (flexitems) se comportan según grid.
+            </li>
+        </ul>
+        <section id="flex">
+            <h3>FLEXBOX!!!!</h3>
+            <a href="practica.html#flex" target="_blank">practica</a>
+            <p>Se aplica a un <strong>contenedor</strong> y afecta a la <em>organizacion de los hijos que tiene</em>. No
+                TODOS los descendientes, solo
+                los de los hijos directos (items).</p>
+            <p>La diferencia entre flex y grid: flex es unidireccional. Se marca un eje de distribucion y los hijos se
+                van
+                organizando a lo largo de ese eje.</p>
+            <pre>
+                    display : flex; </pre>
+            <p>**********</p>
+            <details style="border: 1px solid skyblue; padding:10px;">
+                <summary>
+                    parametros flex
+                </summary>
+                <p>Propiedades aplicables al contenedor para organizar a los hijos:</p>
+                <ul>
+                    <li><code>flex-direction</code><br>El primer parámentro es definir el eje principal. Aka
+                        <pre>
+                flex-direction: row || column || row-reverse || column-reverse</pre>Nótese que el base es de
+                        izq. a derecha en row y reverse es al reves. Columna default es de arriba a abajo y reverse de
+                        abajo
+                        a
+                        arriba.
+                    </li>
+                    <li><code>flex-wrap</code><br>propiedad que hace uqe cuando no queda espacio en el div se continue
+                        en
+                        una seguienrte columna o fila dependiendo.
+                        <pre>
+                    flex-wrap: wrap || nowrap || wrap-reverse</pre>
+                    </li>
+                    <li><code>flex-flow</code><br>!! forma abreviada , se admiten dos valores, la parte de flex
+                        direction y
+                        flex-wrap. así pues:
+                        <pre>
+            flex-flow: row||column||row-reverse||column-reverse   wrap||nowrap||wrap-reverse </pre>
+                    </li>
+                    <li><code>gap</code><br>Propiedad abreviada uqe admite uno o dos valores
+                        <ul>
+                            <li><code>column-gap</code><br>- Distancia entre columnas</li>
+                            <li><code>row-gap</code><br>- distancia entre filas</li>
+                        </ul>
+                    </li>
+                    <li><code>justify-content</code><br>organizacion a lo largo del eje principal. Normalmente al eje
+                        horizontal. <ul>
+                            <li><code>flex-start</code><br>- se pone al principio del eje todo unos al lado de otros.
+                            </li>
+                            <li><code>flex-end</code><br>- se pone al final del eje todo unos al lado de otros.</li>
+                            <li><code>center</code><br>- se centran sin ningun tipo de espaciado entre ellos. Aka el
+                                hueco
+                                sobrante se reparte equitativamente entre los margenes laterales.</li>
+                            <li><code>space-around</code><br>espacio igual a ambos lados de cada elemento, lo que hace
+                                que
+                                el espacio entre elementos sea el doble que el de los bordes</li>
+                            <li><code>space-evenly</code><br>- todo el espacio (bordes y entre elementos) es exactamente
+                                igual..</li>
+                            <li><code>space-between</code><br>- espacio igual entre elementos, sin margen externo..</li>
+                        </ul>
+                    </li>
+                    <li><code>align-content</code><br>organizacion a lo largo del eje secundario. Normalmente al eje
+                        vertical. <br>!!! Esta propiedad solo tiene efecto cuando hay múltiples líneas flex (es decir,
+                        cuando
+                        <code>flex-wrap ≠ nowrap)</code>.
+                        <ul>
+                            <li><code>flex-start</code><br>- se pone al principio del eje todo unos al lado de otros.
+                            </li>
+                            <li><code>flex-end</code><br>- se pone al final del eje todo unos al lado de otros.</li>
+                            <li><code>center</code><br>- se centran sin ningun tipo de espaciado entre ellos. Aka el
+                                hueco
+                                sobrante se reparte equitativamente entre los margenes laterales.</li>
+                            <li><code>space-between</code><br>el espacio entre líneas se reparte uniformemente, sin
+                                espacio
+                                en los bordes.</li>
+                            <li><code>space-around</code><br>el espacio se reparte a ambos lados de cada línea; los
+                                bordes
+                                tienen la mitad del espacio que hay entre líneas.</li>
+                            <li><code>space-evenly</code><br>- reparte el espacio sobrante entre todos los huecos , tnto
+                                entre los hijos como con los margenes.</li>
+                            <li><code>stretch</code> (valor por defecto)<br>- las líneas se estiran para ocupar todo el
+                                espacio disponible.</li>
+                        </ul>
+                    </li>
+                    <li><code>align-items</code><br>Alinea los ítems (no las líneas) a lo largo del eje secundario,
+                        dentro
+                        de cada línea flex.
+                        <ul>
+                            <li><code>stretch</code>(por defecto)<br> los ítems se estiran para llenar el eje
+                                secundario, si
+                                no tienen una altura/anchura fija.</li>
+                            <li><code>flex-start</code><br>- se pone al principio del eje todo unos al lado de otros.
+                            </li>
+                            <li><code>flex-end</code><br>- se pone al final del eje todo unos al lado de otros.</li>
+                            <li><code>center</code><br>- se centran sin ningun tipo de espaciado entre ellos. Aka el
+                                hueco
+                                sobrante se reparte equitativamente entre los margenes laterales.</li>
+                            <li><code>baseline</code><br>- los ítems se alinean según la línea base del texto (muy útil
+                                para
+                                texto o ítems de distintas alturas).</li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <p>propiedades aplicables a los hijos del contenedor flex:</p>
+                <ul>
+                    <li><code>order</code><br>- Define el orden visual del ítem dentro del contenedor,
+                        independientemente del orden del HTML.<br>Cuanto menor sea el valor, antes aparece el ítem.
+                        <br>
+                        !!! Valores pueden ser negativos, cero o positivos.
+                    </li>
+                    <li><code>flex-grow</code><br>- Controla cuánto crece un ítem para ocupar el espacio sobrante del
+                        contenedor.<br>Si todos tienen 0, ninguno crece (valor por defecto). <br>!!El espacio sobrante
+                        se reparte proporcionalmente a sus flex-grow. <br>
+                        <details style="border: 1px solid wheat; padding:10px;">
+                            <summary>Explicacion:</summary>
+                            Define cómo <strong>crecen los elementos hijos</strong> cuando sobra espacio en el
+                            contenedor flex.<br><br>
+                            Cada ítem recibe una porción del espacio sobrante en proporción a su valor de
+                            <code>flex-grow</code>.
+                            Si todos los hijos tienen el mismo valor, crecen por igual. Si un hijo tiene un valor mayor,
+                            crecerá más.<br><br>
+                            <pre>
+.container {
+    display: flex;
+    width: 600px;
+}
+
+.a {
+    flex-grow: 1;
+}
+
+.b {
+    flex-grow: 2;
+}
+    </pre>
+                            <p>Supongamos que cada ítem mide 100px inicialmente. El contenedor mide 600px, así que
+                                sobran 400px.
+                                El navegador reparte ese espacio según los valores:</p>
+                            <ul>
+                                <li>Total de "puntos": 1 + 2 = 3</li>
+                                <li>El ítem A recibe 1/3 del espacio sobrante → 133px</li>
+                                <li>El ítem B recibe 2/3 del espacio sobrante → 266px</li>
+                            </ul>
+                            <p><strong>Resultado final:</strong></p>
+                            <ul>
+                                <li>A → 100 + 133 = <strong>233px</strong></li>
+                                <li>B → 100 + 266 = <strong>366px</strong></li>
+                            </ul>
+                            <p><strong>Valor por defecto:</strong> <code>flex-grow: 0;</code> (no crece)</p>
+                        </details>
+                    </li>
+                    <li><code>flex-srink</code><br>- Controla cuánto se encoge un ítem cuando no hay suficiente
+                        espacio.<br>!! Si lo pones a 0, el ítem no se reduce aunque no haya espacio.
+                        <details style="border: 1px solid wheat; padding:10px;">
+                            <summary>Explicación:</summary>
+                            Define cómo <strong>se encogen los elementos hijos</strong> cuando el contenedor es más
+                            pequeño que la suma de los tamaños base.<br><br>
+                            El valor indica qué parte de la reducción total asumirá cada ítem (de forma proporcional).
+                            Si todos tienen el mismo valor, se encogen por igual; si uno tiene un valor mayor, se
+                            encogerá más.<br><br>
+                            <pre>
+.container {
+    display: flex;
+    width: 300px;
+}
+
+.a, .b {
+    flex-basis: 200px;
+}
+
+.a {
+    flex-shrink: 1;
+}
+
+.b {
+    flex-shrink: 2;
+}
+    </pre>
+                            <p>Cada ítem quiere medir 200px, pero el contenedor solo tiene 300px (faltan 100px en
+                                total).<br>
+                                El navegador reparte esa reducción según los valores de <code>flex-shrink</code>:</p>
+                            <ul>
+                                <li>Total de "puntos": 1 + 2 = 3</li>
+                                <li>A pierde 1/3 de 100px → 33px</li>
+                                <li>B pierde 2/3 de 100px → 67px</li>
+                            </ul>
+                            <p><strong>Resultado final:</strong></p>
+                            <ul>
+                                <li>A → 200 - 33 = <strong>167px</strong></li>
+                                <li>B → 200 - 67 = <strong>133px</strong></li>
+                            </ul>
+                            <p><strong>Valor por defecto:</strong> <code>flex-shrink: 1;</code> (se puede encoger)</p>
+
+                            <strong>Resumen rápido</strong><br>
+                            <table border="1" cellspacing="0" cellpadding="6">
+                                <thead>
+                                    <tr>
+                                        <th>Situación</th>
+                                        <th>Propiedad</th>
+                                        <th>Qué hace</th>
+                                        <th>Valores comunes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Sobra espacio</td>
+                                        <td><code>flex-grow</code></td>
+                                        <td>Hace que los ítems crezcan proporcionalmente</td>
+                                        <td>0 (no crece) o &gt;0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Falta espacio</td>
+                                        <td><code>flex-shrink</code></td>
+                                        <td>Hace que los ítems se encojan proporcionalmente</td>
+                                        <td>0 (no se encoge) o &gt;0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p><strong>Consejo:</strong> normalmente se usa la forma abreviada:</p>
+                            <pre>
+flex: grow shrink basis;
+
+/* Ejemplos comunes */
+flex: 1;          /* = flex: 1 1 0% */
+flex: 0 1 auto;   /* no crece, sí se encoge */
+flex: 1 0 200px;  /* crece, no se encoge, base 200px */
+    </pre>
+                        </details>
+                    </li>
+                    <li><code>flex-basis</code><br>-Define el tamaño base inicial del ítem antes de distribuir espacio.
+                        <br> Puede considerarse como el “ancho” o “alto” inicial según la dirección del eje principal.
+                        <br> !!Si está en auto, se usa el tamaño del contenido o de width/height.
+                    </li>
+                    <li><code>align-self</code><br>-Permite anular la alineación vertical individual de un solo ítem,
+                        sobreescribiendo align-items del contenedor.</li>
+                </ul>
+            </details>
+
+            <a href="https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/">Guia interactiva</a>
+            <a href="https://flexboxfroggy.com/#es">Flexbox froggy jueguito</a>
+            <details>
+                <summary>Flexbox cheatcheet</summary><img src="/img/css-flexbox-poster.png" alt="LMAO" width="80%"
+                    height="auto">
+            </details>
+        </section>
+
+
+        <section id="grid">
+            <h3>GRID</h3>
+            <a href="practica.html#grid" target="_blank">practica</a>
+            <p>(Igual que flexbox) Se aplica a un <strong>contenedor</strong> y afecta a la <em>organizacion de los
+                    hijos
+                    que tiene</em>. No TODOS los descendientes, solo los de los hijos directos.</p>
+            <p>Grid hace referencia a la parrilla,. es decir es una cuadricula y es bidireccional, no como flex. En vez
+                de
+                basarse en ejes que es o que hace flex, se basa en filas y columnas como si fuese una tabla. </p>
+            <p>However, la diferencia con un table es que es modificable con cambios de pantalla, haciendola responsive
+            </p>
+            **********
+            <p>Suele tener más propiedades que flex para hacer loo mismo, pero tambien concede más posibilidades.</p>
+            <p>Igual qeu flexbox se basa en un contenedor con cosas dentro. El grid se mete al contenedor y los hijos
+                pierden su propiedad de block o inline y se vuelven grid-item. Para ello se crea una cuadricula
+                estableciendo las columnas y las filas. Se puede meter explicita (configurandolo desde el código) o
+                implicitamente ( que lo asuma el programa de por si) en caso de que se creen más flias. <br> La
+                cuadricula puede ocupar todo el contenedor o no. De ahi que se pueda usar justify content y align
+                content( creo).. Pero en este caso como no hablamoms de ejes, justify siempre se aplica a las columnas y
+                align a las filas. <br>Así mismo el contenido de una de las celdas puede ser más pequeño que el espacio
+                reservado paara ello. Para ello aparte del align-itme, tambina hay justify intem (cosa que no habia en
+                flex lol)</p>
+            <p>Cuándo definimos un grid se definen unas lineas numeradas, incluyendo o que serian los bordes. De
+                numerarlos en negativo se contarian desde el lado contrario de l que estamos acostumbraods. (i.e
+                columnas:: normal-> derecha izquierda; negativo -> izq derecha. Y lo mismo con las filas). como dato se
+                le puedn dar nombres a las linesa a modo: inicioFila2</p>
+            <p>.</p>
+            <ul>
+                <li><strong>Pista</strong><br>Se entiende como una pista todo la informacion que hay entre dos lineas
+                    consecutivas</li>
+                <li><strong>Linea</strong><br>Van de borde a borde en la grid. (los bordes tambine son líneas)</li>
+                <li><strong>Celda</strong><br>Unidad minima en un grid</li>
+                <li><strong>Área</strong><br>Conjunto de celdas consecutivas, minimo 1 celda. Always cestructura
+                    cuadrática</li>
+                <li><strong>Canal</strong><br>Distancia entre uana celda y la de al lado (<code>GAP</code>)</li>
+            </ul>
+            <p>Surgió poque habia una libreria (bootstrap) que trabajaba co el concepto de grid. COmo css tenia
+                posicionamiento basico en aquiel entonces, cuando salió la nueva version de css con flex y grid la
+                librería se fue a la p**a lol (ni tato pero bueh)</p>
+            <p>Se puede ver la grilla desde el navegador con los anchos y detalles dela grilla!</p>
+
+            <details style="border: 1px solid skyblue; padding:10px;">
+                <summary>Propiedades de Grid</summary>
+                Propiedades del contenedor:
+                <ul>
+                    <li><code>display</code><br>Establece la distribucion de los hijos en grid.
+                        <pre>
+                        display: grid||inline-grid</pre>
+                        No suele hacer nada de por si porlo qeu hay que definir la grid:
+                    </li>
+                    <li><strong>Definir explicitamente nuevas celdas: </strong>
+                        <ul>
+                            <li><code>grid-template-columns</code><br> determina las columnas que
+                                tendrá la grid, se le meten tantos valores como columnas queramos, modo en px, %, etc..
+                                Si se le meten 3 valores se haran 3 columnas con esos anchos. <br>Unidades de medida:
+                                <ul>
+                                    <li><code>px</code>, <code>%</code>, <code>cm</code>...</li>
+                                    <li>
+                                        <strong style="color: red;">!! Fracción</strong> (<code>fr</code>):
+                                        recalcula en proporción del <u>hueco sobrante (no ocupado)</u>,
+                                        lo que permite diseños <em>responsive</em>.
+                                    </li>
+                                    <li>
+                                        <strong style="color: red;">!! Repeat</strong>:
+                                        repite lo puesto entre paréntesis en formato
+                                        <code>repeat(número, medida)</code>.
+                                    </li>
+                                    <li>
+                                        A veces el contenido supera el tamaño establecido; aquí entran en juego las
+                                        propiedades
+                                        <code>max-content</code> y <code>min-content</code>, que ajustan la celda al
+                                        tamaño más grande
+                                        o más pequeño de su contenido (según si se aplican a columnas o filas).
+                                    </li>
+                                    <li>
+                                        <code>minmax(mínimo, máximo)</code>:
+                                        establece un valor mínimo y máximo, por lo que la columna o fila oscilará entre
+                                        esos límites.
+                                    </li>
+                                    <li>
+                                        <code>fit-content(medida)</code>:
+                                        utiliza como valor de medida el menor entre la medida dada y el
+                                        <code>max-content</code>.
+                                    </li>
+                                    <li>
+                                        También existen los valores <code>auto</code> y <code>none</code>.
+                                    </li>
+                                </ul>
+
+                                <pre>
+        grid-template-columns: 150px 40% 2fr repeat(2, 1fr) min-content minamx(200px, 30%);</pre>
+                                Se le pueden dar nombres a cada columna (a las lineas mas bien con un [] antes de cada
+                                valor) para que nos resulte mas sencillo a la hora de delimitar areas.
+                                <pre>
+    grid-template-columns: [iniCol1] 200px [finCol1 iniCol2]2fr [finCol2 iniCol3] 1fr [finCol3];</pre>
+                            </li>
+                            <li><code>grid-template-rows</code><br>Lo mismo pero para las filas y el
+                                valos valdran lo alto que son.</li>
+                            <li><code>grid-template-columns</code><br></li>
+                            <li><code>grid-template-areas</code><br> cada "" es una fila y lo que vaya dentro son los
+                                items que van en esa fila (necesitamos los nombres de grid-area)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Definir implicita nuevas celdas:</strong>
+                        <ul>
+                            <li><code>grid-auto-columns</code><br>Definicion automatica para las nuevas columnas que se
+                                crean de forma implicita. Se crean con esos valores. </li>
+                            <li><code>grid-auto-rows</code><br>Lo mismo que lo anterior pero para filas</li>
+                        </ul>
+                    </li>
+
+                    <li><strong><code>grid-auto-flow</code></strong><br> le flow que sigue rellenando, si hay mas hijos
+                        se crean en la direccion que se especifica-. Similar al flex-direction
+                        <pre>grid-auto-flow: column||row</pre>
+                    </li>
+
+                    <li><strong>Propiedades para definir el canal</strong> (lè GAP)
+                        <ul>
+                            <li><code>column-gap (grid-column-gap)</code><br>DEFINIR </li>
+                            <li><code>row-gap (grid-row-gap)</code><br>DEFINIR</li>
+                            <li><code>gap</code><br>En particularmente este orden:
+                                <pre>
+                                gap: columna fila;</pre>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li><code></code><br></li>
+                </ul>
+                Propiedades del item:
+                <ul>
+                    <li><code>grid-area</code><br>permite crear un grids usanodo nombres para los items/hijos <ul></ul>
+                    </li>
+                    <li><code>grid-column-start</code>:<br> Define la línea de inicio de la columna donde comenzará el
+                        item.
+                    </li>
+                    <li><code>grid-column-end</code>:<br> Define la línea de finalización de la columna donde terminará
+                        el
+                        item.</li>
+                    <li><code>grid-column</code>:<br> Propiedad abreviada para <code>grid-column-start</code> y
+                        <code>grid-column-end</code>.
+                    </li>
+                    <li><code>grid-row-start</code>:<br> Define la línea de inicio de la fila donde comenzará el item.
+                    </li>
+                    <li><code>grid-row-end</code>:<br> Define la línea de finalización de la fila donde terminará el
+                        item.
+                    </li>
+                    <li><code>grid-row</code>:<br> Propiedad abreviada para <code>grid-row-start</code> y
+                        <code>grid-row-end</code>.
+                    </li>
+
+                </ul>
+            </details>
+
+            <details>
+                <summary>Grid cheatcheet</summary><img src="img/css-grid-poster.png" alt="grid poster" width="80%"
+                    height="auto">
+            </details>
+            <a href="https://cssgridgenerator.io/" target="_blank">Generador de GRIDs</a>
+            <p><a href="/maquetacion.html">Prueba de maquetacion malamente plas plas</a></p>
+        </section>
+    </section>
+
+    <section id="profundidad">
+        <h2>Profundidad</h2>
+    </section>
+    <section id="opcidad">
+        <h2>Visualizacion y opacidad</h2>
+        <p></p>
+    </section>
+
+
+    <div id="down"></div>
+    <section id="navBTN"><a href="#"><i class="fa-solid fa-arrow-up"></i></a><a href="#down"><i
+                class="fa-solid fa-arrow-down"></i></a></section>
+</body>
+
+</html>

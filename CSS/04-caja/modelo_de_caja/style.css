@@ -1,0 +1,233 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+html {
+    background-color: white;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --colorPrincipal: #00aa9f;
+    --colorOscuro: #3C5449;
+    --colorSecundario: #efdcb3;
+    --colorTercero: #f1bfd6;
+}
+
+/* ---------HEADER----------- */
+header {
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    border: 1px solid black;
+    padding: 10px 2vw;
+    background-color: var(--colorTercero);
+    color: var(--colorOscuro);
+    display: flex;
+    gap: 3rem;
+    align-items: flex-end;
+    z-index: 500;
+}
+
+header img {
+    height: 4rem;
+    border-radius: 49%;
+}
+
+header a {
+    color: var(--colorOscuro);
+    text-decoration: none;
+}
+
+header li {
+    padding: 0.5rem 1rem;
+}
+
+header li:hover {
+    background-color: var(--colorSecundario);
+    text-decoration: underline;
+}
+
+header>div {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+header div.headerUp {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 5px;
+}
+
+header div.headerUp i {
+    margin-right: 5px;
+}
+
+header div.headerDown {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    gap: 15vw;
+}
+
+
+header div.headerDown ul {
+    display: flex;
+    gap: 2vw;
+    text-align: center;
+    align-items: center;
+}
+
+header a.btn {
+    padding: 0.5rem 1rem;
+    background-color: var(--colorSecundario);
+    color: var(--colorOscuro);
+    border-radius: 10px;
+    border: 1px solid var(--colorOscuro);
+}
+
+header a.btn:hover {
+    background-color: var(--colorPrincipal);
+    border: 1px solid #977e6b;
+    color: var(--colorSecundario);
+}
+
+
+/* ----------footer-------- */
+footer {
+    padding: 2vw;
+    background-color: var(--colorTercero);
+    color: var(--colorOscuro);
+    display: flex;
+    justify-content: space-around;
+}
+
+footer img {
+    height: 3rem;
+    border-radius: 49%;
+}
+
+footer .redesSociales>ul {
+    display: flex;
+    gap: 1rem;
+}
+
+
+footer .redesSociales li a,
+footer .avisosLegales li a {
+    color: var(--colorOscuro);
+    text-decoration: none;
+}
+
+footer .redesSociales li a:hover {
+    text-shadow: 0 0 5px var(--colorPrincipal);
+}
+
+footer .avisosLegales li a:hover,
+header .headerUp a:hover {
+    text-decoration: underline;
+}
+
+/* navBTN */
+#navBTN {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: fixed;
+    right: 15px;
+    bottom: 30px;
+}
+
+#navBTN>a {
+    width: 30px;
+    height: 30px;
+    background-color: var(--colorSecundario);
+    border-radius: 50%;
+    color: var(--colorOscuro);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: all 300ms;
+}
+
+#navBTN>a:hover {
+    background-color: var(--colorPrincipal);
+    color: var(--colorOscuro);
+}
+
+/* -------------MAIN-------------- */
+
+main {
+    width: 90%;
+    margin: 0 auto;
+}
+
+h2 {
+    margin-top: 1rem;
+}
+
+.equipos {
+    display: flex;
+    padding: 5%;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.equipos>.tajeta {
+    min-width: 250px;
+    max-width: 30%;
+    padding: 5px 5px 5px 40px;
+    box-shadow: 0 0 10px var(--colorPrincipal);
+    background-image: url(img/color-test.png);
+    background-size: 10px 10px;
+    background-repeat: repeat-y;
+    background-position: 10px 0;
+    list-style: none;
+}
+
+.equipos>.tajeta>.info {
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+    align-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 5px;
+}
+
+.equipos>.tajeta .imgContain {
+    width: 90%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    position: relative;
+    border-radius: 50%;
+}
+
+.equipos>.tajeta img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-position: top;
+    object-fit: cover;
+}
+
+.equipos>.tajeta>h3 {
+    margin: 1rem 0;
+    color: var(--colorOscuro);
+}
+
+.equipos>.tajeta ul {
+    margin: 1rem 0 5px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.equipos>.tajeta a {
+    color: var(--colorOscuro);
+}

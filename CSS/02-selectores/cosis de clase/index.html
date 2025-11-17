@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectores dia2</title>
+</head>
+
+<body>
+    <h1>Selectores de css 2.0</h1>
+    <section class="selector-con-atributos">
+        <h2>atributos</h2>
+        <p>Para poner selectories de atributos van con corchetes "[]". Hace referencia a la existencia de un atributo (y
+            su valor en cada caso) <br>A nivel de sintaxis viene a ser algo asi: <br>
+            <code>
+            <pre>
+                selector[atributo]
+                   |_ *
+                   |_ etiqueta
+                   |_ clase
+                   |_ id
+            </pre>
+        </code>
+            Ejemplo:
+            <code>
+                <pre>div[lang="es"]>a</pre>
+            </code>
+
+        </p>
+        <section>
+            <h3>Basico</h3>
+            <p>De manera muy basica simplemente es que exista el atributo en el contenedor
+                <code>
+                    <pre>
+                        whatev[atributo]</pre>
+                </code>
+                Estos son ejepmlos: <br>
+                <code> |-> a[target]</code>
+                afecta a todos los vinculos que tengan un atributo targe al margen del valor de target. <br>
+                <code> |-> .logo[width]</code> <br>
+                afecta a todos los contenedores que tengan la clase "logo" y que tengan el atributo width presente. <br>
+                THis is da igual el contenido simplemente la existencia del atributo ya aplica la norma.
+            </p>
+        </section>
+        <section>
+            <h3>atributo con valor</h3>
+            <p>Solo afecta al contenedor expresado que contenga el atriubuto que se especifica junto a ese valor en
+                concreto, ni mas ni menos.
+                <code>
+                    <pre>
+                        whatev[atributo="algo"]</pre>
+                </code>
+                Estos son ejepmlos: <br>
+                <code> |-> a[target="_blanc"]</code> <br>
+                afecta a todos los vinculos que tengan un atributo target con el valor de "_blanc". <br>
+                <code> |-> iframe[src="url.que.nos.convenga.com"]</code> <br>
+                los iframe que tengan esa url en oncreto.
+            </p>
+        </section>
+        <section>
+            <h3>atributo con valor incluido(?)</h3>
+            <p>Solo afecta al contenedor expresado que contenga el atriubuto que se especifica junto a un valor completo
+                que tenga.
+                <br>
+                BUSCAR EN CHATGPT bc Istg idek anymore
+                <code>
+                    <pre>
+                        whatev[atributo ~= "valor"]</pre>
+                </code>
+                Estos son ejepmlos: <br>
+                <code> |-> p[class="importante"]</code> <br>
+                afecta a todos los p que tengan un atributo class cuyo valor contenga totalidad
+                "importante". Puede ser :
+            <pre>
+
+                    p[class="importante"]
+                    p[class="importante advertencia"]
+                    p[class="advertencia importante"]
+                    p[class="importanteRojo"] XXXX
+                </pre>
+            </p>
+        </section>
+        <section>
+            <h3>atributo con valor aproximado</h3>
+            <p>Solo afecta al contenedor expresado que contenga el atriubuto que se especifica junto a un valor que
+                contenga lo especificado o lo specificado mas un guion "-".
+                <br>
+                BUSCAR EN CHATGPT bc Istg idek anymore
+                <code>
+                    <pre>
+                        whatev[atributo |= "valor"]</pre>
+                </code>
+                Estos son ejepmlos: <br>
+                <code> |-> p[lang|="pt"]</code> <br>
+                afecta a todos los p que tengan un atributo lang cuyo valor contenga parcialmente o en su totalidad
+                "pt". Puede ser pt-PT, pt-BR. . <br>
+                Esto se suele usar para temas de lenguage mostly
+            </p>
+        </section>
+        <section>
+            <h3>atributo con comienzo de</h3>
+            <p>Solo afecta al contenedor expresado que contenga el atriubuto que se especifica junto a un valor que
+                <b>comience</b> con lo especificado.
+                <code>
+                    <pre>
+                        whatev[atributo ^= "valor"]</pre>
+                </code>
+                Estos son ejepmlos: <br>
+                <code> |-> a[href^="mailto"]</code> <br>
+                afecta a los vinculos que en el atributo href comience con mail to aka que se vayan a enviar uin correo.
+                <br>
+                <code> |-> p[lang^="pt"]</code> <br>
+                afecta a todos los p que tengan un atributo lang cuyo valor contenga comience por "pt". Puede ser pt-PT,
+                pt-BR.
+            </p>
+        </section>
+        <section>
+            <h3>atributo con fin de</h3>
+            <p>Solo afecta al contenedor expresado que contenga el atriubuto que se especifica junto a un valor que
+                <b>acabe</b> con lo especificado.
+                <code>
+                    <pre>
+                        whatev[atributo $= "valor"]</pre>
+                </code>
+                Estos son ejepmlos: <br>
+                <code> |-> a[href$=".pdf"]</code> <br>
+                afecta a los vinculos que en el atributo href acabe con .pdf, aka que sea un documento pdf.
+            </p>
+        </section>
+
+        <section>
+            <h3>atributo con valor contenido</h3>
+            <p>Solo afecta al contenedor expresado que contenga el atriubuto que se especifica junto a un valor que
+                <b>combine</b> lo especificado.
+                <code>
+                    <pre>
+                        whatev[atributo *= "valor"]</pre>
+                </code>
+                Estos son ejepmlos: <br>
+                <code> |-> a[href*="google.com"]</code> <br>
+                Afectaria a:
+            <pre>
+        https://drive.google.es
+        https://www.google.es
+        https://images.google.es
+        https://mail.google.es
+                </pre>
+            </p>
+        </section>
+        <a href="ejemplos.html">Vamos a ver los ejepmplos</a>
+    </section>
+    <section id="pseudo-elementos">
+        <h2>PSEUDO-ELEMENTOS</h2>
+        <a href="ejemplos.html#pe">EJEPMLOS</a>
+        <p> En CSS comienzanm por dos DOS PUNTOS :: aunque puede ser que que ahora se vea solo con un par de ellos ":"
+            <br>
+            Perimte utilizar una parte especifica de un elemento html sin necesida de tener que modificar el HTNL.
+            <br>vamos COn tipos
+        </p>
+        <ol>
+            <li><code>::before</code> ó <code>:before</code> & <code>::after</code> ó <code>:after</code>
+                <p>Hace referencia al espacio antes del contenido. <br>para qeu vaya el ::before o after tiene que
+                    aparecer content, aunque sea una cadena vacia de texto. Modo "". <br> I.E. Crea una cadena de texto
+                    antes del
+                    que está de haber padding en el elemento el padding iria entre la cadena de texto de css y el
+                    contenido de html</p>
+                <p>Se pueden meter imagenes poniendo url() y ahi la url local o externa de la imagen. <br> AHORA!! Le
+                    problema viene a que a esa imagen no se le puede modificar el tamaño</p>
+                <p>Para modificar imagenes, en vez de directamente meter ulr al content, se puede hacer de la siguiente
+                    manera:
+                <pre>
+    content: ""; -> cadena vacia
+    background-image: url(WTV.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: inline-block; /* para que la width y height funcionen */
+    width: 20px; Y ahi se modifican el tamaño de la caja contenedora
+    height: 20px;
+                        </pre>
+                </p>
+            </li>
+            <li><code>::first-letter</code> ó <code>:first-letter</code>
+                <p>Cambian la primera letra del texto. </p>
+            </li>
+            <li><code>::first-line</code> ó <code>:first-line</code>
+                <p>Cambian la primera linea del texto. </p>
+            </li>
+            <li><code>::selection</code>o <code>:selection</code>
+                <p>Para cambiar cosas cuando se selecciona con el raton</p>
+            </li>
+        </ol>
+    </section>
+    <section id="pseudo-clases">
+        <h2>PSeudo-clases</h2>
+        <p>Se refiere a cuanado un elemento esté en un estado. Modifica el aspecto del elemento seleccionado sin
+            modificar el html. <br>se representa en css con un comienzo de dos puntos <mark>:</mark>
+        </p>
+        <a href="https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-classes">Link a MSN que muestra de forma detallada
+            cada una de las pseudo-clases</a> <br>
+        <a href="ejemplos.html#pseudo-clases">Link a la practica</a>
+
+        <p>No vamos a ver aun los pseudo clases relacionados con los formularios, porque es un tema aparte... Por ahora
+            las opciones que vamenos a ver:</p>
+
+        <section id="pc-hover">
+            <h3>Hover</h3>
+            <p>Varia en base al estado de si el raton está por encima o no.</p>
+            <code>elemento:hover</code>
+            <p>Normalemnte se utiliza como disparados para quwe algo pase, vamos estoy acostumbrada a que sea para
+                distinguir secciones, o links</p>
+        </section>
+
+        <section id="pc-hijos">
+            <h3>Hijos</h3>
+            <p>Varia en base de la posicion dentro de la estructura del documento.</p>
+            <ul>
+                <li>
+                    <pre>:first-child</pre> Afecta al primer hijo
+                </li>
+                <li>
+                    <pre>:last-child</pre> Afecta al último hijo
+                </li>
+                <li>
+                    <pre>selector:nth-child(An+B)</pre> Afectana los hijos que ocupan los parentesis. <br>La n
+                    representa un
+                    valor
+                    natural.(0,1,2,3,4...)
+                    P.e; 3n: 0, 3, 6, 9...; 2n: 0,2,4,6.. <br>Cuand se pone un +numero (modo 3n+5), quiere decir que
+                    empieza la modificacion por el 5º hijo y de ahí ya se pone el intervalo establecido en la n, cada 3
+                    en este ejemplo. <br>Vamos como multiplicando lo que
+                    acompñe la n por los numeros naturales.
+                </li>
+                <li>
+                    <pre>selector:nth-of-type(An+B)</pre> Same thing pero aplicandolo a los hijos de cierto selector.
+                </li>
+                <li>
+                    <pre>selector:nth-last-child(An+B)</pre> Afectan al último hijos que ocupan la posicion An+B,
+                    enorden decreciente<br>1 -> last-child (?????)
+                </li>
+                <li>
+                    <pre>:only-child</pre> Se aplica cuando es el unico elemento dentro de su contenedor.
+                </li>
+            </ul>
+        </section>
+
+        <section id="pc-varias">
+            <h3>Varias</h3>
+            <p>-\_(._.)/-</p>
+            <ul>
+                <li><code>:not(selector)</code> se selecciona todo excaptop lo que está entre parentesis. </li>
+                <li><code>:is(selector1, selector2)</code> no se usa para nada(??)</li>
+                <li><code>:root</code> <br>Viene a decir que es la etiqueta html. Aqui se suelen escribir variables para
+                    especialemtne colores.br para crear una variable CSS se usa esta sintaxis:
+                    <code>--nombre:valor</code> <br>Para ser utilizada dentro de una propiedad se usa la siguiente
+                    sintaxis: <code>nombre_propiedad: var(--nombre)</code>. Por ejepmlo:
+                    <pre>
+                        :root{
+                            --colorFondo: aliceblue;
+                            --fuenteBase: Arial, sans-serif;
+                        }
+
+                        h2{
+                            backgounrd-color: var(--colorFondo);
+                            font-family: var(--fuenteBase)
+                        }
+                    </pre>
+                </li>
+                <li><code>:emty</code> hace referencia aque no tiene nada ni hijos ni espacios ni enter ni nah de nah.
+                    </code>
+                </li>
+            </ul>
+        </section>
+    </section>
+</body>
+
+</html>

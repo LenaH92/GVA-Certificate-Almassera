@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos mutimedia</title>
+    <meta name="description" content="Pagina web de practica de uso de elementos multimedia">
+    <meta name="generator" content="Visual Studio Code">
+    <meta name="author" content="Lena Cortés">
+    <meta name="copyright" content="CENTRO LABORA">
+    <meta name="robots" content="noindex,nofollow">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <h1>Elementos mutimedia</h1>
+    <section>
+        <h2>Imagen</h2>
+        <p>Imagen adaptativa que cambie de horizontal a vertical cuando el tamaño de la pantalla sea inferiora 500px</p>
+        <picture>
+            <source srcset="/assets/image-medium.jpg" media="(min-width: 500px)">
+            <source srcset="/assets/image-big.jpg" media="(min-width: 800px)">
+            <img src="/assets/image-small.jpg" alt="Yamaha TMAX">
+        </picture>
+    </section>
+    <section>
+        <h2>Sonido de bienvenida</h2>
+        <p>Sonido que de la bienvenida a la página web y que disponga de unos controles para la reproducción</p>
+        <audio src="/assets/YOH.webm" autoplay controls></audio>
+    </section>
+    <section>
+        <h2>Vídeo</h2>
+        <p>Vídeo relacionado con el surf que se reproduzca automáticamente y en bucle.</p>
+        <video src="/assets/Surfin.mp4" autoplay loop controls width="50%"></video>
+
+    </section>
+    <section>
+        <h2>Vídeo YouTube</h2>
+        <p>Vídeo de youtube relacionado con clases para aprender a manejar una tabla de surf</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/WmiYi1kbUpM?si=cs0MEzZhX5AxO6wf"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+</body>
+
+</html>

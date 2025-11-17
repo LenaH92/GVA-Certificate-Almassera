@@ -1,0 +1,5 @@
+/* lITERAL VAMPOS A MIRAR UN MINIMIZADOR ONLINE 
+https://www.minifier.org/
+ a MI NO ME FUNCIONA PORQUE TENGO FORMAT-ON-SAVE que me cambia el formato automaticamente y de una linea me lo cambia a como se ve un css normal. Lo voy a quitar solo para guardar este archivo*/
+
+#hojaDeEstilosExterna h4{color:blueviolet;font-size:2rem;text-decoration:underline}#hojaDeEstilosExterna p{text-align:justify}#hojaDeEstilosExterna p:last-child{text-align:center}#hojaDeEstilosExterna img{width:90px;margin:20px;display:inline-block}

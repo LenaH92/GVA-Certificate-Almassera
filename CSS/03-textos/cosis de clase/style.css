@@ -1,0 +1,357 @@
+@import url(/fuentes/fAwesomeDown/css/all.min.css);
+
+/* importacion de la fuente de google */
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* import de fuente propia */
+@font-face {
+    font-family: CPWDoto;
+    /* de tener espacion en blaco iria entrecomillado */
+    src: url(/fuentes/Doto/Doto-VariableFont_ROND\,wght.ttf);
+}
+
+@font-face {
+    font-family: CPWNotoSerif;
+    src: url(/fuentes/Noto_Serif/NotoSerif-VariableFont_wdth\,wght.ttf);
+    font-style: normal;
+    /* se usa este estilo cuando es normal */
+}
+
+@font-face {
+    font-family: CPWNotoSerif;
+    /* se mantiene el nombre para indicar que la fuente tiene dos estilos */
+    src: url(/fuentes/Noto_Serif/NotoSerif-Italic-VariableFont_wdth\,wght.ttf);
+    font-style: italic;
+    /* se usa este estilo cuando es cursiva */
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-Thin.ttf);
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-ThinItalic.ttf);
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-ExtraLight.ttf);
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-ExtraLightItalic.ttf);
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-Light.ttf);
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-LightItalic.ttf);
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-Italic.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-Medium.ttf);
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-MediumItalic.ttf);
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-SemiBold.ttf);
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-SemiBoldItalic.ttf);
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-Bold.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-BoldItalic.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-ExtraBold.ttf);
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-ExtraBoldItalic.ttf);
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-Black.ttf);
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-BlackItalic.ttf);
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* ******************************************* */
+
+* {
+    box-sizing: border-box;
+    text-align: justify;
+}
+
+body {
+    font-size: 16px;
+    margin: 20px auto 300px;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body>section {
+    border: 2px solid aliceblue;
+    box-shadow: 0 0 15px aliceblue;
+    padding: 20px;
+}
+
+h1,
+h2 {
+    text-align: center;
+}
+
+/* fuentes estandar */
+#fontEstandar h2 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#fontEstandar p {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#fontEstandar div {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Fuentes de google */
+#fontGoogle h2 {
+    font-family: "Noto Serif", serif;
+    ;
+}
+
+#fontGoogle p {
+    font-family: "Poppins", sans-serif;
+}
+
+#fontGoogle div {
+    font-family: "Doto", sans-serif;
+    font-weight: 500;
+}
+
+/* Fuentes propias*/
+#fontPropias h2 {
+    font-family: "CPWNotoSerif", serif;
+    ;
+}
+
+#fontPropias p {
+    font-family: "CPWPopping", sans-serif;
+}
+
+#fontPropias div {
+    font-family: "CPWDoto", sans-serif;
+    font-weight: 600;
+}
+
+/* fontawesome */
+
+/* se pueden modificar los iconos de fontawesome como si fuese texto, el color tamaño etc.. */
+#fontAwesome i {
+    color: aquamarine;
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+#fAwesome-externo li>a {
+    text-decoration: none;
+}
+
+#fAwesome-externo li>a:before {
+    color: blueviolet;
+    margin-right: 1rem;
+}
+
+#fAwesome-externo ul:nth-of-type(3)>li:nth-child(1)::before {
+    font-family: "Font Awesome 7 Free";
+    content: "\f09b";
+    font-weight: 400;
+}
+
+/* propiedades textos */
+.fStrech p span {
+    text-transform: capitalize;
+}
+
+.fStrech h3 {
+    /* font-variant: small-caps;
+    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: 500; */
+    /* poniendola en una sola propiedad */
+    font: italic small-caps 500 2rem "Times New ROman, Time, serif";
+}
+
+.text h3 {
+    letter-spacing: 1.25rem;
+    word-spacing: 5rem;
+}
+
+.overflowWrap p:nth-of-type(1) {
+    width: 190px;
+    border: solid red;
+    border-radius: 20px;
+    overflow-wrap: normal;
+}
+
+.overflowWrap p:nth-of-type(2) {
+    width: 190px;
+    border: solid red;
+    border-radius: 20px;
+    overflow-wrap: break-word;
+}
+
+.overflowWrap p:nth-of-type(3) {
+    width: 190px;
+    border: solid red;
+    border-radius: 20px;
+    overflow-wrap: anywhere;
+}
+
+.overflowWrap p:nth-of-type(4) {
+    width: 190px;
+    border: solid red;
+    border-radius: 20px;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+}
+
+.textDecor h3 {
+    border-bottom: red 1px solid;
+    text-decoration: overline underline plum dotted;
+}
+
+.textDecor p {
+    text-indent: 3rem;
+}
+
+.sombras h3 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 10px -10px violet;
+}
+
+.sombras p {
+    font-weight: 700;
+    text-shadow: 0 0 1px violet;
+}
+
+.sombras p:hover {
+    font-weight: 700;
+    text-shadow: 0 0 5px violet;
+    border: 1px red dotted;
+}
+
+.sombras p::selection {
+    font-weight: 700;
+    color: violet;
+    text-shadow: 0 0 5px skyblue;
+
+}
+
+.suspensivos {
+    width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* columnas */
+.columnasDiv {
+    column-count: 3;
+    column-width: 30%;
+    column-gap: 5%;
+    padding: 10px;
+    column-rule: 2px dotted red;
+}
+
+/* .columnasDiv p:nth-of-type(2) {
+    column-count: 2;
+    column-width: 30%;
+    column-gap: 20%;
+} */
+
+.columnasDiv p:nth-of-type(1),
+.columnasDiv h4 {
+    margin-top: 0;
+}
+
+.columnasDiv h4 {
+    column-span: all;
+}

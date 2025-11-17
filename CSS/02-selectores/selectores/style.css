@@ -1,0 +1,28 @@
+#primeraLinea>p::first-line {
+    color: salmon;
+}
+
+#atributo a[href="https://www.wikipedia.org"] {
+    color: green;
+}
+
+#atributo a[href="https://www.openai.com"] {
+    color: #f39c12;
+}
+
+*[lang|="es"] {
+    background-color: aliceblue;
+    box-shadow: 0 0 15px wheat
+}
+
+#lista ul.listaElementos li:nth-child(even) {
+    color: rgb(255, 85, 85);
+}
+
+#lista ul.listaElementos li:nth-child(odd) {
+    color: rgb(102, 219, 255);
+}
+
+#lista ul.listaElementos li:hover {
+    color: yellowgreen;
+}

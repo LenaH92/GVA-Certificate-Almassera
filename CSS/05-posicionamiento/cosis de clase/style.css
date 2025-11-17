@@ -1,0 +1,360 @@
+* {
+    box-sizing: border-box;
+    text-align: justify;
+}
+
+
+/* botones de subir bajar */
+html {
+    scroll-behavior: smooth;
+}
+
+#navBTN {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: fixed;
+    right: 0;
+    bottom: 30px;
+}
+
+#navBTN>a {
+    width: 30px;
+    height: 30px;
+    background-color: aqua;
+    border-radius: 50%;
+    color: brown;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: all 300ms;
+}
+
+#navBTN>a:hover {
+    background-color: brown;
+    color: aqua;
+}
+
+#posicionBasico>div {
+    border: 1px solid aliceblue;
+    padding: 10px;
+}
+
+#posicionBasico>div>div {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 130px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+#posicionBasico>div>div:nth-child(1) {
+    background-color: antiquewhite;
+}
+
+#posicionBasico>div>div:nth-child(2) {
+    background-color: aqua;
+}
+
+#posicionBasico>div>div:nth-child(3) {
+    background-color: wheat;
+    border: 1px dashed rgb(187, 121, 0);
+    box-shadow: 0 0 15px rgb(245, 241, 179);
+}
+
+#posicionBasico>div>div:nth-child(4) {
+    background-color: blanchedalmond;
+}
+
+#posicionBasico>div>div:nth-child(5) {
+    background-color: aquamarine;
+}
+
+
+#posicionBasico>div.estatico>div:nth-child(3) {
+    position: static;
+    top: 50px;
+    left: 50px;
+    /* Esto no funciona */
+}
+
+#posicionBasico>div.relativo>div:nth-child(3) {
+    position: relative;
+    top: 50px;
+    left: 50px;
+}
+
+/* efecto de ubir una boton */
+#posicionBasico>div.relativo>div:nth-child(2) {
+    position: relative;
+    transition: all 300ms;
+    bottom: 0;
+}
+
+#posicionBasico>div.relativo>div:nth-child(2):hover {
+    bottom: 5px
+}
+
+#posicionBasico>div.absoluto {
+    position: relative
+}
+
+#posicionBasico>div.absoluto>div:nth-child(3) {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+/* lo de que se haga una card que se voltee */
+
+#posicionBasico .card-container>article {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    background-color: azure;
+    border-radius: 15px;
+}
+
+#posicionBasico .card-container>article>h3,
+#posicionBasico .card-container>article>a {
+    position: absolute;
+    display: block;
+}
+
+#posicionBasico .card-container>article>img {
+    width: 100%;
+    height: 100%;
+}
+
+#posicionBasico .card-container>article>h3 {
+    top: 20px;
+    font-weight: 3rem;
+    left: 25%;
+    width: 50%;
+    padding: 5px;
+    background-color: rgba(240, 248, 255, 0.815);
+    border-radius: 10px;
+    box-shadow: 0 0 15px aliceblue;
+}
+
+#posicionBasico .card-container>article>a {
+    bottom: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    text-decoration: none;
+    background-color: rgba(250, 235, 215, 0.664);
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+}
+
+/* posicionamiento fijo */
+#posicionBasico>div.fijo>div:nth-child(3) {
+    position: fixed;
+    top: 80px;
+    left: 80px;
+}
+
+#posicionBasico>article.menuLateral {
+    position: fixed;
+    top: 30px;
+    right: -80px;
+    width: 150px;
+    padding: 0;
+}
+
+#posicionBasico>article.menuLateral a {
+    display: block;
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-decoration: none;
+    background-color: brown;
+    color: aliceblue;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid transparent;
+    transition: all 300ms;
+    position: relative;
+    left: 0;
+}
+
+#posicionBasico>article.menuLateral a:last-child {
+    margin-bottom: 0;
+}
+
+#posicionBasico>article.menuLateral a>i {
+    margin-right: 20px;
+    padding-left: 10px;
+}
+
+#posicionBasico>article.menuLateral a:hover {
+    background-color: aliceblue;
+    color: brown;
+    border: 1px solid brown;
+    left: -80px
+}
+
+/* sticky */
+#posicionBasico>div.sticky {
+    position: sticky;
+    top: 0;
+    background-color: cadetblue;
+    z-index: 500;
+}
+
+/* FLOTANTE */
+#flotante {
+    width: 700px;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+#flotante>article img {
+    width: 100px;
+}
+
+#flotante>article>p:first-child img {
+    float: left;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    height: 300px;
+}
+
+#flotante>article>p:last-child img {
+    float: right;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+#flotante>article>p:last-child {
+    clear: left;
+}
+
+/* visibilidad */
+#visibilidad article.propDisplay>img:nth-child(2) {
+    display: none
+}
+
+
+#visibilidad article.propVisibility>img:nth-child(2) {
+    visibility: hidden;
+}
+
+#visibilidad article.propOpacity>img:nth-child(2) {
+    opacity: 0.29;
+}
+
+/* FLEX */
+#flex>article:first-of-type {
+    box-shadow: 0 0 15px orange;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+#flex>article:first-of-type>div {
+    background-color: azure;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    row-gap: 20px;
+    column-gap: 1%;
+}
+
+#flex>article:first-of-type>div>p {
+    width: 250px;
+    border: 1px solid rgba(86, 86, 255, 0.541);
+    flex-wrap: wrap-reverse;
+}
+
+/* DISTRIBUCION GRID!!!! */
+
+#grid>.distriGrid>section:first-of-type {
+    border: 3px solid aliceblue;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: [iniCol1] 200px [finCol1 iniCol2]2fr [finCol2 iniCol3] 1fr [finCol3];
+
+    grid-template-rows: [iniFila1] 200px [finFila1 iniFila2]2fr [finFila2 iniFila3] 1fr [finFila3];
+    ;
+}
+
+#grid>.distriGrid>section:first-of-type img {
+    width: 100%;
+}
+
+#grid>.distriGrid>section:nth-of-type(2) {
+    border: 1px dashed black;
+    display: grid;
+    margin-top: 50px;
+    grid-template-areas:
+        "item1 item2 item7"
+        "item4 item2 item6"
+        "item3 item5 item5"
+}
+
+#grid>.distriGrid>section:nth-of-type(2)>div {
+    width: 150px;
+    height: 150px;
+    border: 2px solid wheat;
+    display: grid;
+    place-items: center;
+}
+
+#grid>.distriGrid>section:nth-of-type(2)>div:first-child {
+    grid-area: item1;
+}
+
+#grid>.distriGrid>section:nth-of-type(2)>div:nth-child(2) {
+    grid-area: item2;
+    align-self: center;
+    background-color: aquamarine;
+}
+
+#grid>.distriGrid>section:nth-of-type(2)>div:nth-child(3) {
+    grid-area: item3;
+}
+
+#grid>.distriGrid>section:nth-of-type(2)>div:nth-child(4) {
+    grid-area: item4;
+}
+
+#grid>.distriGrid>section:nth-of-type(2)>div:nth-child(5) {
+    grid-area: item5;
+    justify-self: center;
+}
+
+#grid>.distriGrid>section:nth-of-type(2)>div:nth-child(6) {
+    grid-area: item6;
+}
+
+#grid>.distriGrid>section:nth-of-type(2)>div:nth-child(7) {
+    grid-area: item7;
+}
+
+#grid>section:nth-of-type(1) {
+    display: grid;
+    grid-template-columns: [col1I] 250px [col1F col2I] 350px [col2F col3I] 100px [col3F];
+    grid-template-rows: [row1I] 100px [row1F row2I] 250px [row2F row3I] 75px [row3F];
+    gap: 20px 40px;
+}
+
+#grid>section:nth-of-type(1)>div {
+    border: 1px solid aqua;
+    display: grid;
+    place-items: center;
+}
+
+#grid>section:nth-of-type(1)>div:nth-of-type(4) {
+    /* grid-column-start: 1;
+    grid-column-end: 3; */
+    /* 
+    grid-column: 1/3; */
+    /* es lo mismo que arriba, comienzo y final, no incluye el final. */
+}
+
+/* #grid>section:nth-of-type(1)>div:nth-of-type(3) {
+    grid-row-start: span 2;
+} */

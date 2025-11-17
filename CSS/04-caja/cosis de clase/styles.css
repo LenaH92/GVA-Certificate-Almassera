@@ -1,0 +1,313 @@
+* p {
+    text-align: justify;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 20px 10px;
+}
+
+/* dimensiones */
+#dimensiones>div:nth-of-type(1) {
+    background-color: antiquewhite;
+    padding: 10px;
+    width: 80%;
+    min-width: 500px;
+    max-width: 700px;
+    margin: auto;
+}
+
+#dimensiones>div:nth-of-type(1)>p {
+    padding: 0;
+    margin: 0;
+}
+
+#dimensiones>div:last-child {
+    margin-top: 40px;
+}
+
+#dimensiones>div:last-child>article {
+    display: inline-block;
+    width: 40%;
+    padding: 20px;
+    border: 3px solid aliceblue;
+    min-height: 200px;
+}
+
+#dimensiones>div:last-child>article:first-child {
+    box-sizing: content-box;
+}
+
+#dimensiones>div:last-child>article:last-child {
+    box-sizing: border-box;
+}
+
+/* padding */
+
+#rellenos>div {
+    border: 1px red dotted;
+    padding: 30px;
+    padding-bottom: 10px;
+}
+
+/* border y outline */
+#border>div:nth-of-type(1) {
+    width: 70%;
+    margin: 20px auto;
+    padding: 20px;
+    /* 
+    border: 2px solid skyblue;
+    border-bottom: 5px solid bisque; */
+    outline: 3px dashed yellowgreen;
+    outline-offset: 2px;
+    border-radius: 0 50px;
+    background-color: aliceblue;
+}
+
+.botones {
+    margin-bottom: 20px;
+
+}
+
+.botones a {
+    padding: 7px 20px;
+    text-decoration: none;
+    background-color: turquoise;
+    color: black;
+    border-radius: 10px;
+    /* 
+    margin: 0 5px; */
+}
+
+.botones a:hover {
+    background-color: black;
+    color: turquoise;
+}
+
+.botones a.botonB:hover {
+    border: 4px solid turquoise;
+}
+
+.botones a.botonP:hover {
+    outline: 4px solid turquoise;
+}
+
+a.botonUp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    width: 4rem;
+    height: 4rem;
+    text-decoration: none;
+    background-color: chocolate;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    position: fixed;
+    bottom: 7rem;
+    right: 3rem;
+    color: yellowgreen;
+}
+
+a.botonUp:hover {
+    border: 1px solid chocolate;
+    background-color: yellowgreen;
+    box-shadow: 0 0 15px chocolate;
+    outline: 1px dotted chocolate;
+    outline-offset: -5px;
+    color: chocolate;
+}
+
+a.botonDown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    width: 4rem;
+    height: 4rem;
+    text-decoration: none;
+    background-color: chocolate;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    color: yellowgreen;
+}
+
+a.botonDown:hover {
+    border: 1px solid chocolate;
+    background-color: yellowgreen;
+    box-shadow: 0 0 15px chocolate;
+    outline: 1px dotted chocolate;
+    outline-offset: -5px;
+    color: chocolate;
+}
+
+/* Desbordamientos */
+
+#desbordamiento>div {
+    display: inline-block;
+    padding: 10px;
+    width: 22%;
+    height: 175px;
+    border: 1px solid rgba(255, 152, 255, 0.829);
+    box-shadow: 0 0 15px rgba(255, 152, 255, 0.829);
+    border-radius: 20px;
+}
+
+#desbordamiento>div:nth-of-type(1) {
+    overflow: visible;
+}
+
+#desbordamiento>div:nth-of-type(2) {
+    overflow: hidden;
+}
+
+#desbordamiento>div:nth-of-type(3) {
+    overflow: scroll;
+}
+
+#desbordamiento>div:nth-of-type(4) {
+    overflow: scroll;
+}
+
+#desbordamiento>div:nth-of-type(5) {
+    overflow: auto;
+}
+
+#desbordamiento>div:nth-of-type(6) {
+    overflow: auto;
+}
+
+
+/* MArgenes */
+#margenes>div {
+    border: 1px solid black;
+    padding: 20px;
+}
+
+#margenes .cajaCentrada {
+    width: 800px;
+    margin: 20px auto 10px auto;
+}
+
+#margenes .cajaFlexible {
+    margin: 30px 100px;
+}
+
+/* Fondos */
+#fondo div {
+    margin: 30px 100px;
+    border: 17px solid rgba(210, 235, 98, 0.61);
+    padding: 40px;
+    min-height: 400px
+}
+
+#fondo .basico {
+    background-color: antiquewhite;
+    background-image: url(/assets/img/pup.png);
+    background-position: center;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    background-size: 50px;
+    transition: 0.5s ease;
+}
+
+#fondo .basico:hover {
+    background-size: 150px;
+}
+
+#fondo .ajustar,
+#fondo .contener {
+    width: 1000px;
+    background-image: url(assets/img/BG.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#fondo .ajustar {
+    height: 600px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-clip: padding-box;
+}
+
+#fondo .contener {
+    height: 400px;
+    background-size: contain;
+}
+
+/* degradados */
+#fondo .caja {
+    width: 70%;
+    margin: 20px auto;
+    border: 1px solid black;
+    height: 400px;
+    border-radius: 25px;
+}
+
+#fondo .gradienteLineal {
+    /* background-image: linear-gradient(45deg, brown, wheat, aliceblue, skyblue 60%); */
+    /* background-image: linear-gradient(45deg, brown, wheat, aliceblue 30%, aliceblue 70%, skyblue); */
+    background-image: linear-gradient(45deg, brown, wheat, wheat 30%, aliceblue 30%, aliceblue 70%, skyblue);
+}
+
+#fondo .gradienteCircular {
+    /* background-image: radial-gradient(circle, white,aliceblue, wheat, skyblue); */
+    background-image: radial-gradient(circle at 220px 150px, white, aliceblue 50%, wheat);
+}
+
+#fondo .gradienteEliptico {
+    /* background-image: radial-gradient(ellipse, aliceblue 50%, wheat); */
+    background-image: radial-gradient(ellipse, aliceblue 50%, wheat);
+}
+
+#fondo .gradienteConico {
+    background-image: conic-gradient(wheat, aliceblue 20%, aliceblue 60%, wheat 80%);
+}
+
+#fondo .fondesMultiples {
+    background-image: url(assets/img/wolf.png), url(assets/img/wolf.png), url(assets/img/background.jpg);
+    background-repeat: repeat-y, repeat-y, no-repeat;
+    background-size: auto, 70px, cover;
+    background-position: 0 0, 100% 0, 0 0;
+}
+
+#fondo .fondesMultipleGradiente {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    background-image: linear-gradient(90deg, #fff 50%, #fff0), url(assets/img/background.jpg);
+}
+
+#fondo .fondesMultipleGradiente div {
+    box-sizing: border-box;
+    border: none;
+    margin: 0;
+    width: 250px;
+    padding: 0;
+    min-height: 0;
+}
+
+
+.botonMultocilor {
+    margin-top: 20px;
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 20px;
+    color: black;
+    text-decoration: none;
+    background: linear-gradient(to bottom, #d3fffb 0%, #ffffff 40%, #ffffff 58%, #d3fffb 100%);
+}
+
+.botonMultocilor:hover {
+
+    text-decoration: none;
+    background: linear-gradient(to bottom, #ffffff 0%, #d3fffb 40%, #d3fffb 58%, #ffffff 100%);
+}

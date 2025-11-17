@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos multimedia | práctica clase</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <h1>Elementos multimedia</h1>
+
+    <section class="images">
+        <h2>Imágenes</h2>
+        <!-- jpeg para representar cosas de la vida real, porque podemos comprimir imagenes sin que pesen demasié y no pierdan calidazzzz demo demo no admite movimiento, ni transparencia y caundo se le hacen cambios de tamaño pierden calidad bc mapa de bits -->
+        <h3>Etiqueta IMG</h3>
+        <p><b>JPG</b></p>
+        <img src="/assets/img/Tormenta-verano.jpg" alt="Noche de tormenta sobre una ciudad">
+        <p><b>WEBP</b></p>
+        <img src="/assets/img/Tormenta-verano-webp.webp" alt="Noche de tormenta sobre una ciudad">
+
+        <h3>Etiqueta picture</h3>
+        <picture>
+            <source srcset="assets/img/Tormenta-verano-600x800.jpg" media="(max-width:760px)" type="image/jpeg">
+            <source srcset="assets/img/Tormenta-verano-800x600.jpg" media="(max-width:1024px)" type="image/jpeg">
+            <img src="assets/img/Tormenta-verano.jpg" alt="Noche de tormenta sobre una ciudad">
+        </picture>
+    </section>
+
+    <section class="audios">
+        <h2>Audios</h2>
+        <p>etiqueta audio con SRC</p>
+        <audio src="/assets/audio/videoplayback.mp3" controls></audio>
+        <!-- OR -->
+        <p><br>etiqueta audio con SOURCE</p>
+        <audio controls>
+            <!-- se le pueden añadir tambien AUTOPLAY, LOOP, MUTED, PRELOAD para que comience a cargar en cuanto se monta la pag, no es booleano asi que los que se le asocia puede ser: preload="none/metadata/auto -->
+            <source src="/assets/audio/videoplayback.mp3" type="audio/mpeg"><!-- 
+            <source src="/assets/audio/--" type="audio/ogg"> -->
+            <source src="/assets/audio/videoplayback.weba" type="audio/webm">
+        </audio>
+    </section>
+
+    <section class="videos">
+        <h2>Vídeos</h2>
+        <video src="/assets/video/Stray Kids _특(S-Class) (SKZOO ver.)_ M_V.mp4" controls></video>
+        <!-- OR -->
+        <video controls width="300" height="auto">
+            <!-- a los videos tambien se le pueden añadir las propiedades de width o height (sin px) para controlar lo grande que sale el reproductor, also POSTER a lo miniarutra a modo: poster="/ruta/image.jpg" -->
+            <source src="/assets/video/Stray Kids _특(S-Class) (SKZOO ver.)_ M_V.mp4" type="video/mp4">
+            <source src="/assets/video/--" type="video/ogg">
+            <source src="/assets/video/--" type="video/avi">
+            <source src="/assets/video/--" type="video/webm">
+        </video>
+    </section>
+</body>
+
+</html>

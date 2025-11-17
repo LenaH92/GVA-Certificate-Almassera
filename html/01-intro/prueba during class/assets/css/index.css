@@ -1,0 +1,44 @@
+body {
+  background-color: lightcyan;
+  font: inherit;
+  font-family: "After Disaster";
+}
+
+.dividedDiv {
+  display: flex;
+  gap: 20px;
+}
+
+.dividedDiv img {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+/* DELETED div w/class
+.layover {
+  position: fixed;
+  background: radial-gradient(
+    circle,
+    rgba(255, 128, 0, 0) 0%,
+    rgba(196, 89, 0, 0.04) 53%,
+    rgba(122, 39, 0, 1) 100%
+  );
+  opacity: 0.5;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+} */
+
+h2 {
+  text-decoration: underline;
+  text-shadow: 1px 1px 2px #787c62;
+}
+
+.partyParty {
+  font-weight: 800;
+  background-image: linear-gradient(45deg, #609204, #f7ff80 50%, #62df31 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

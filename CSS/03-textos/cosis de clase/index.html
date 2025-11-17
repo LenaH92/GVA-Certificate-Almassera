@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textos CSS</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+
+<body>
+    <h1>textos</h1>
+    <a href="practicas.html">Link a las practicas</a>
+    <hr>
+    <section id="fuentes">
+        <section id="fontEstandar">
+            <h2>Fuentes Estandar</h2>
+            <p>Normalmente siempre se adjudiica una familia basica sans, sans-serif, monospace, fantasy y cursive.. Para
+                qeu
+                por
+                defecto se pueda ver em todos los ordeadores everywhere. P.Ej:
+            <pre>
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        </pre>
+            En ese caso seria sans-serif. <br><br>
+            Cualquier fuente que tenga dos palabras ira entre comillada si no, no hace falta. <br>Aka:::: "comic Sans" y
+            Arial
+            </p>
+            <details>
+                <summary>listado e fuentes que por lo general son seguras para usar:</summary>
+                <ul>
+                    <li>Arial</li>
+                    <li>Times New Roman</li>
+                    <li>Helvetica</li>
+                    <li>Calibri</li>
+                    <li>Georgia</li>
+                    <li>Cambria</li>
+                    <li>Veranda</li>
+                    <li>Tahoma</li>
+                    <li>Trebuchet</li>
+                    <li>Century Gothic</li>
+                    <li>Didot</li>
+                    <li>Bodoni</li>
+                    <li>Calisto</li>
+                    <li>Candara</li>
+                    <li>Optima</li>
+                    <li>Palatino</li>
+                    <li>Quichsand</li>
+                    <li>Courier New</li>
+                    <li>Rockwell</li>
+                    <li>Garamond</li>
+                    <li>Copperplate</li>
+                    <li>Impact</li>
+                </ul>
+            </details>
+        </section>
+        <hr>
+        <section id="fontGoogle">
+            <h2>Fuentes de Google</h2>
+            <a href="https://fonts.google.com/">Link a Google FONTS</a>
+            <p>Abriend el link se buscan por filtros, o nombre o whatever you like queen</p>
+            <p>Puedes cambiar el texto que se muestra como prueba para mirar una tipografia que sea similar a la que
+                quires
+                o para ver si soporta los caracteres espciales de tu idioma (en español acentos o la ñ)</p>
+            <p>es conveniente fijarse en los "style" que tiene porque algunas por ejepmlo no admiten italica o no
+                grosores
+                diferentes etc..</p>
+
+            <p>Despues de darle a Get Font en todas las que queramos. Hay dos opciones o descargar la fuente o ponerlo
+                embed. <br> A continuacion las opciones de los embed:
+            <ul>
+                <li>Poerlo en link en HTML: <br>
+                    - basicamente hace un link o varios que te van todas las fuentes en ese link. <br>
+                    - Puedes ponerlo e la head o hacer un import, dependiendo lo que necesites. <br>- El link de import
+                    debe
+                    hacerse antes del link al css en el head del html. <br>
+                    A el no le gusta eterlo en la cabeza del HTML porqeu le mete demasiado asi qeu prefiere meterlo en
+                    un
+                    CSS. En una "pseudoregla" @import <br>.
+                </li>
+                <li>POnerlo en @import de CSS <br> Lo suyo es hacerlo arriba del todo del css. </li>
+            </ul>
+
+            Vamos a continuar con el tema de descargarlo, que se mirará mejor en la seccion de fuentes propias :D
+
+            </p>
+        </section>
+        <hr>
+        <section id="fontPropias">
+            <h2>Fuentes Propias</h2>
+            <p>Em los descargados si entramos en las carpetas de cada una hay tres versiones: se usa un archivo, dos o
+                multiples.
+
+                EN CSS SE PONE un import @font-face y en font-famili le puedes dar el nombre uqe quieras. Despues en src
+                se
+                mete una url al archivo que necesitemos.
+
+            <ul>
+                <li><b>Un archivo</b><br>
+                    <pre>
+            @font-face {
+            font-family: CPWDoto;
+            /* de tener espacion en blaco iria entrecomillado */
+            src: url(/fuentes/Doto/Doto-VariableFont_ROND\,wght.ttf);
+            }
+            </pre>
+                </li>
+                <li><b>Dos archivos</b><br>Notese que se ha añadido el font-style:
+                    <pre>
+            @font-face {
+            font-family: CPWNotoSerif;
+            src: url(/fuentes/Noto_Serif/NotoSerif-VariableFont_wdth\,wght.ttf);
+            font-style: normal;
+            /* se usa este estilo cuando es normal */
+            }
+
+            @font-face {
+            font-family: CPWNotoSerif;
+            /* se mantiene el nombre para indicar que la fuente tiene dos estilos */
+            src: url(/fuentes/Noto_Serif/NotoSerif-Italic-VariableFont_wdth\,wght.ttf);
+            font-style: italic;
+            /* se usa este estilo cuando es cursiva */
+            }
+            </pre>
+                </li>
+                <li><b>Multiples archivos</b> <br>Notese que aparte del font-style, tambien esta el font-weight para
+                    configurarlos. Por defecto el peso son 400 si no se especifica
+                    <details>
+                        <summary>Se ponen todas las que queremos, tanto estilos como grosores, y es mucho asi qeu si
+                            quieres
+                            desplegar, bajo tu propia responsabilidad</summary>
+
+                        <pre>
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-Thin.ttf);
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-ThinItalic.ttf);
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-ExtraLight.ttf);
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-ExtraLightItalic.ttf);
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-Light.ttf);
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-LightItalic.ttf);
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-Italic.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-Medium.ttf);
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-MediumItalic.ttf);
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-SemiBold.ttf);
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-SemiBoldItalic.ttf);
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-Bold.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-BoldItalic.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-ExtraBold.ttf);
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-ExtraBoldItalic.ttf);
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-Black.ttf);
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CPWPopping;
+    src: url(/fuentes/Poppins/Poppins-BlackItalic.ttf);
+    font-weight: 900;
+    font-style: normal;
+}
+            </pre>
+                    </details>
+                </li>
+            </ul>
+            </p>
+        </section>
+        <hr>
+        <section id="fontAwesome">
+            <h2>Fuentes FONT Awesome</h2>
+            <p><b>son solo iconos, no texto </b></p>
+            <p>funciona similar a Fuentes de Google, o descargar o embed</p><a href="https://fontawesome.com/">Web
+                fontawesome</a>
+            <p>Si tienes una cuenta y un paquete hecho lo puedes pegar en la cabecera con la etiqueta que lleva de
+                script,
+                que al fin y al cabo te está creando un link a un archivo JS en font awesome </p>
+            <p>Tiene esta pinta:</p>
+            <code>&lt;script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous">&lt;/script >
+</code>
+            <p>Despues irias donde quieras y vas cogiendo el codigo de ada uno y los vas incorporando a tu html.
+                normalemtne
+                los iconois tienen este tipo de codigo:
+            </p> <code>&lt;i class="fas fa-home">&lt;/i></code>
+            <p>despuies en el css se puede manejar como si fuesen texto, cambiando el color y de toh</p>
+
+            <p>Se podrian quitrar las tag de los i, poneindo directamente enel tag anterior, pero es mas complicado
+                hacer
+                otras cosas</p>
+
+            <p>se opdria aceder desde el css coginedo la etiqueta y accediendo a ::before; de todas maneras no parece
+                muy
+                recomendable hacerlo bc a Carlos le está fastidiando la letra LOL</p>
+            <p>esta intentando solucionarlo forzando el tamaño de letra y todo en css aparte tanto en el before como en
+                el
+                a. asi qcomo eliminando los espacion de taclado y poniendolo con el codigo html: <code>& nbsp:</code>
+                sin el
+                espacio, obvio</p>
+            <p>Para hacer toda esta movida solo descargando, vas a start en la web, bajas a other ways to use, le das a
+                download y ahi dowload free for web. Descomprimimos y segun el solo necesitamos la carpeta css LOL
+                <br>aNYWAY NOS HA HECHO DESCARGAR Y COPIAR LA CARPETA CSS DONDE la carpeta fuente. ahora se puede hacer
+                link
+                desde either HTML o css.
+            <ul>
+                <li>Por el html <p>Primero anulamos el script y ponemos el link al css en el head antes de nuestro css.
+                        en
+                        Concreto ponemos el de min, pero daria igual poner el all o el all.min</p>
+                </li>
+                <li>por el css</li>
+            </ul>
+            </p>
+            <p>Macho me he perdido muy mucho, pero tambien se pueden insertar los iconos a modo texto con un unicode que
+                te
+                aparece qcuando buscas un icono en concreto, arriba te aparece un codigo, lo copias y pegas</p>
+        </section>
+    </section>
+    <hr>
+    <hr>
+    <section id="propiedades-de-textos">
+        <h2>Propiedades de los textos</h2>
+        <p>Propiedades relacionadas con los textos</p>
+        <a href="practicas.html#propiedades">Práctica</a>
+        <ul>
+            <li><b>color</b></li>
+            <li><b>font</b> <br>No aporta nada, es una abreviación. Se le puede dar múltiples valores simultáneamente,
+                en vez
+                de escribir mil propiedades y sus valores. Sintaxis:
+                <pre>
+        <b>font: [ &lt;font-style> || &lt;font-variant> || &lt;font-weight> ]?  &lt;font-size> [ / &lt;line-height> ]? &lt;font-family></b>
+        </pre> Lo obligatorio son font size y font family, el resto se puede poner o no. Ejemplo:
+                <pre>
+            p {font: italic 300 16px/1.25 Arial, Helvetica, sans-serif;}
+        </pre>
+            </li>
+            <li><b>font-family</b></li>
+            <li><b>font-size</b></li>
+            <li><b>font-size-adjust</b>
+                <br>Se aplica cuando la fuente primera falla, entonces ajusta las siguientes. Ajusta la fuente en
+                porcentaje de 1. Modo:
+                <pre>
+            p {
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-size:32px;
+                font-size-adjust:0.6;
+            }
+        </pre>
+                Aquí sería el 60 % de 32px a partir de Lucida Sans Unicode.
+            </li>
+            <li><b>font-stretch</b> <br>Habla de cuánto se condensa o expande la letra, modo en que las letras aparecen
+                más o menos
+                juntas. Mayormente para títulos. <i>OBSOLETO</i>, usar <code>font-width</code>.
+            </li>
+            <li><b>font-style</b></li>
+            <li><b>font-variant</b></li>
+            <li><b>font-weight</b></li>
+            <li><b>line-height</b> <br>Es un porcentaje en base a 1 o en píxeles. <br>Lo más normal es que sea hasta
+                1.5,
+                porque si no, es demasiado visualmente.
+            </li>
+        </ul>
+
+        <p><b>Efectos sobre textos</b></p>
+
+        <ul>
+            <li><b>letter-spacing</b> <br> Separa las letras, la variande de word-spacing hace los mismo cno plabras.
+            </li>
+            <li><b>line-break</b> <br>Para cunado se hace un salto de linea automatico.<ul>
+                    <li><b>auto</b><br> — Romper el texto usando la regla de salto de línea predeterminada.</li>
+                    <li><b>loose</b><br> — Romper el texto usando la regla de salto de línea menos restrictiva.
+                        Típicamente
+                        usada para líneas cortas, como en los periódicos.</li>
+                    <li><b>normal</b> <br>— Romper el texto usando la regla de salto de línea más común.</li>
+                    <li><b>strict</b><br> — Romper el texto usando la regla de salto de línea más estricta.</li>
+                    <li><b>anywhere</b><br> — Existe una oportunidad de envoltura suave alrededor de cada unidad de
+                        carácter
+                        tipográfico, incluso alrededor de cualquier carácter de puntuación o espacios en blanco
+                        conservados, o en medio de las palabras, sin tener en cuenta cualquier prohibición contra los
+                        saltos de línea, incluso los introducidos por caracteres con el carácter <i>GL</i>, <i>WJ</i> o
+                        <i>ZWJ</i> class o exigido por la propiedad <code>word-break</code>. No se deben priorizar las
+                        diferentes oportunidades de envoltura. No se aplican guiones.
+                    </li>
+                </ul>
+            </li>
+            <li><b>overflow-wrap</b> <br>Basicamente que baje lo que sobre. Por defecto es normal, pero se puede poner
+                en anywhere y break-word.</li>
+            <li><b>hyphens</b><br>para cuando hay wrap, y queremos que se partan las palabras con un guincito. Lo hay
+                manual, pero hay qeu cambiar un html, y no lo veo productivo para responsive... asi qeu mejor por
+                defecto poner auto lol.</li>
+            <li><b>text-align</b> <br>dentro de la aja contenedora se alinea el texto. <br>Datos interesantes: justify
+                all: afecta tambien a las ultimas lineas de parrafos. Asi qeu las risas con como queda. <br>Also, con
+                justify (solo, sin el alll) tambein se aplica a las lineas que tiene un br, asiq ue cuidadin con usar
+                eso lol</li>
+            <li><b>text-align-last</b> <br>solo la ultima fila</li>
+            <li><b>text-decoration</b><br>lineas que acompañan al texto. es abreviadad tambien. Sintaxis:
+                <pre>
+        <b>text-decoration: text-decoration-line || text-decoration-style || text-decoration-color ;</b>
+        </pre> Por defecto el color de la linea será del mismo que la letra que acompañe. Ejemplo:
+                <pre>
+            text-decoration: underline dotted red;
+        </pre>
+                Se pueden poner lineas por arriba y por abajo y en medio al mismo teimpo.
+            </li>
+            <li><b>text-indent</b> Afecta la primera linea del parrafo, Si lo pones en positivo
+                va ahacia la derencia y si está en negatiovo va pala izqu.</li>
+            <li><b>text-transform</b> <br>Cambia el texto seleccionado:
+                <ul>
+                    <li><b>capitalize</b> — Primera letra de cada palabra en mayúsculas, el resto de caracteres no es
+                        modificado.</li>
+                    <li><b>uppercase</b> — Todas las letras en mayúsculas.</li>
+                    <li><b>lowercase</b> — Todas las letras en minúsculas.</li>
+                    <li><b>none</b> — Evita cualquier cambio.</li>
+                </ul>
+            </li>
+            <li><b>text-shadow</b> Se puede hacer lo mismo al box. Valores mínimos:
+                <pre>
+                <b>text-shadow: indexXlinea indexYcolumna radioDistorsion color</b></pre>
+                Vamos con un ejemplo:
+                <pre>
+                text-shadow: 5px -5px 10px #000;
+                text-shadow: 0 0 10px #000;</pre>
+                la segunda es una sombra centrada sin desplazamiento, basicamente ueda modo halo. En realidad se podria
+                eliminar el radio de distorsion y quedaria como si se hubiese escrito dos veces
+            </li>
+            <li><b>white-space</b> <br>Como se tratan lso espcais en blanco. Aunque se le metan mil espacios en codigo
+                soo se muestra uno en web, </li>
+            <li><b>word-break</b></li>
+            <li><b>word-spacing</b></li>
+            <li><b>word-wrap</b></li>
+        </ul>
+        <section id="text-multicolum">
+            <p><b>Textos multicolumnas</b></p>
+            <a href="practicas.html#multicolumna">link a la zona de la practica</a>
+            <ul>
+                <li><b>column-count</b> <br>cuantas vamos a crear</li>
+                <li><b>column-gap</b> <br> el ancho entre las columnas</li>
+                <li><b>column-rule</b><br>la abreviada de las siguientes 3. poner linea divisoria en medio</li>
+                <li><b>column-rule-color</b> </li>
+                <li><b>column-rule-style</b></li>
+                <li><b>column-rule-width</b></li>
+                <li><b>column-span</b> <br>agrupar que un elemento ocupe mas de una columna</li>
+                <li><b>column-width</b> <br>el ancho de la columna</li>
+                <li><b>columns</b>I'm guessing la forma abreviada del resto¿?</li>
+            </ul>
+            <p>Como estas propiedades son relativamente nuevas, por compatibilidad debemos de
+                preceder todas ellas de los prefijos:
+            <ul>
+                <li><b>-webkit-</b> — Safari y Chrome</li>
+                <li><b>-moz-</b> — Firefox</li>
+                <li><b>-o-</b> — Opera</li>
+                <li><b>-chrome-</b> — Chrome</li>
+                <li><b>-ms-</b> — Internet Explorer</li>
+                <li><b>-khtml-</b> — Konqueror</li>
+            </ul>
+            </p>
+        </section>
+
+
+    </section>
+
+</body>
+
+</html>

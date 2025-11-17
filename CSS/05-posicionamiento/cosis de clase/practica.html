@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica de posicionamineto y visualización</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/ca1b506d98.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>Posicionamineto y visualización - lè práctica</h1>
+    <a href="index.html">Link teoria</a>
+    <section id="posicionBasico">
+        <h2>Posicionamineto Básico</h2>
+        <p>Como dato: hay algunos div que aparecen más abajo que el resto parece ser que es porque tienen inline.-lex y
+            el texto ocupa mas de una linea,. no se como funciona pero lmao al menos se por que es</p>
+        <h3>Estático</h3>
+        <div class="estatico">
+            <div>Bloque 1</div>
+            <div>Bloque 2</div>
+            <div>Bloque 3</div>
+            <div>Bloque 4</div>
+            <div>Bloque 5</div>
+        </div>
+        <hr>
+        <h3>Sticky</h3>
+        <div class="sticky">
+            <div>Bloque 1</div>
+            <div>Bloque 2</div>
+            <div>Bloque 3</div>
+            <div>Bloque 4</div>
+            <div>Bloque 5</div>
+        </div>
+        <hr>
+        <h3>Relativo</h3>
+        <div class="relativo">
+            <div>Bloque 1</div>
+            <div>Bloque 2 <br>efecto de brsubir el div</div>
+            <div>Bloque 3 <br>desplazado <br>top: 50px; <br>left: 50px;</div>
+            <div>Bloque 4</div>
+            <div>Bloque 5</div>
+        </div>
+        <hr>
+        <h3>Absoluto</h3>
+        <div class="absoluto">
+            <div>Bloque 1</div>
+            <div>Bloque 2</div>
+            <div>Bloque 3 <br> está en caulquier <br>sitio lmao</div>
+            <div>Bloque 4 <br> nótese como <br>ocupa el lugar <br>del bloque3</div>
+            <div>Bloque 5</div>
+        </div>
+        <div class="card-container">
+            <article class="card-absolute"><img src="img/pup (1).png" alt="">
+                <h3>CSS 1</h3><a href="#">Ver más</a>
+            </article>
+            <article class="card-absolute"><img src="img/wolf (1).png" alt="">
+                <h3>CSS 2</h3><a href="#">hola</a>
+            </article>
+        </div>
+
+        <h3>Fijo</h3>
+        <div class="fijo">
+            <div>Bloque 1</div>
+            <div>Bloque 2</div>
+            <div>Bloque 3 fijo</div>
+            <div>Bloque 4</div>
+            <div>Bloque 5</div>
+        </div>
+        <article class="menuLateral">
+            <a href="#"><i class="fa-solid fa-house"></i>Home</a>
+            <a href="tel:+34900111222"><i class="fa-solid fa-phone"></i>TFN</a>
+            <a href="mailto:contacto@ejemplo.com"><i class="fa-solid fa-envelope"></i>mail</a>
+            <a href="https://www.facebook.com/tuempresa" target="_blank"><i class="fa-brands fa-facebook"></i>FB</a>
+            <a href="https://x.com/tuempresa" target="_blank"><i class="fa-brands fa-twitter"></i>Twiter </a>
+        </article>
+
+        <hr>
+    </section>
+    <section id="flotante">
+        <h2>Elementos Flotantes</h2>
+        <article>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. <img src="img/wolf (1).png" alt="pup">Amet
+                porro alias illum, maiores et, omnis ullam possimus, aliquid necessitatibus facere officia a obcaecati
+                asperiores quos laboriosam perspiciatis. Aliquam mollitia inventore animi eligendi veritatis, atque
+                dignissimos dolorem doloremque! Soluta nulla est temporibus ad tempora ducimus, dolore doloremque
+                repellendus itaque officia reprehenderit, placeat numquam quis tempore expedita vel nemo, voluptatem
+                laborum harum quidem cumque aperiam impedit molestias. Nihil eos reprehenderit sapiente consequatur vel
+                dolorum expedita eius, commodi quos perspiciatis culpa vitae est adipisci aspernatur libero
+                exercitationem cupiditate, provident consectetur in at temporibus ullam harum debitis quod. </p>
+            <p>Aquí está afectando al segundo parrafo que es el tio del elemneto que tiene el float. Lorem ipsum dolor
+                sit amet, consectetur adipisicing elit. Corrupti sequi similique fugiat magni
+                voluptatem illum. Excepturi eius id, itaque, error eligendi eveniet numquam est esse e </p>
+            <p>Aqui vemos como habiendole puesto el clear a la izquierda este parrafo ya comienza despues del
+                flotante<img src="img/pup (1).png" alt="pup">maiores et, omnis ullam possimus, aliquid
+                necessitatibus facere officia a obcaecati
+                asperiores quos laboriosam perspiciatis. Aliquam mollitia inventore animi eligendi veritatis, atque
+                dignissimos dolorem doloremque! Soluta nulla est temporibus ad tempora ducimus, dolore doloremque
+                repellendus itaque officia reprehenderit, placeat numquam quis tempore expedita vel nemo, voluptatem
+                laborum harum quidem cumque aperiam impedit molestias. Nihil eos reprehenderit sapiente consequatur vel
+                dolorum expedita eius, commodi quos perspiciatis culpa vitae est adipisci aspernatur libero
+                exercitationem cupiditate, provident consectetur in at temporibus ullam harum debitis quod. Recusandae
+                iure voluptas, molestias quia dolor ducimus quo doloribus non sint. Perferendis impedit tempora vel
+                similique, cupiditate sapiente atque voluptatem libero aut fugit asperiores iste veniam officia rerum
+                natus aliquid voluptates voluptate necessitatibus commodi, maiores animi ullam quia! Impedit cupiditate
+                animi sed repellat. Provident non quod voluptate odio facere architecto ea consectetur asperiores
+                laudantium deserunt cumque quis, magni sunt possimus necessitatibus odit, expedita corporis. Unde
+                minima, incidunt consectetur vel reprehenderit eos accusamus ipsa eveniet, expedita, deserunt eum ad
+                quia facere asperiores porro. Ut veniam deserunt deleniti, saepe natus ducimus aspernatur necessitatibus
+                nesciunt est eaque. Voluptas facere blanditiis voluptatibus vel quia maiores rerum perferendis in quasi
+                omnis.</p>
+        </article>
+    </section>
+    <section id="visibilidad">
+        <h2>visibilidad</h2>
+        <article class="propDisplay">
+            <img src="img/pup (1).png" alt=""><img src="img/wolf (1).png" alt=""><img src="img/pup (1).png" alt="">
+            <p>display none desaparece hasta el hueco que ocupaba wolfchan</p>
+        </article>
+        <article class="propVisibility">
+            <img src="img/pup (1).png" alt=""><img src="img/wolf (1).png" alt=""><img src="img/pup (1).png" alt="">
+            <p>wolfchan desaparece pero hueco hay</p>
+        </article>
+        <article class="propOpacity">
+            <img src="img/pup (1).png" alt=""><img src="img/wolf (1).png" alt=""><img src="img/pup (1).png" alt="">
+            <p>wolfchan no se ve pero está</p>
+        </article>
+        <section id="flex">
+            <h3>FLEXBOX!!!!</h3>
+            <article><img src="img/wolf (1).png" alt="">
+                <div>
+                    <p>Parrafo 1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste modi magni placeat a
+                        commodi?
+                        Nostrum sed quia reiciendis dolor iste ab nemo id ratione, maiores totam. Dignissimos impedit
+                        rem deserunt.</p>
+                    <p>Parrafo 2 Doloremque iure nam, ratione magnam esse repellendus necessitatibus commodi sed
+                        corrupti, rem
+                        odit? Amet qui optio nostrum quod iusto molestiae ducimus quo quas aut laborum totam, tenetur,
+                        porro consequatur inventore.</p>
+                    <p>Parrafo 3 Suscipit fugit culpa doloremque vel dolorem accusantium eaque quod non facilis! Quae
+                        voluptate
+                        perferendis quisquam incidunt est alias illo, molestias, officiis itaque qui dolor eligendi odit
+                        id sapiente, tempore nostrum!</p>
+                    <p>Parrafo 4 Consequatur, amet ipsam? Unde dolores a et culpa nam consequuntur sed numquam vero
+                        sequi? Dolorem
+                        architecto aliquam minus quaerat! Porro ullam, officiis id eos blanditiis similique vero totam
+                        fugit adipisci.</p>
+                    <p>Parrafo 5 Repudiandae minus ex a blanditiis iste, facilis repellat libero fugit inventore
+                        doloribus qui
+                        nobis culpa fugiat sed odio quidem aliquid, quaerat dicta atque amet voluptas tenetur dolores
+                        nihil nemo. Iure!</p>
+                </div>
+            </article>
+        </section>
+        <section id="grid">
+            <h3>GRID</h3>
+            <h4>Dsitribucion grid</h4>
+            <article class="distriGrid">
+                <section>
+                    <img src="/img/wolf (1).png" alt="  ">
+                    <p>Bloque 1 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illum, esse veniam
+                        fugiat
+                        voluptates repellat, eum aliquam accusamus ut fugit eaque consequuntur debitis molestias natus
+                        possimus sunt. Repellendus, necessitatibus eveniet.</p>
+                    <p>Bloque 2 Nesciunt ad sequi eveniet voluptatem incidunt dolore quasi nulla quisquam odio eaque?
+                        Beatae
+                        harum
+                        enim qui eos, sint sit! Aliquam dolore voluptas in assumenda laudantium doloremque alias quasi
+                        ea
+                        atque.</p>
+                    <p>Bloque 3 Ratione aliquid, sit quisquam repellendus sunt nostrum ut, animi placeat, quod commodi
+                        aspernatur
+                        vitae! Sunt quas incidunt reiciendis distinctio ad qui voluptas perspiciatis eaque excepturi a!
+                        Necessitatibus architecto ullam sint!</p>
+                    <p>Bloque 4 Nulla dignissimos adipisci aliquam necessitatibus architecto earum eveniet natus at esse
+                        doloribus.
+                        Dolorem voluptatibus, perspiciatis similique eligendi dignissimos unde ea necessitatibus facilis
+                        odio. Fugiat debitis neque fuga enim, facilis mollitia?</p>
+                    <p>Bloque 5 Dolorem ratione modi iure, illo molestiae assumenda atque eius doloribus, ducimus nam,
+                        deleniti ad?
+                        Excepturi fugit a ipsa repudiandae impedit hic fugiat, iste quae labore repellat molestiae sit
+                        numquam vel.</p>
+                    <p>Bloque 6 Fugiat autem modi adipisci nemo consequuntur quod, eveniet, error praesentium earum
+                        voluptas
+                        nobis
+                        dolore natus illum maiores minima blanditiis corporis facere deleniti. Dolore eos dicta magnam
+                        impedit eveniet saepe consequatur!</p>
+                    <p>Bloque 7 Dolore dolorum, beatae unde doloremque quia voluptate eligendi, autem repellat quas,
+                        ratione
+                        ut
+                        quaerat eveniet nisi! Facere iste et rerum corrupti autem libero eveniet, harum suscipit
+                        repellendus
+                        architecto repudiandae quam.</p>
+                    <p>Bloque 8 Consectetur iure aperiam eius quisquam voluptatem rem accusantium fugit, vel fuga, quod
+                        porro sit
+                        doloremque voluptas tenetur voluptatum perspiciatis corrupti ex laudantium cumque doloribus
+                        error
+                        laborum ad dicta. Necessitatibus, tempore.</p>
+                </section>
+                <section>
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                </section>
+            </article>
+            <p><a href="/maquetacion.html">Prueba de maquetacion malamente plas plas</a></p>
+            <section>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+            </section>
+        </section>
+    </section>
+    <section id="profundidad">
+        <h2>Profundidad</h2>
+    </section>
+    <section id="opcidad">
+        <h2>Visualizacion y opacidad</h2>
+    </section>
+
+    <div id="down"></div>
+    <section id="navBTN"><a href="#"><i class="fa-solid fa-arrow-up"></i></a><a href="#down"><i
+                class="fa-solid fa-arrow-down"></i></a></section>
+</body>
+
+</html>

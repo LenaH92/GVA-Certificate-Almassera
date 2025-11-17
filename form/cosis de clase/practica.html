@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1>Formularios</h1>
+    <a href="index.html">Link a teoría</a>
+    <section id="formularioClasico">
+        <h2>Forms clásicos</h2>
+        <a href="index.html#formularioClasico">Link a teoría</a>
+        <form action="procesar.php" method="post" target="salidaForm">
+            <div>
+                <label for="nick">User: </label>
+                <input type="text" name="nick" id="nick">
+            </div>
+            <div>
+                <label for="pass">Password: </label>
+                <input type="password" name="pass" id="pass">
+            </div>
+            <div class="botones">
+                <input type="submit" value="Enviar">
+                <button type="submit">Enviar btn</button>
+            </div>
+        </form>
+        <iframe src="" frameborder="0" style="width: 80vw; height: 300px; border: 5px solid aliceblue;"
+            name="salidaForm"></iframe>
+    </section>
+
+
+
+    <!-- ******************* -->
+    <section id="formModerno">
+        <h2>Formularios modernos</h2>
+        <a href="index.html#formularioClasico">Link a teoría</a>
+        <div>
+            <label for="nick">User: </label>
+            <input type="text" name="nick" id="nick" form="formMod2">
+        </div><!-- El primer input del form -->
+        <form action="procesar.php" target="salidaFormModerno" name="formModerno" id="formMod2"></form>
+        <iframe src="" frameborder="0" style="width: 80vw; height: 300px; border: 5px solid aliceblue;"
+            name="salidaFormModerno"></iframe>
+        <!-- notee el iframe se conecta a los resultados del form a traves del name del form que va ene l name del iframe. -->
+        <div>
+            <label for="pass">Password: </label>
+            <input type="password" name="pass" id="pass" form="formMod2">
+        </div><!-- El segundo input del form -->
+
+        <!-- NOtese que los campos y los pbotones estan enlazados con el form por la ID del form no el name( podria ser el mismo, sí, pero aquiestá diferente para ver la especificacaion) -->
+
+        <div class="botones">
+            <input type="submit" value="Enviar" form="formMod2" formmethod="get">
+            <button type="submit" form="formMod2" formmethod="post">Enviar btn</button>
+        </div> <!-- los bontones de enviar el form -->
+    </section>
+</body>
+
+</html>

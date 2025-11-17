@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+/* LISTAs */
+ul,
+table {
+    border: 1px dashed rebeccapurple;
+}
+
+li,
+td {
+    border: 1px solid aquamarine;
+}
+
+ul {
+    list-style-position: inside;
+    list-style-type: circle;
+}
+
+/* no tan listas */
+td {
+    height: 3rem;
+    width: 100px;
+    vertical-align: top;
+    text-align: center;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 10px;
+    caption-side: bottom;
+}

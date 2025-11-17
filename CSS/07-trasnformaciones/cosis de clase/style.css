@@ -1,0 +1,238 @@
+* {
+    box-sizing: border-box;
+}
+
+section {
+    border: 1px solid wheat;
+    padding: 20px;
+}
+
+/* TRANSICIONES */
+.practicaTransiciones div {
+    height: 150px;
+    width: 150px;
+    display: grid;
+    place-items: center;
+    background-color: rosybrown;
+    margin: 50px 0;
+    font-size: 1rem;
+    position: relative;
+    /* transicion */
+    transition-property: all;
+    transition-duration: 1s;
+    transition: scale(1);
+    left: 0;
+    /* 
+    transition-delay: 1s; */
+    border: 1px solid transparent;
+}
+
+.practicaTransiciones>.basico:hover {
+    font-size: 2rem;
+    background-color: antiquewhite;
+    border-radius: 20px;
+    color: rosybrown;
+    border: 1px solid rosybrown;
+}
+
+.practicaTransiciones span.mover:hover>.dimeniones {
+    transform: scale(2);
+    left: 550px;
+    border-radius: 50%;
+    background-color: aliceblue;
+    border: 1px solid rosybrown;
+    color: rosybrown;
+}
+
+.practicaTransiciones span.trasladar {
+    display: block;
+    padding: 0 10px;
+    border: 1px dashed red;
+}
+
+.practicaTransiciones span.trasladar:hover>div {
+    transform: translateX(500px);
+}
+
+.practicaTransiciones span.trasladar:hover>div.fbEase {
+    transition-timing-function: ease
+}
+
+.practicaTransiciones span.trasladar:hover>div.fbEaseIn {
+    transition-timing-function: ease-in
+}
+
+.practicaTransiciones span.trasladar:hover>div.fbEaseOut {
+    transition-timing-function: ease-out
+}
+
+.practicaTransiciones span.trasladar:hover>div.fbCubic {
+    transition-timing-function: linear
+}
+
+.practicaTransiciones span.trasladar:hover>div.fbStep {
+    transition-timing-function: steps(10);
+}
+
+.practicaTransiciones span.trasladar:hover>div.fbStepJS {
+    transition-timing-function: steps(10, jump-start)
+}
+
+.practicaTransiciones span.trasladar:hover>div.fbStepJE {
+    transition-timing-function: steps(10, jump-end)
+}
+
+/* ANIMACINOES */
+
+.practicaAnimaciones>div {
+    height: 150px;
+    width: 150px;
+    display: grid;
+    place-items: center;
+    background-color: lightgreen;
+    margin: 50px 0;
+    font-size: 1rem;
+    border: 1px solid transparent;
+}
+
+@keyframes movimientoColor {
+
+    /* normalmente las keyframes deberian ir arriba del todo */
+    from {
+        background-color: skyblue;
+        color: lightcoral;
+        font-size: 1rem;
+        transform: translateX(0);
+    }
+
+    to {
+        background-color: lightcoral;
+        color: aliceblue;
+        font-size: 2rem;
+        transform: translateX(400px);
+    }
+}
+
+.practicaAnimaciones>div.movColor:hover {
+    animation-name: movimientoColor;
+    animation-duration: 2s;
+}
+
+.practicaAnimaciones>div.counting {
+    animation-name: movimientoColor;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    /* se puede poner infinito */
+}
+
+.practicaAnimaciones>div.reverted {
+    animation-name: movimientoColor;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+}
+
+.practicaAnimaciones>div.alternated {
+    animation-name: movimientoColor;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.practicaAnimaciones>div.Forwrd {
+    animation-name: movimientoColor;
+    animation-duration: 2s;
+    animation-iteration-count: 3;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
+.practicaAnimaciones>div.backwards {
+    animation-name: movimientoColor;
+    animation-duration: 2s;
+    animation-iteration-count: 3;
+    animation-direction: alternate;
+    animation-fill-mode: backwards;
+}
+
+.practicaAnimaciones>div.none {
+    animation-name: movimientoColor;
+    animation-duration: 2s;
+    animation-iteration-count: 3;
+    animation-direction: alternate;
+    animation-fill-mode: none;
+}
+
+.animacion2 {
+    height: 800px;
+}
+
+.animacion2>div {
+    height: 150px;
+    width: 150px;
+    background-color: aliceblue;
+    border: 1px solid brown;
+    display: grid;
+    place-content: center;
+}
+
+@keyframes moviRectangular {
+    0% {
+        background-color: antiquewhite;
+        font-size: 1rem;
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+    }
+
+    25% {
+        background-color: aquamarine;
+        opacity: 0.5;
+        font-size: 2rem;
+        transform: translateX(500px) translateY(0);
+    }
+
+    50% {
+        background-color: aliceblue;
+        opacity: 0.75;
+        font-size: 0.5rem;
+        transform: translateX(500px) translateY(300px);
+    }
+
+    75% {
+        background-color: aquamarine;
+        opacity: 0.5;
+        font-size: 2rem;
+        transform: translateX(0) translateY(300px);
+    }
+
+    100% {
+        background-color: antiquewhite;
+        font-size: 1rem;
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animacion2>div {
+    animation-name: moviRectangular;
+    animation-duration: 5s;
+    animation-iteration-count: 3
+}
+
+@keyframes rotacionTexto {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+
+}
+
+.animacion2>div>a {
+    animation-name: rotacionTexto;
+    animation-duration: 5s;
+    animation-iteration-count: 3;
+}

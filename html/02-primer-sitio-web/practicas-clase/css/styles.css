@@ -1,0 +1,24 @@
+h1 {
+  background-color: aliceblue;
+  padding: 15px 0 15px 0;
+}
+img {
+  max-width: 200px;
+  border-radius: 50%;
+}
+a {
+  color: rgb(214, 94, 214);
+  text-decoration: underline;
+}
+a:hover {
+  color: rgb(131, 8, 131);
+}
+.headerDiv {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.headerDiv img {
+  max-height: 100px;
+}

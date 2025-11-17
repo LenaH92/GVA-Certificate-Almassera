@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformaciones, Transiciones y Animaciones</title>
+</head>
+
+<body>
+    <h1>Transformaciones, Transiciones y Animaciones</h1>
+    <a href="practica.html">Link a practica</a>
+
+
+    <section id="transformaciones">
+        <h2>Transformaciones</h2>
+    </section>
+
+
+    <section id="transiciones">
+        <h2>Transiciones</h2><a href="practica.html#transiciones">Link a practica de transiciones </a>
+
+        <p>es un metdosa traves del cual se fuerza el cambio de uin valor de uina propiedad(o varias) de un punto
+            inicial a un punto final en un determinado tiempo. <br> cuando se crean el sistema interpola lños puntos
+            intermedios de la transición. <br>es importante especificar en la propiedad inicial ocmo esta originalmente
+            para que calcule solo el cambio-</p>
+        <p>#dato, si se cambian las alturas y anchuras, afecta a los que los rodean.. para eso mejor usar
+            transform: scale(xx0)</p>
+        <p>propiedades</p>
+        <ul>
+            <li><code>transition-property</code><br> puedes elegir que propiedades quieres que cambien, separadas por
+                comas. Si no hay algo que no quieras que se anime en el cambio, se le puede poner all y se aplica a
+                todas. Palante.</li>
+            <li><code>transition-duration</code><br>se indica en segundos (s) o milisegundos (ms) <br><b>cortas</b>:
+                300ms, o 0.3s
+                o <b>largas</b> 500ms+</li>
+            <li><code>transition-delay</code><br>el retardo, lol. Vamos desde que se indica que empiece hasta que
+                realmente empieza. Modo, con un hover, si le metes un delay al hover, si quitas el raton durante ese
+                retraso la animacion no se llevaráa cabo. <br>tambien se aplica a cuadno te quitas el raton btw</li>
+            <li><code>transition-timing-function</code><br>digamos es como la transicion se lleva, que hayan picos de
+                rapidez o lentitud. <br> permite crear una de cero <br> <a
+                    href="https://cubic-bezier.com/#.17,.67,.83,.67" target="_blank">Web original con representacion
+                    grafica de los
+                    tiempos de cambio</a>
+                <ul>
+                    <li><code>ease</code><br></li>
+                    <li><code>ease-in</code><br></li>
+                    <li><code>ease-out</code><br></li>
+                    <li><code>ease-in-out</code><br></li>
+                    <li><code>linear</code><br></li>
+                    <li><code>steps</code><br>Se marcan puntos y se cambian en esos puntos de forma radical, sin
+                        animacion bonita I guess</li>
+                    <li><code>steps-start</code><br></li>
+                    <li><code>steps-end</code><br></li>
+                </ul>
+            </li>
+            <li><code>transition</code><br>propiedad que acumula tr-property tr-duration tr-timing-function tr-delay
+            </li>
+        </ul>
+    </section>
+
+
+    <section id="animaciones">
+        <h2>Animaciones</h2><a href="practica.html#animaciones">Link a practica de animaciones</a>
+        <ul>
+            <li><code>@keyframes</code><br>Sse define una animacion con un nombre: @keyframes nombre-variable{from
+                {propiedades alcomienzo} to{propiedades al fin}}</li>
+            <li><code>animation-name</code></li>
+            <li><code>animation-delay</code></li>
+            <li><code>animation-direction</code></li>
+            <li><code>animation-duration</code></li>
+            <li><code>animation-timing-function</code></li>
+            <li><code>animation-iteretaion-count</code><br>cuantas veces se tiene que repetir</li>
+            <li><code>animation-fill-mode</code><br>->en qué sentido va, si de cero a 100, de 100 a 0 o en ambas
+                direcciones</li>
+            <li><code>animation-play-state</code><br>
+                -> FOR JS</li>
+            <li><code>animation</code></li>
+        </ul>
+    </section>
+</body>
+
+</html>

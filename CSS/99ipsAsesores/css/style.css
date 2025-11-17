@@ -1,0 +1,102 @@
+@font-face {
+    font-family: "Lato";
+    src: url(/fonts/Lato/OFL.txt);
+}
+
+@font-face {
+    font-family: "SourceSansPro";
+    src: url(/fonts/SourceSansPro/OFL.txt);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --colorTexto: rgb(119, 119 119);
+    --colorLink: #f16164;
+    --colorLinkHover: #323232;
+    --colorTitle: #363f48;
+    --bgColor: #fff;
+    --bgColorCta: #f3f3f3;
+    --bgColorFooter: #242424;
+}
+
+body {
+    font-family: "SourceSansPro", sans-serif;
+    font-size: 16px;
+    background-color: var(--bgColor);
+    color: var(--colorTexto);
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lato", sans-serif;
+}
+
+.box {
+    width: 100%;
+    max-width: 1380px;
+    margin: auto;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--colorLink);
+}
+
+/* header */
+
+header {
+    background-color: var(--bgColor);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+header>* {
+    margin: 0;
+    padding: 0;
+}
+
+header ul {
+    display: flex;
+    gap: 1.2rem;
+}
+
+header div,
+header nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav img {
+    height: 100px;
+}
+
+header hr {
+    height: 1px;
+    background-color: #e6e9ed;
+    border: none;
+}
+
+header nav {
+    align-items: center;
+}
+
+header nav.topFixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+}

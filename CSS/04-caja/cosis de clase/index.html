@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODELO DE CAJA</title>
+    <style>
+        * {
+            text-align: justify;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            width: 90vw;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        a.botonUp {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            width: 4rem;
+            height: 4rem;
+            text-decoration: none;
+            background-color: chocolate;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            position: fixed;
+            bottom: 7rem;
+            right: 3rem;
+            color: yellowgreen;
+        }
+
+        a.botonUp:hover {
+            border: 1px solid chocolate;
+            background-color: yellowgreen;
+            box-shadow: 0 0 15px chocolate;
+            outline: 1px dotted chocolate;
+            outline-offset: -5px;
+            color: chocolate;
+        }
+
+        a.botonDown {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            width: 4rem;
+            height: 4rem;
+            text-decoration: none;
+            background-color: chocolate;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            position: fixed;
+            bottom: 3rem;
+            right: 3rem;
+            color: yellowgreen;
+        }
+
+        a.botonDown:hover {
+            border: 1px solid chocolate;
+            background-color: yellowgreen;
+            box-shadow: 0 0 15px chocolate;
+            outline: 1px dotted chocolate;
+            outline-offset: -5px;
+            color: chocolate;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Modelo de caja</h1>
+    <p>hga habido un dia que no he venido asi que lol</p>
+    <a href="practica.html">lINK TO PRACTICA</a>
+    <section>
+        <h2>Dimensiones</h2>
+        <p>Basically prodipedades de width y height. Base width es 100% del contenedor si es block. Si no solo la del
+            contenido que tenga. <br>la altura es mas dificil de calcular en porcentaje porque siempre se puede hacer
+            el scroll. <br>
+            <b>prefijos min y max</b><br>son los minimos o máximos, no es opbligatorio establecer ninguno de ellos. <br>
+            box sizing: aqui depende de que queremos que cuente. El tamaño del contenido ("content-box") o incluyendo el
+            border ("border-box")
+        </p>
+    </section>
+    <section id="rellenos">
+        <h2>Rellenos</h2>
+        <p>hay 4: top right bottom left, pero se puede usar de forma abreviada:
+        <pre>
+            padding: 2px 2px 2px 2px;
+            padding: 10px 10px
+        </pre> Esto viene a decir que el primero sigue el orden dado antes, y en la segunda es top-bottom, y laterales
+        </p>
+    </section>
+    <section id="border">
+        <h2>Bordes y perfiles</h2>
+        <p>Para crear lineas alrededor de contenido. El border ocupa espacio y se contabilizan, se pueden personalizar
+            uno por uno. Los perfiles no cuentan a nivel de espaciado, ni se pueden personalizar. </p>
+        <details>
+            <summary>Propiedades de border:</summary>
+            <ul>
+                <li>
+                    <details>
+                        <summary><b>Color del borde</b></summary>
+                        <ul>
+                            <li><b>border-color</b><br>Define el color general del borde de un elemento.</li>
+                            <li><b>border-top-color</b><br>Establece el color del borde superior.</li>
+                            <li><b>border-right-color</b><br>Establece el color del borde derecho.</li>
+                            <li><b>border-bottom-color</b><br>Establece el color del borde inferior.</li>
+                            <li><b>border-left-color</b><br>Establece el color del borde izquierdo.</li>
+                        </ul>
+                    </details>
+                </li>
+
+                <li>
+                    <details>
+                        <summary><b>Estilo del borde</b></summary>
+                        <ul>
+                            <li><b>border-style</b><br>Define el estilo general del borde (solid, dashed, dotted, etc.).
+                            </li>
+                            <li><b>border-top-style</b><br>Define el estilo del borde superior.</li>
+                            <li><b>border-right-style</b><br>Define el estilo del borde derecho.</li>
+                            <li><b>border-bottom-style</b><br>Define el estilo del borde inferior.</li>
+                            <li><b>border-left-style</b><br>Define el estilo del borde izquierdo.</li>
+                        </ul>
+                    </details>
+                </li>
+
+                <li>
+                    <details>
+                        <summary><b>Grosor del borde</b></summary>
+                        <ul>
+                            <li><b>border-width</b><br>Define el grosor general del borde (en px, em, etc.).</li>
+                            <li><b>border-top-width</b><br>Establece el grosor del borde superior.</li>
+                            <li><b>border-right-width</b><br>Establece el grosor del borde derecho.</li>
+                            <li><b>border-bottom-width</b><br>Establece el grosor del borde inferior.</li>
+                            <li><b>border-left-width</b><br>Establece el grosor del borde izquierdo.</li>
+                        </ul>
+                    </details>
+                </li>
+
+                <li>
+                    <details>
+                        <summary><b>Curvatura del borde</b></summary>
+                        <ul>
+                            <li><b>border-radius</b><br>Redondea las esquinas del borde del elemento.</li>
+                            <li><b>border-top-left-radius</b><br>Redondea la esquina superior izquierda.</li>
+                            <li><b>border-top-right-radius</b><br>Redondea la esquina superior derecha.</li>
+                            <li><b>border-bottom-left-radius</b><br>Redondea la esquina inferior izquierda.</li>
+                            <li><b>border-bottom-right-radius</b><br>Redondea la esquina inferior derecha.</li>
+                        </ul>
+                    </details>
+                </li>
+
+                <li>
+                    <details>
+                        <summary><b>Imágenes como bordes</b><br>
+                        </summary>
+                        <p>no muy recomendable, hay que estudiralo bien bc movidas de que si el programa rompe la
+                            imagen
+                            en 9 y repite desde ahí</p>
+                        <ul>
+                            <li><b>border-image</b><br>Permite usar una imagen como borde alrededor del elemento.</li>
+                            <li><b>border-image-outset</b><br>Define cuánto sobresale la imagen del borde fuera del
+                                elemento.</li>
+                            <li><b>border-image-repeat</b><br>Controla cómo se repite o estira la imagen del borde.</li>
+                            <li><b>border-image-slice</b><br>Indica cómo se corta la imagen para aplicarla a los bordes.
+                            </li>
+                            <li><b>border-image-source</b><br>Especifica la imagen que se usará como borde.</li>
+                            <li><b>border-image-width</b><br>Determina el grosor del área donde se muestra la imagen del
+                                borde.</li>
+                        </ul>
+                    </details>
+                </li>
+            </ul>
+
+        </details>
+        <details>
+            <summary>Propiedades de perfil aka outline</summary>
+            <ul>
+                <li><b>outline-color</b></li>
+                <li><b>outline-offset</b></li>
+                <li><b>outline-style</b></li>
+                <li><b>outline-width</b></li>
+            </ul>
+        </details>
+    </section>
+    <section id="margenes">
+        <h2>Márgenes</h2>
+        <p>Lo que hayh entre el borde y el contenedor padre/hermanos. <br>Propiedades para establecer márgenes:
+        <ul>
+            <li><b>margin-top</b><br>Establece el margen superior del elemento. No es operativa en elementos de tipo
+                línea.</li>
+            <li><b>margin-left</b><br>Establece el margen izquierdo del elemento.</li>
+            <li><b>margin-bottom</b><br>Establece el margen inferior del elemento. No es operativa en elementos de tipo
+                línea.</li>
+            <li><b>margin-right</b><br>Establece el margen derecho del elemento.</li>
+            <li><b>margin</b><br>Propiedad abreviada que permite definir todos los márgenes (de una a cuatro medidas).
+            </li>
+        </ul>
+        Para centrar una caja en un contenedros, el auto en el segundo valor centra por los lados, lo que haya primero
+        puede cambiar dependiendo lo que queramos:
+        <pre>
+        margin: 20px auto;</pre>
+        </p>
+    </section>
+    <section id="sombra">
+        <h2>Sombra</h2>
+        <p>Permite agregar efectos de sombra sobre un elemento.<br>
+            La propiedad principal es: <b>box-shadow</b> que Permite agregar una o más sombras a un elemento. <br>
+            Valores y características de la sombra:
+        <ul>
+            <li><b>none</b><br>Indica que el elemento no tiene sombra.</li>
+            <li><b>h-offset</b><br>Desplazamiento de la sombra en el eje horizontal.</li>
+            <li><b>v-offset</b><br>Desplazamiento de la sombra en el eje vertical.</li>
+            <li><b>blur</b><br>Grado de difuminado de la sombra.</li>
+            <li><b>spread</b><br>Tamaño de la sombra. Valores positivos la agrandan, valores negativos la reducen. Por
+                defecto, su valor es 0.</li>
+            <li><b>color</b><br>Define el color de la sombra.</li>
+        </ul>
+        Los parámetros de <b>desplazamiento</b> (horizontal y vertical) y el <b>color</b> son obligatorios.<br>
+        Es posible definir más de una sombra separando sus parámetros por comas.
+        <pre>
+        box-shadow: 10px 5px 5px gray;</pre>
+        </p>
+    </section>
+
+    <section id="fondo">
+        <h2>Fondos</h2>
+        <p>hay muchas posibilidades. HEmos visto como meter fondos planos y con imagenes, ahoora veremos como hacer
+            degradados. Hay herramientas que lo hacen, asiq eu no hya que romperse la cabeza haciendolo.</p>
+        <!-- degradados -->
+        <section>
+            <h3>Degradados de fondo</h3>
+            <p>
+                para expresar angulos se puede hacer de difererntes maneras:</p>
+            <ol>
+                <li><code>deg</code> <br> Son los gradis de una circunferencia de una sircunferencia de 360. S epùede
+                    poner en
+                    negativo y positivo assiq ue depende de donde esté el 0 por defecto se avanzará hacia un ladou otro.
+                </li>
+                <li><code>grad.</code> <br>Son gradientes de una ciurcunfderencia que tenga 400 gradientes. Así se puede
+                    hacer una
+                    similitud con los grados </li>
+                <li><code>rad.</code><br>radianes, una circunferencia tiene 2*pi. Es un lio so pass de ser posible.,
+                    demo demo, si alguien te lo pasa en esto mejor no perder el tiempo en calcular el equivalente en
+                    otros formatos.</li>
+                <li><code>turn</code><br>UNa vuelta, una circunferencia tiene 1 vuelta.</li>
+
+            </ol>
+            <p>para hacer gradientes rapido sin pensar: <a href="https://www.colorzilla.com/"
+                    target="_blank">Colorzilla</a></p>
+            <div class="gradienteLineal caja">
+                <h4>gradiente lineal</h4>
+                se piuede poner despues de cada color la distancia que quiero que en el que ese punto se algcanza, o en
+                px o en % justo despues del color que queramos. <br> para hacer un cambio radical, limio en tro dos
+                colores, la cosa es poner el mismo punto de cambio en ambos colores.
+            </div>
+            <div class="gradienteCircular caja">
+                <h4>Gradiente ciurcular</h4>
+                muy similar al linear. <br>Al poner radial gradient por defecto es eliptico, pero si queremos poner qie
+                sea
+                circular hay que especificarlo. <br>El 0% cambia a ser el centro del círculo.
+                <p>Para indicar el centro del círculo se puede poner al principio despues de circle
+                    <code>at x-index-px y-index-px</code> o tambien en px
+                </p>
+            </div>
+            <div class="gradienteEliptico caja">
+                es una elipse qeu coje de variantes la distancia del centro hata arriba y hacia uno de los lados, por
+                eso no es un circulo, lol
+                <section id="radial-gradient-sizes">
+                    <h5>Valores de tamaño en <code>radial-gradient()</code></h5>
+                    <p>Los valores <strong>closest-side</strong>, <strong>farthest-side</strong>,
+                        <strong>closest-corner</strong> y <strong>farthest-corner</strong> determinan hasta dónde se
+                        extiende un gradiente radial dentro del elemento.
+                    </p>
+
+                    <h6>📘 Sintaxis general:</h6>
+                    <pre><code>radial-gradient([forma] [tamaño] at [posición], color1, color2, ...)</code></pre>
+
+                    <h6>🌀 Formas posibles:</h6>
+                    <ul>
+                        <li><code>circle</code> → Gradiente circular.</li>
+                        <li><code>ellipse</code> → Gradiente elíptico (ovalado).</li>
+                    </ul>
+
+                    <h6>📏 Valores de tamaño:</h6>
+                    <ul>
+                        <li><strong>closest-side</strong>: El gradiente llega hasta el <em>borde más cercano</em> desde
+                            el centro o punto de inicio.</li>
+                        <li><strong>farthest-side</strong>: El gradiente llega hasta el <em>borde más lejano</em> del
+                            contenedor.</li>
+                        <li><strong>closest-corner</strong>: Se extiende hasta la <em>esquina más cercana</em> al punto
+                            de inicio.</li>
+                        <li><strong>farthest-corner</strong>: Se extiende hasta la <em>esquina más lejana</em> (valor
+                            por defecto).</li>
+                    </ul>
+
+                    <h6>🎨 Ejemplos:</h6>
+                    <pre><code>background: radial-gradient(ellipse closest-side, skyblue, steelblue);
+background: radial-gradient(circle farthest-side, gold, orange);
+background: radial-gradient(circle closest-corner at top left, pink, purple);
+background: radial-gradient(circle farthest-corner at top left, coral, navy);</code></pre>
+
+                    <h6>💡 Notas:</h6>
+                    <ul>
+                        <li>El punto de inicio se define con <code>at [posición]</code> (por defecto
+                            <code>center</code>).
+                        </li>
+                        <li><code>farthest-corner</code> es el comportamiento predeterminado.</li>
+                        <li>Se puede combinar con <code>circle</code> o <code>ellipse</code> según la forma deseada.
+                        </li>
+                    </ul>
+                </section>
+
+            </div>
+            <div class="gradienteConico caja">
+                <h4>gradiete conico</h4>
+                casi lo mismo que el radial circular. pero la ifererncia que el 0% westaen el centro del circulo y aqui
+                seria modo el radio de las agujas del reloj, donde el 0 seria las 12.
+            </div>
+        </section>
+    </section>
+    <div id="abajo"></div>
+    <a href="#" class="botonUp">⬆</a>
+    <a href="#abajo" class="botonDown">v</a>
+</body>
+
+</html>

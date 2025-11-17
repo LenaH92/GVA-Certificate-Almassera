@@ -1,0 +1,363 @@
+@import url(/css/normalize.css);
+@import url(/fonts/fontawesome/css/all.min.css);
+
+/* ENLAZAR FUENTES */
+@font-face {
+    font-family: "Source Sans Pro";
+    src: url(/fonts/source-sans-pro/SourceSansPro-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url(/fonts/lato/Lato-Regular.ttf);
+}
+
+
+
+/* DEFINIR VARIABLES */
+:root {
+    --background-color-page: #fff;
+    --background-color-cta: #f3f3f3;
+    --background-color-footer: #242424;
+    --color-text: rgb(119, 119, 119);
+    --color-link: #f16164;
+    --color-link-hover: #323232;
+    --color-title: #363f48;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Source Sans Pro",sans-serif;
+    font-size: 16px;
+    background-color: var(--background-color-page);
+    color: var(--color-text);
+    margin:0;
+    padding:0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Lato",sans-serif;
+    color: var(--color-title);
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 5rem;
+    margin:0;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-link);
+}
+
+a:hover {
+    color: var(--color-link-hover);
+}
+
+ul,ol {
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+
+.box {
+    width:100%;
+    max-width: 1380px;
+    margin: auto;
+}
+
+/*** HEADER ***************************************/
+header {
+    
+}
+header>* {
+    margin:0;
+    padding:0;
+}
+header ul {
+    display:flex;
+    gap:1.2rem;
+}
+header > div,
+header nav {
+    display:flex;
+    justify-content: space-between;
+    background-color: var(--background-color-page);
+}
+
+header > div:first-child {
+    padding: 5px 5px 0;
+}
+header > div:last-child {
+    padding: 0 5px 5px;
+}
+header hr {
+    height: 1px;
+    background-color: #e6e9ed;
+    border:none;
+    margin:5px 0;
+}
+header div:last-child {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+header div:last-child.topFixed {
+    position:fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+}
+header nav {
+    align-items: center;
+    text-transform: uppercase;
+}
+
+header nav img {
+    height: 100px;
+}
+
+/*** SECTION CABECERA ****/
+#cabecera {
+    min-height: 60vh;
+    background-image: linear-gradient(#0006,#0006),
+                      url(/imagenes/ips-asesores-valencia.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    gap: 1.5rem;
+}
+
+#cabecera h1 {
+    color: #fff;
+}
+
+#cabecera p {
+    font-size: 2rem;
+    margin:0;
+}
+
+/** SERVICIOS ************************************/
+#servicios {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 50px 0;
+}
+
+#servicios h2,
+#servicios>p {
+    flex-basis: 100%;
+    text-align: center;
+    margin:0;
+}
+
+#servicios>article {
+    flex-basis: 24%;
+}
+#servicios>article>* {
+    text-align: center;
+}
+
+#servicios>article i {
+    font-size: 2rem;
+    color: var(--color-link);
+    display:block;
+    margin: 0 auto 1rem;
+}
+
+
+/*** NOTICIAS ************************************/
+#noticias {
+    padding: 50px 0;
+    background-color: var(--background-color-cta);
+}
+
+#noticias h2,
+#noticias>div>p {
+    flex-basis: 100%;
+    text-align: center;
+    margin:0;
+}
+
+#noticias>div {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+#noticias article {
+    flex-basis: 32%;
+    background-color: var(--background-color-page);
+    padding: 40px;
+    box-shadow: 0 0 10px #0004;
+}
+#noticias article>* {
+    text-align: center;
+}
+#noticias article>img {
+    width:100%;
+}
+
+#noticias article>p {
+    margin:0;
+}
+
+/*** SECCION OPINIONES ***************************/
+#opiniones {
+    padding: 50px 0;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 2rem;
+}
+#opiniones h2,
+#opiniones > p {
+    flex-basis: 100%;
+    text-align: center;
+    margin:0;
+}
+
+#opiniones>blockquote {
+    flex-basis: 32%;
+    margin:0;
+    padding-left: 2rem;
+}
+
+#opiniones>blockquote>cite {
+    display:block;
+    font-weight: 500;
+    color:#000;
+    font-style: normal;
+    margin-top:1.5rem;
+}
+
+#opiniones>blockquote:before {
+    margin-left: -2rem;
+    content: "";
+    display:inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-image: url(/imagenes/sin-titulo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position:relative;
+    top:0px;
+    padding-right: 1rem;
+}
+
+
+/** FOOTER ***************************************/
+footer {
+    padding:50px 0;
+    background-color: var(--background-color-footer);
+    color: #fff;
+}
+footer * {
+    font-size: 0.9rem;
+}
+
+footer h2 {
+    color:#fff;
+    font-size: 1.2rem;
+    
+}
+
+footer>div {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer>div>div {
+    flex-basis: 25%;
+}
+
+footer section.contacta>ul {
+    color:#999;
+}
+footer section.contacta>ul li {
+    margin-bottom: 1rem;
+}
+
+footer section.contacta>ul li:before {
+    content: ">";
+    margin-right: 1rem;
+}
+footer section.contacta>ul li:first-child:before {
+    margin-right: 0;
+    content:"";
+}
+
+footer section.contacta+ul {
+    display:flex;
+    gap:0.5rem;
+}
+
+footer section.contacta+ul>* {
+    color: var(--color-link);
+}
+footer section.contacta+ul a:hover {
+    color:#fff;
+}
+
+footer > div > iframe {
+    flex-basis:15%;
+    height: 200px;
+}
+footer section.conecta {
+    margin-bottom:2rem;
+}
+footer section.conecta>ul {
+    display:flex;
+    gap: 2rem;
+}
+
+footer section.conecta ul a {
+    display:flex;
+    width: 2.5rem;
+    height: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    color: var(--background-color-footer);
+    background-color: #fff;
+    border-radius: 50%;
+    border:1px solid #fff;
+}
+footer section.conecta ul a:hover {
+    color: #999;
+    color: #fff;
+    background-color: var(--background-color-footer);
+}
+footer section.conecta ul i {
+    font-size: 1rem;
+}
+
+footer div:last-child>ul {
+    display:flex;
+    gap:0.5rem;
+    text-transform: uppercase;
+}
+
+footer div:last-child>ul>* {
+    color: var(--color-link);
+}
+footer div:last-child>ul a:hover {
+    color:#fff;
+}
+
+
+
+/*************************************************/

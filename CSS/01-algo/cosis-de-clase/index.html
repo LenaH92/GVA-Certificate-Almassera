@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= device-width, initial-scale=1.0">
+    <title>CSS INTRO 2.0</title>
+    <link rel="stylesheet" href="/css/hojaDeEstilosExterna.css">
+    <style>
+        /* HOJA DE ESTILO INTERNA*/
+        /*CON SELECTOR y esto se llama una hoija porque hay mas de una regla*/
+        #hojaDeEstilosInterna h4 {
+            color: blue;
+            font-size: 2rem;
+            text-decoration: underline;
+        }
+
+        #hojaDeEstilosInterna p {
+            text-align: justify;
+        }
+
+        /*para modificar el ultimo hijo de un elemento*/
+        #hojaDeEstilosInterna p:last-child {
+            text-align: center;
+        }
+
+        #hojaDeEstilosInterna img {
+            width: 75px;
+            margin: 20px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to my nmotes for CSS </h1>
+
+    <section>
+        <h2>Intro</h2>
+        <p>Csss es hojas de estilos en cascada. Se usa para maquetar, aka pinata y colorea y mueve las cosas por la
+            ventana
+            (en plan posición)</p>
+        <p>dew Necesitar hacer una decision si una ani,macion se hace en JS o Css usually Css... a no ser que
+            necesitemos
+            calculos o programacion bc css no lo hase wey</p>
+        <p>estilo en html VS en css?? Always CSS</p>
+
+        <p>El tema que se llame en cascada es que las ordenes llevan prioridad desde abajo hacia ariba. es decir las
+            ultimas
+            son las que más importancia tienen. ANTE ingualdad de importancia loque manda es lo ultimo (*5 veces que lo
+            ha
+            dicho)</p>
+        <p>Esto viene a decir qu la jerarquia es muy importante y así como la especificidad (cuan especifico sea el
+            selector)</p>
+        <p>HISTORY TIME: Se empezo con el css bc html ya tenia demasié asi qeu se paso al css para maquetar.
+            Anteriormente
+            las web eran chiquitas pero conforme fueron creciendo el mantenimiento de era muy lioso asiq eu s epaso a
+            las
+            hojas de estilos. Tengo sueño prque hoy no hemos hecho el "en capitulos anteriores" y son las 9.30 y ya teng
+            casi 40 lineas de codigo T_T</p>
+
+        <p>DATO RANDOM: los navegadores tienen analizadores para quitar la mierda akak codigo innecesario como espacios
+            y
+            tabuladores. Los trabajadores segun él siempre tienen dos copias de un codigo, uno noraml que es el que
+            tratan y
+            otro llamado minimizado que se come toda esa mierda. suele llamar whatever-min.extension</p>
+        <p>Para enlazar el contenido html con el css hay dos:</p>
+        <ul>
+            <li>Internos
+                <p>como <u>etiquetas style en la cabecera</u> o <u>atributos style dentro de una etiqueta</u>(estilos en
+                    linea)</p>
+                el atributo dentro de una etiqueta es generica asi qeu casi tosalo aceptan y crea una regla (¿?)
+                <p>personalemtne no me gustan estas formas de darle estilo, solo en momentos muy selectos para ver como
+                    saldria de buenas a primeras pero simepre lo paso despues a css.</p>
+            </li>
+            <li>Externos</li>
+            <p>Viene a ser el <u>link al css en la cabecera</u> (dato: pueden ser multiples links a multiples css, pero
+                notese que
+                el orden en el que se linkena tambien es relevante para la jerarquia, el qeu está mas tarde tiene
+                preferencia ante igualdad de importancia)</p>
+            <p>ventajas: afecta a todos los elementos de la pagina( no solo a los seleccionaos) y tenemos todo el codigo
+                centralizado en un archivo.</p>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Lé lenguaje</h2>
+        <p>Es un lenguaje completamente nuevo y se actualiza mucho más que html y hay mcuihas cosis nuevas</p>
+        <p>Es un estandar, so technicaly deberia funcionar en todos los navegadores, pero las cosas nuevas tienen su
+            tiempo
+            de adaptacion asi que cuiadin con usar las cosas nuevas a la birulé (mirar <a href="https://caniuse.com/"
+                target="_blank">canIuse.com</a> o similares)</p>
+        <p>La normativa es un pooc un coñazo igual que leerse el boe pero puedes mirar this: <a
+                href="https://developer.mozilla.org/es/" target="_blank">MDN</a></p>
+
+        <p>Nadie dice por defecto que está establecido con las propiedades de cada cosa. Modo el tamaño de la letra, su
+            color, su grosor, color de fondo, etc... El que lo hace es el programador de CADA buscador. Ie. depende del
+            navegador, chrome y mozillapueeds ser diferentes</p>
+        <p>Así pues normlamente al princio de un archivo css lo uqe va es el reset y /o normalizacion ( no me ha quedado
+            claro la diferencia entre estos, algo asi ue el reseteo es a cero, la normalizacion el igualar todo a lo
+            mismo
+            no tiene que ser cero¿?). padding 0, margin 0, letra tal, grosor tal, fondo etc.. Hay muchos sitios donde
+            puedes
+            encontrar ejemplos. <a href="https://saskialund.de/es/css/normalizar-css-que-es/">Aqui</a> lo expkica, pero
+            no
+            lo he leido.... lol</p>
+        <p>Un ejepolo de normalizacion para ÉL el lo del box-sizing: border-ox (que yo jamas lo habia usado)</p>
+    </section>
+
+    <section>
+        <h2>Vamos con cosas practicas o eso dice</h2>
+        <p>mirar en el drive y descargar html asap porque tiene qeu quitarlo</p>
+        <p>para reset el css <a href="https://meyerweb.com/eric/tools/css/reset/">CSS Tools: Reset CSS</a> Dicho por el,
+            a
+            mi me aprece demasié, pero creamos un doc css llamado reset.css</p>
+        <details>
+            <summary>REST CODE</summary><code><pre>/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}</pre></code>
+        </details>
+
+        <p>(como dato: para que quede el texto como lo pego he puesto las siguientes tags: details + summary para que se
+            despliegue y con un titulo, y code + pre para que aparezca en monospace y se respeten los espacion y los
+            saltos de linea)</p>
+        <p>para normlaizar el css: <a href="https://github.com/necolas/normalize.css">necolas/normalize.css: A modern
+                alternative to CSS resets
+            </a> Y se descarga el archivo que es normalize.css o se copia y pega lol. WARNIGN: El codigo es hiper largo,
+            abrir details bajo supervision adulta (usted verá, es mejor vcver la web original lol)</p>
+        <details>
+            <summary>NORMALIZE CODE</summary><code><pre>/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+
+[hidden] {
+  display: none;
+}</pre></code>
+        </details>
+
+        <p>Segun el son de los más usados esos dos pedazons de codigo,. ambos estan en la carpeta de css, pero no
+            linkeados
+            aqui, como dato.</p>
+        <section>
+            <h2>INTRODUCCIÓN AL CSS</h2>
+            <p>btw ovio el mozo no ha usaddo las imagenes que yo, pero paso de eterme al drive. Supongo que él subirá su
+                codigo más ambientado en un entorno escolar xD</p>
+            <section id="estilosEnLinea">
+                <h4 style="color: red; font-size: 2rem ; text-decoration: underline;">Estilos EN linea</h4>
+
+                <p style="text-align: center;">Así es como en teoria se trabajaba antes, de manera que el estilo solo se
+                    aplicaba en una etiqueta,
+                    solo en la que estaba escrito el style. Aunque las buenas practicas de hoy en dia dicen que no se
+                    deben de mezclr diferentes lenguajes en un archivo. Vease que no hacer esto lol</p>
+                <p style="text-align: justify;"> A veces me pregunto que coño dice en estos Lorem, aunque creo que no
+                    tiene sentido jeje Assumenda dicta, voluptate fugit tempora voluptatibus at, repellendus
+                    maiores perferendis optio amet odit aspernatur quasi natus atque sed, adipisci itaque facilis qui
+                    cupiditate dignissimos inventore iste perspiciatis! Fugit excepturi incidunt adipisci dicta,
+                    laboriosam eum? Quos ut, dolore, corrupti facere tenetur facilis, voluptate maiores odio neque
+                    reiciendis voluptas recusandae cupiditate atque.</p>
+                <p style="text-align: center;">
+                    <img src="/assets/img/Wolf_Chan_SKZOO_2D.webp" alt="chanie"
+                        style="width: 75px; margin: 20px;display: inline-block;">
+                    <img src="/assets/img/Leebit_SKZOO_2D.webp" alt="leeknow"
+                        style="width: 75px; margin: 20px;display: inline-block;">
+                    <img src="/assets/img/DWAEKKI_SKZOO_2D.webp" alt="changbien"
+                        style="width: 75px; margin: 20px;display: inline-block;">
+                </p>
+            </section>
+
+
+            <section id="hojaDeEstilosInterna">
+                <h4>Hoja de estilos interna</h4>
+
+                <p>Literal copia pega de la anterior seccion solo que hemos borrado los estilos asiq eu antes de hacer
+                    nada esto es un chisto lo grande que se ven las imagenes. SIN EMBARGO el codigo está mucho mas
+                    limpio porque un html no deberia encargare de Cómo se ven las cosas</p>
+                <p>Así pues para ver cualquier cosa vamos a la etiqueta style dentrode la cabecera del html, lo que me
+                    va a joder el resto del documento, i'm sure of it fffff (pues parece que no porque como hemos hecho
+                    seleccion por id de la seccion nope)</p>
+                <p>Literal lo que hemos hecho es copiar y pegar las reglas que habiamos puedto antes en linea en la
+                    secion de style de la cabecera para que lo de esta seccion se vea igual LOL. Also, aquí aunque esta
+                    en el mismo documento, de cmabiar cualquier regla de por ejemplo las imagenes de
+                    esta seccion, se cambiarian todas de golpe, y no habria que ir una auna cambiado.</p>
+                <p>
+                    <img src="/assets/img/HAN_QUOKKA_SKZOO_2D.webp" alt="hannie">
+                    <img src="/assets/img/Jiniret_SKZOO_2D.webp" alt="hyunjin">
+                    <img src="/assets/img/BbokAri_SKZOO_2D.webp" alt="likie">
+                </p>
+            </section>
+
+            <section id="hojaDeEstilosExterna">
+                <h4>Hoja de estilos interna</h4>
+
+                <p>Literal copia pega de la anterior seccion solo que hemos cambiado el id de la seccion y los mismos
+                    estilos los hemos copiado en el css que ha puto llamado hojasDeEstiloExterna.css buegh</p>
+                <p>Así pues para ver cualquier cosa vamos al archivo css, he cambiado el tamaño de las img y el color
+                    del tiulo para que npo parezca todo igual y tal, movidas mias, pero se podria dejar tal como los
+                    anteriores y se vería todo examctamente igual</p>
+                <p>pasamos a ahcer un documento html extra llamado test.html link: <a href="/test.html">AQUI</a></p>
+                <p>
+                    <img src="/assets/img/PuppyM_SKZOO_2D.webp" alt="sungmin">
+                    <img src="/assets/img/FoxI.Ny_SKZOO_2D.webp" alt="Innie">
+                    <img src="/assets/img/OriginalSKZOO.webp" alt="todis">
+                </p>
+            </section>
+        </section>
+    </section>
+
+</body>

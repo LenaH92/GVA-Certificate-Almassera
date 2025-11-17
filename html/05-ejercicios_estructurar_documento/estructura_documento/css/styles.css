@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: white;
+    color: black;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --negro: #41464D;
+    --crema: #D7CEC6;
+    --salmon: #FF8080;
+    --rosa: #F0b8a8;
+    --rosa-oscuo: #D9BCBE;
+    --teja: #BA9A8F;
+    --blancucho: #fafaf4;
+    --sucio: #C6BAAE;
+}
+
+body * {
+    background-color: var(--blancucho);
+}
+
+main p,
+main li {
+    color: var(--negro);
+    font-family: "Besley", serif;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Bodoni Moda", serif;
+    ;
+    text-decoration: underline;
+}
+
+/* Estilos del nav */
+
+.bannerImg {
+    width: 100vw;
+}
+
+.navLinks {
+    display: flex;
+    gap: 20px;
+    margin-left: 3vw;
+}
+
+.navLinks a {
+    padding: 4px 5px;
+}
+
+.navLinks li:hover * {
+    background-color: var(--rosa);
+}
+
+.navLinks>li>a:active {
+    background-color: var(--rosa-oscuo);
+    color: var(--blancucho);
+}
+
+ul>li {
+    list-style: none;
+}
+
+/* Estols del main */
+main {
+    padding: 10px 5vw;
+}
+
+section {
+    padding-bottom: 40px;
+}
+
+.nosotrosFlex {
+    display: flex;
+}
+
+.nosotrosFlex img {
+    max-width: 30vw;
+    height: auto;
+    object-fit: contain;
+}
+
+.productosDiv {
+    padding-top: 20px;
+    width: 80vw;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: auto;
+    justify-content: center;
+    align-content: center;
+
+}
+
+.singleProduct {
+    position: relative;
+    border: 1px solid black;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 400ms ease, transform 300ms ease;
+}
+
+.singleProduct>img {
+    width: 40vw;
+    max-width: 400px;
+    height: 100%;
+    transition: opacity 400ms ease, transform 400ms ease;
+    opacity: 1;
+    visibility: visible;
+}
+
+.description {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    gap: 0.5rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    overflow-y: auto;
+    max-height: 100%;
+    transition: opacity 400ms ease, transform 400ms ease;
+}
+
+.singleProduct:hover {
+    transform: none;
+}
+
+.singleProduct:hover>img {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.05);
+}
+
+.singleProduct:hover .description {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.singleProduct:hover * {
+    background-color: transparent;
+}
+
+.singleProduct.product1:hover {
+    background-image:
+        linear-gradient(rgba(250, 250, 250, 0.6), rgba(250, 250, 250, 0.6)),
+        url("/assets/img/products/1-2.jpg");
+}
+
+.singleProduct.product2:hover {
+    background-image: linear-gradient(rgba(250, 250, 250, 0.6), rgba(250, 250, 250, 0.6)),
+        url("/assets/img/products/2-2.jpg");
+}
+
+.singleProduct.product3:hover {
+    background-image: linear-gradient(rgba(250, 250, 250, 0.6), rgba(250, 250, 250, 0.6)),
+        url("/assets/img/products/3-2.jpg");
+}
+
+.singleProduct.product4:hover {
+    background-image: linear-gradient(rgba(250, 250, 250, 0.6), rgba(250, 250, 250, 0.6)),
+        url("/assets/img/products/4-2.jpg");
+}
+
+.singleProduct.product5:hover {
+    background-image: linear-gradient(rgba(250, 250, 250, 0.6), rgba(250, 250, 250, 0.6)),
+        url("/assets/img/products/5-2.jpg");
+}
+
+.singleProduct.product6:hover {
+    background-image: linear-gradient(rgba(250, 250, 250, 0.6), rgba(250, 250, 250, 0.6)),
+        url("/assets/img/products/6-2.jpg");
+}
+
+.singleProduct.product7:hover {
+    background-image: linear-gradient(rgba(250, 250, 250, 0.6), rgba(250, 250, 250, 0.6)),
+        url("/assets/img/products/7-2.jpg");
+}
+
+.singleProduct.product8:hover {
+    background-image: linear-gradient(rgba(250, 250, 250, 0.6), rgba(250, 250, 250, 0.6)),
+        url("/assets/img/products/8-2.jpg");
+}
+
+/* estilos de contacto */
+.contactInfo {
+    display: flex;
+    gap: 5vw;
+    justify-content: space-around;
+    padding-top: 2rem;
+}
+
+.contacto-lista *,
+.menu-legal * {
+    text-decoration: none;
+}
+
+.contacto-lista a:hover,
+.menu-legal a:hover {
+    color: var(--salmon);
+    text-decoration: underline;
+}
+
+/* estilos de footer */
+footer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu-legal li {
+    padding: 3px 0;
+}
+
+.miniGallery img {
+    width: 125px;
+}
+
+.galleryIframe {
+    max-width: 1024px;
+    height: 768px;
+    width: 80vw;
+}
+
+/* mapa web */
+ol,
+ol>li {
+    padding: inherit;
+}
+
+/* tabla contactos */
+.contactTable th,
+.contactTable td {
+    padding: 5px;
+
+}
+
+.contactTable {
+    margin: 5px auto;
+    border: var(--salmon) 1px dashed;
+}

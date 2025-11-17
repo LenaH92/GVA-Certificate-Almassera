@@ -1,0 +1,298 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --colorAzulito: aliceblue;
+    --colorLetras: #000;
+}
+
+#atributos *[lang] {
+    width: 80%;
+    border: 1px blue solid;
+}
+
+#atributoValorExacto p[lang="es"] {
+    color: violet;
+    width: 70%;
+    margin-left: 20px;
+}
+
+#atributoValorExactoOGuion p[lang|=es] {
+    color: tomato;
+}
+
+#atributoValorPalabraCompleta a[alt~="holi"] {
+    color: green;
+    font-size: 1.2rem;
+    text-decoration: none;
+
+}
+
+#atributoValorPalabraContiene a[alt*="holi"] {
+    color: brown;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+#comienzaPor a[alt^="ho"] {
+    color: magenta;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+#terminaPor a[alt$="li"] {
+    color: aqua;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+
+/* PSEUDO LEMENTOS */
+#pe,
+#pe>section {
+    padding: 20px;
+}
+
+#pre-bef-afeter>p#b4::before,
+#pre-bef-afeter>p#after::after {
+    content: "***";
+    font-weight: 600;
+    color: blue;
+}
+
+#pre-bef-afeter>p#b4::before {
+    padding-right: 1rem;
+}
+
+#pre-bef-afeter>p#after::after {
+    padding-left: 1rem;
+}
+
+#pre-bef-afeter li {
+    list-style: none;
+}
+
+#pre-bef-afeter li>a::after {
+    /* content: url(img/star.png);
+    */
+    padding-left: 1rem;
+    /* ******************* */
+    content: "";
+    /* a esto se le llama cadena vacia */
+    background-image: url(img/star.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    /* para que la width y height funcionen */
+    width: 20px;
+    height: 20px;
+}
+
+#pre-bef-afeter li>a[href$=".doc"]::after {
+    /* content: url(img/money.png); */
+    padding-left: 1rem;
+    background-image: url(img/money.png);
+}
+
+#pre-bef-afeter li>a[href$=".xls"]::after {
+    /* 
+    content: url(img/heart.png); */
+    padding-left: 1rem;
+    background-image: url(img/heart.png);
+}
+
+/* #pe-first {} */
+#pe-first p#letter::first-letter {
+    font-size: 2rem;
+    color: purple;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#pe-first p#line::first-line {
+    font-size: 2rem;
+    color: yellowgreen;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/*#pe-selection {} */
+#pe-selection p::selection {
+    background-color: aliceblue;
+    color: brown;
+}
+
+/* pseudoclases */
+
+#pc-hover a {
+    display: inline-block;
+    border: 2px solid brown;
+    background-color: blueviolet;
+    color: aliceblue;
+    padding: 10px;
+    margin: 0 20px 20px 20px;
+    text-decoration: none;
+    transition: all 300ms;
+}
+
+#pc-hover a:hover {
+    background-color: aliceblue;
+    color: blueviolet;
+}
+
+#pc-hover div {
+    background-color: var(--colorLetras);
+    color: var(--colorAzulito);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 200px;
+    margin: auto;
+    position: relative;
+}
+
+#pc-hover div::after {
+    content: "";
+    position: absolute;
+    /* Para ue no empuje el texto para el lado */
+    top: 0;
+    /* Para ue no empuje el texto para el lado */
+    right: -100px;
+    /* Para ue no empuje el texto para el lado */
+    width: 0;
+    height: 0;
+    color: transparent;
+    /* para ver el estilo flecha */
+    border-width: 100px;
+    border-style: solid;
+    border-left-color: red;
+    /* border-top-color: aquamarine;
+    border-bottom-color: aqua;
+    
+    border-right-color: brown; */
+    z-index: -1;
+    /* lo baja una capa */
+    transition: all 600ms;
+}
+
+#pc-hover div:hover::after {
+    right: -200px;
+}
+
+
+/* HIJOS */
+
+#pc-hijos {
+    padding: 20px
+}
+
+#pc-hijos-articulos {
+    padding-top: 20px;
+}
+
+#pc-hijos section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    column-gap: calc(4%/2);
+    row-gap: 25px;
+}
+
+#pc-hijos section>* {
+    width: 32%;
+    border: 1px solid var(--colorAzulito);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* cambiando el tamaño del primer hijo */
+#pc-hijos section>*:first-child {
+    width: 65.5%;
+    border: 1px solid antiquewhite;
+}
+
+/* cambiando solo todos hijos con * */
+#pc-hijos section>*:nth-child(2n) {
+    background-color: antiquewhite;
+}
+
+#pc-hijos section>*>h4 {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+#pc-hijos section>*>img {
+    display: block;
+    margin: 20px auto;
+}
+
+#pc-hijos section>*>p {
+    text-align: center;
+    width: 80%;
+    margin: 10px auto;
+}
+
+#pc-hijos section>*>a {
+    background-color: var(--colorAzulito);
+    transition: all 1000ms;
+    padding: 5px;
+    border: 1px solid var(--colorLetras);
+    color: var(--colorLetras);
+    border-radius: 5px;
+    margin: 0 5px;
+    text-decoration: none;
+}
+
+#pc-hijos section>*>a:hover {
+    background-color: var(--colorLetras);
+    border: 1px solid var(--colorAzulito);
+    color: aliceblue;
+}
+
+/* Cambiando nthchild of type */
+#pc-hijos section>div:nth-of-type(2n+1) {
+    border: 1px solid green;
+}
+
+#pc-hijos section>div:nth-of-type(2n+1)>h4 {
+    color: blueviolet;
+    font-size: 2rem;
+    text-decoration: underline brown;
+}
+
+/*  */
+#pc-hijos li:nth-of-type(2)>section {
+    border: 1px black dashed;
+    border-radius: 20px;
+    display: block;
+}
+
+#pc-hijos li:nth-of-type(2)>section>h4 {
+    color: rebeccapurple;
+    text-align: center;
+    font-size: 2rem;
+    visibility: hidden;
+}
+
+#pc-hijos li:nth-of-type(2)>section :not(h4:only-child) {
+    visibility: visible;
+}
+
+/* Necesito entendre por que aqui funciona la visibilidad */
+
+#pc-hijos li:nth-of-type(2)>section>h4:only-child {}
+
+#pc-hijos li:nth-of-type(2)>section:nth-of-type(2)+p {
+    visibility: hidden;
+}
+
+#pc-hijos li:nth-of-type(2)>section:nth-of-type(2):empty+p {
+    visibility: visible;
+}
+
+#pc-varias section:last-child :not(p) {
+    color: red;
+    text-decoration: underline;
+}

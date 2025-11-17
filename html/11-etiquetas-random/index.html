@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etiquetas variadas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>ETIQUETAS RANDOM</h1>
+    <section>
+        <h2>etiqueta BR para saltos de linea</h2>
+        <p>Para poner un linea se pone br entre angulos. Con la propiedad size se le puede dar más grosor con size = "
+            numero" que será en pixeles</p>
+        <p>Para que la linea apareca rellena y no solo los bordes se le añade el atributo de noshade tal que así.</p>
+        <hr size="5" noshade align="left">
+
+        <p>Por defecto la linea atraviesa toda la pantalla horizontalemnte, pero se puede modificar directamente en html
+            con width="" por defecto el numero va en pixeles igual que lo otro pero tambien se puede poner en % para que
+            sea responsive dependiendo del tamañño de la pantalla.</p>
+        <p>Por defecto se pone en medio Pero se puede cambiar. Con IDK PORQUE SE HA ENTREETENIDO CON OTRA COSAA</p>
+        <p>Los atributos de br se pueden poner en html pero lo suyoeria modificarlo en css LMAO</p>
+    </section>
+
+    <section>
+        <h2>IFRAME</h2>
+        <p>es como una miniventana (como donde se visualizan pdf, mapas, visores de imagenes, etc...)</p>
+        <p>Algunos de los atributos pueden ser: </p>
+        <pre>parametros de iframe raris: 
+            - ALLOW=> establece qué permisis especiales leotorgamos al
+            documento dentro de nuestro iframe.
+
+                > autoplay
+                > camera
+                > microphone
+                > full screen
+                > geolocation
+                > clipboard-white (permite copiar contenido al portapales)
+                > payment
+                > encripted-media(reproduccion de media encriptada o cifrada) 
+
+                en codigo: allow="camera, microphone"
+
+                ***
+
+            - REFERRERPOLICY => para indicar quien hace la petidion de
+            documentos en caso de que pedir documento externos. Por
+            defecto es html asi que ta bien saber quien lo pide.
+            A veses dependiendo e lapolitica de privacidad bloque el
+            acceso al contenido dependiendo de cosis(?)
+                VALORES:
+                - no-referrere: no se envia informacion 
+                - no-referrer-when-downgrade: siempre que no se pase de
+                protocolo https a http. I mean, que la pagina que lo vaya
+                a mostrar no tenga la s al final de http.
+                
+                - origin:
+                    Solo se envía el dominio, no la ruta completa
+                - origin-when-cross-origin: 
+                    Si vas al mismo dominio, se envía todo. Si vas a otro dominio,
+                    solo el dominio.
+                - same-origin: 
+                    solo envia a webs que sean del mismo servidor/dominio.
+                -strict-origin: 
+                    Envia solo si es de httpS a httpS
+                -strict-origin-when-cross-origin:
+                    Misma página: se envía todo. 🌍 Otro dominio: solo dominio.
+                    ❌ Si HTTPS → HTTP, no se envía nada.
+                - unsafe-url:
+                    Se envía la URL completa SIEMPRE, sin importar nada.
+
+
+            - SANDBOX => para añadir restricciones de seguridad a un
+            contenido que se carga dentro de uin iframe. Es util bc  
+            cuando estais cargrando contenido a un sitio externo o que no
+            controlas del toh. Resticciones por defecto:
+                    NO puede ejecutar JS
+                    NO puede enviar forularios
+                    NO puede abrir ventanas nievas
+                    NO puede modificar el contenoido del sitio padre
+                    plugins
+                    NO tienee acceso a almacenamente local ni cookies compartidas.
+
+                PERMISOS:
+                - allow-scripts
+                - allow-forms
+                - allow-same-origin-windows
+                - allow-
+                - allow-
+
+            En codigo: danbox="allor-scripts allow-forms"
+
+        </pre>
+
+        <h3>MArco flotante aka IFRAME</h3>
+        <iframe src="http://elpais.com" frameborder="0"></iframe>
+        <p>con srcdoc</p>
+        <p>no se sulele poner, pero tiene preferencia sobre el src simple... ??</p>
+        <p>el frameborder define lo grande que es pero se modifica en css mejor.</p>
+        <p>Lo mismo con width y height??</p>
+        <p>con atributo de name="" es como un id para el iframe, de manera que despues se puede linkear en un "< A>" QUE
+                TENGA COMO TARGET ESE MISMO NOMBRE, modo que se abra en la misma ventana¿?</p>
+        <h4>fiesta pagana con atributos raris</h4>
+        <p>allow. </p>
+    </section>
+
+    <section>
+        <h2>DETALLES</h2>
+        <p>Para tipo faq, donde dando a un icono se abre el texto</p>
+        <details>codigo que me venga en gana
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit maiores dolorem nisi totam, architecto quo
+                dolores, eveniet sed veniam nesciunt asperiores omnis suscipit saepe. Esse placeat sunt facilis odit
+                voluptas.</p>
+        </details>
+
+        <p>para que no aparezca detalles como texto se le mete summary dentro con el texto que quiras que aparezca a
+            modo titulo</p>
+        <details>
+            <summary>HAGAME CLICK</summary>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque mollitia blanditiis magni obcaecati dolor
+                praesentium excepturi nisi impedit temporibus voluptas ipsa possimus, non earum atque nam placeat culpa
+                ut minus.
+            </p>
+        </details>
+    </section>
+
+    <section>
+        <h2>CUADRO DE DIALOGO</h2>
+        <p>Hay que programarlo de cero en comparacino con el < DETALLES> <br>
+                Por defecto está contraido asi qeu hay que programr el boton para abrirlo</p>
+
+        <p>pero bullshit porque todo eso de poner botones para que se abra cuierre etc ya es JS y las risas porque lo
+            está metiendo en un script tag LMAO</p>
+        <p>Prueba del cuadro de dialogo:</p>
+
+        <button type="button" id="abrirBTN">ABRIR DIALOGO</button>
+        <dialog id="dialogoCuadro">
+            <h3>Cujadro de dialogo en modal</h3>
+            <p>Nótese como el cuadro de dialogo se come el texto que habría debajo del boton, vamos que se pone por
+                encima, sin embargo no llega a seer una modal tal que así</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus enim nihil nisi possimus dolore!
+                Placeat fugit, impedit eum quaerat enim neque amet? Quia nemo ad odio neque molestiae praesentium
+                incidunt.</p>
+            <button type="button" id="cerrarBTN">CERRAR</button>
+        </dialog>
+        <script>
+            const dialogo = document.getElementById("dialogoCuadro")
+            const abrirDialoBTN = document.getElementById("abrirBTN")
+            const cerrarDialoBTN = document.getElementById("cerrarBTN")
+
+            //Lè JS
+
+            abrirDialoBTN.addEventListener("click", () =>
+                dialogo.show() //la diferencia entre show() o showModal() es qu show solo lo muestra en la misma paginam, en modal abre una modal.
+            )
+
+            cerrarDialoBTN.addEventListener("click", () => dialogo.close())
+        </script>
+
+        <p>bueh pues aqui va con una modal, lo mismo literal</p>
+        <button type="button" id="abrirBTN2">ABRIR DIALOGO en modal</button>
+        <dialog id="dialogoCuadro2">
+            <h3>Cujadro de dialogo</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, amet dignissimos. Veniam nulla vero autem
+                distinctio, quis animi, voluptatibus enim soluta nostrum, numquam repellat aut deleniti eligendi at
+                placeat commodi!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus enim nihil nisi possimus dolore!
+                Placeat fugit, impedit eum quaerat enim neque amet? Quia nemo ad odio neque molestiae praesentium
+                incidunt.</p>
+            <button type="button" id="cerrarBTN2">CERRAR</button>
+        </dialog>
+        <script>
+            const dialogo2 = document.getElementById("dialogoCuadro2")
+            const abrirDialoBTN2 = document.getElementById("abrirBTN2")
+            const cerrarDialoBTN2 = document.getElementById("cerrarBTN2")
+
+            //Lè JS
+
+            abrirDialoBTN2.addEventListener("click", () =>
+                dialogo2.showModal() //la diferencia entre show() o showModal() es qu show solo lo muestra en la misma paginam, en modal abre una modal.
+            )
+
+            cerrarDialoBTN2.addEventListener("click", () => dialogo2.close())
+        </script>
+    </section>
+
+    <section>
+        <h2>CANVAS</h2>
+        <p>Es como un tapiz, lo que sea que significa eso... Pero pareciera que tambien se necesita JS para poner cosas
+        </p>
+        <p>Cupiditate, beatae, vel tempora facere exercitationem at fugiat maiores a ducimus cumque reprehenderit,
+            architecto nemo et odio nobis quibusdam vitae?</p>
+
+        <canvas id="pruebaCanvas"
+            style="border: 1px solid black; display: block; margin: 20px auto; background-color: aquamarine; width: 500px; height: 400px;">
+        </canvas>
+
+        <p>MIrar en su codigo todo el script que me da perecitra copiarlo todo</p>
+    </section>
+</body>
+
+</html>
