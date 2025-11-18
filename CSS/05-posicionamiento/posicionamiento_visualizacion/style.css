@@ -245,7 +245,22 @@ main>div::after {
     color: var(--colorOscuro);
 }
 
+/* organizando seccion horarios */
+.horarios {
+    display: flex;
+    flex-wrap: wrap;
+}
 
+.horarios>section:first-child {
+    flex: 1 1 400px;
+}
+
+.horarios>section:last-child {
+    flex: 1 1 250px;
+    max-width: 300px;
+    margin-left: 2rem;
+    margin-top: 2rem;
+}
 
 /* Seccion de los horarios */
 summary {
@@ -266,7 +281,7 @@ summary::before {
     font-size: 15px;
 }
 
-summary details[open] summary::before {
+details[open] summary::before {
     transform: rotate(90deg);
 }
 
@@ -286,7 +301,64 @@ summary .imgContain.small img {
     object-fit: cover;
 }
 
+/* Esileando las tablas */
+
 details>table {
-    margin-left: 60px;
-    margin-top: 1rem;
+    width: 90%;
+    max-width: 600px;
+    border-collapse: collapse;
+    margin: 1rem 0 2rem 60px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+details>table th {
+    background-color: var(--colorPrincipal);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+details>table th:last-child {
+    border-right: none;
+}
+
+details>table td {
+    padding: 12px;
+    text-align: center;
+    color: var(--colorOscuro);
+    font-size: 18px;
+}
+
+details>table tr:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+details>table td:hover {
+    background-color: var(--colorSecundario);
+    color: var(--colorOscuro);
+    cursor: default;
+    transition: 0.3s;
+}
+
+details>table i {
+    font-size: 20px;
+}
+
+/* leyenda de horarios */
+.horarios>section:last-child dl>* {
+    display: inline-block;
+}
+
+.horarios>section:last-child h3 {
+    margin-bottom: 1rem;
+}
+
+.horarios>section:last-child dt {
+    margin-bottom: 1rem;
 }
