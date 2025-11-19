@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+    <style>
+        html {
+            background-color: white;
+            color: black;
+            font-family: 'Times New Roman', Times, serif;
+            scroll-behavior: smooth;
+            margin-bottom: 50px;
+        }
+
+        body {
+            width: 80vw;
+            margin: 0 auto;
+        }
+
+        /* NAv btn */
+        #navBTN {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            position: fixed;
+            right: 15px;
+            bottom: 30px;
+        }
+
+        #navBTN>a {
+            width: 30px;
+            height: 30px;
+            background-color: thistle;
+            border-radius: 50%;
+            color: aquamarine;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            transition: all 300ms;
+        }
+
+        #navBTN>a:hover {
+            background-color: wheat;
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Formularios</h1>
+    <section id="intro">
+        <a href="practica.html">Link a práctica</a>
+        <h2>Intro</h2>
+        <p>Un from es un paso entre un servidor y una parte front. Esto se hace a travces de un script y se devuelve una
+            respuesta.</p>
+        <p>lol dice que la parte de backend es la parte administrativa del manejo de pag web.</p>
+        <p>hay dos tiposs de forms, el de diseño clasico y el de diseño moderno, cual docotr who</p>
+        <ul>
+            <li>Formato clasico <br>Era todo un bloque cual google forms</li>
+            <li>Formato moderno <br>Hya más libertad de posicionamiento de cosas</li>
+        </ul>
+    </section>
+    <section id="htmlForm">
+        <h2>HTML</h2>
+        <a href="practica.html#htmlForm">Link a práctica</a>
+        <p>etiquetas:</p>
+        <ul>
+            <li><code>&lt;form>.....&lt;/form></code><br>Acumula TODO EL FORMULARIO. Se le añade los atributos
+                <ol>
+                    <li><mark>!!!</mark><code> action</code>: continene la url del destinatario(script/web?) que
+                        procesará la info. En
+                        nuestro
+                        caso un archivo PHP. </li>
+                    <li><code>method</code> que es get o post.
+                        <ul>
+                            <li>El GET establece la informacion adjunta a la url.
+                                <br>Pro
+                                y cons:
+                                <ul>
+                                    <li>Pro: se
+                                        puede tratar mediante JS.</li>
+                                    <li>cons <ol>
+                                            <li>la info NO es privada</li>
+                                            <li>la longitud de la infoque se manda está
+                                                limitada</li>
+                                            <li>No se pueden enviar archivos</li>
+                                        </ol>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>POST, es basicamente lo opuesto al GET. <br>La info se envia como documento adjunto a la
+                                solicitud. <br>Pros y cons:<ul>
+                                    <li>Pro: <ol>
+                                            <li>la info SÍ es privada</li>
+                                            <li>la longitud de la infoque se manda NO está
+                                                limitada</li>
+                                            <li>Se pueden enviar archivos</li>
+                                        </ol>
+                                    </li>
+                                    <li>cons: <ol>
+                                            <li>Requiere de un lenguaje de scrpt de servidor</li>
+                                            <li>Requiere el uso de un formulario</li>
+                                        </ol>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><mark>!!!</mark><code> target</code> <br>La respuesta del script sobvre deoned se debe abrir esa
+                        peticion. por
+                        defecto es en self. Se le puede poner black o in clueso en un iframe! :D</li>
+                    <li><mark>!!!</mark><code> enctype</code><br>Viene de tipo de encriptamiento. Tipos: <ul>
+                            <li><code>text/plain</code><br>Texto plano lol</li>
+                            <li><code>application/x-ww-form-urlencoded</code><br>Lo más comun, codifica caracteres
+                                especiales</li>
+                            <li><code>multipart/form-data</code><br>Permite el envío de ficheros a traves del form</li>
+                        </ul>
+                    </li>
+                    <li><code>name</code><br>Le asignamos un nombre al form, solo si trabajamos con JS. Varios form
+                        pueden tener el mismo name. Diferencia con id:</li>
+                    <ul>
+                        <li><code>id</code> -> Suele asignarse el mismo que el nombre para enlazar con diferentes cosas
+                            y que
+                            no haya movidas raras, NO se puede repetir</li>
+                    </ul>
+
+                    <li><code>accept-charset</code><br>Va a determinar el juego de caracteres que acepta el form, suele
+                        ponerse si los que responden no usn el mismo juego de caracteres del que está escrito
+                        originalemnte el codigo del form.</li>
+                    <li><code>autocomplate</code><br>Valores "ON" u "OFF", vamos se permite que se autocompleten los
+                        campos.</li>
+                    <li><code>novalidate</code><br>Se validan o no los campos por parte de html.... Por defecto los
+                        campos se validan. <br>I.e. p.e: poner condiciones para que cumplas esos requisitos, pues modo,
+                        que sean al menos 6 caracteres, que tengan un simbolo, un @ para los correos, etc..</li>
+                </ol>
+            </li>
+            <li><code>label</code><br>Es el texto que aparece deltat del input. Atributos: <ul>
+                    <li><code>for</code><br>se le opne un nombre del campo. Si conincide con el name cuando hagas click
+                        en la etiqueta de l texto, se pondra el cursor autmaticamente sobre en el campo a rellenar.
+                        <br>Lo escrito en el FOR del label tiene que coincidir con el id/name del input
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <p>Tipos de Campos que se pueden meter:</p>
+        <ul>
+            <li>Tipo Input<br>Cosas que se mete el usuario. esta lista va a ser larga lol
+                <details>
+                    <summary>Atributos comunes</summary>
+                    <ol>
+                        <li><code>type</code><br>establece las peculiaridades del campo.
+                            <details>
+                                <summary>tipos de type</summary>
+                                <ul>
+                                    <li><code>Texto</code> tipos:
+                                        <ol>
+                                            <li><code>text</code><br>por defecto, pero mejor escribirlo.</li>
+                                            <li><code>password</code><br>Aparecen puntos en vezz de caracteres y tienes
+                                                la
+                                                posibilidad de hacer visible los caraceteeres o no.</li>
+                                            <li><code>email</code><br>chackea que tenga texto@texto, no más</li>
+                                            <li><code>url</code><br>chackea que tenga http://, no más</li>
+                                            <li><code>search</code><br>NO busca, la operatividad vendra por JS o php, la
+                                                unaca movida que tiene es poner una x para borrar todo de golpa</li>
+
+                                        </ol>
+                                        <details>
+                                            <summary>Atributos</summary>
+                                            <ol>
+                                                <li><code>autocomplate</code><br>Viene bien o mal dependiendo de la
+                                                    privacidad que queremos. En el modo password no funciona (?)</li>
+                                                <li><code>inputmode</code><br>Tipo de teclado que se mostraria moso
+                                                    teclado
+                                                    numerico o whtv</li>
+                                                <li><code>size</code><br>determina el tamaño el campo, usually usamos
+                                                    CSS
+                                                    para esto</li>
+                                                <li><code>maxlength/minlenght</code><br>Si esta puesto el validate
+                                                    limitas
+                                                    el maximo o el maximo de caracteres para escribir, recibe numero
+                                                    entero.
+                                                </li>
+                                                <li><code>placeholder</code><br> El texto que va dentro del campo que se
+                                                    va
+                                                    automativamente al hacer click ahí. Puede ser un ejemplo de lo que
+                                                    la
+                                                    gente tiene que esribir. Usualmente ahora se pone en
+                                                    sustitucion de un label para ahorrar espcio diciendo lo que tiene s
+                                                    que
+                                                    poner ahí.</li>
+                                                <li><code>readonly</code><br>Para mostrar resultados, sustituidos por el
+                                                    tipo output.</li>
+                                                <li><code>Requiered</code><br>OBLIGATORIO CUMPLIMIENTO. Boolean, está o
+                                                    no.
+                                                </li>
+                                                <li><code>pattern</code><br>muestra un patron qwue tiene qu seguir lo
+                                                    que se
+                                                    meta, entre corchetes los valores que se pueden esribir y tntre
+                                                    curlies
+                                                    la cantidad de caracteres que se pueden poner p.e pattern="[0-9]{5}"
+                                                    <details>
+                                                        <summary>Ejemplos</summary>
+                                                        <ul>
+
+                                                            <li>Solo MAYÚSCULAS → <code>pattern="[A-Z]+"</code></li>
+
+                                                            <li>Solo minúsculas → <code>pattern="[a-z]+"</code></li>
+
+                                                            <li>Letras y espacios → <code>pattern="[A-Za-z ]+"</code>
+                                                            </li>
+
+                                                            <li>Número entre 1 y 99 (sin ceros delante) →
+                                                                <code>pattern="[1-9][0-9]?"</code>
+                                                            </li>
+
+                                                            <li>Código postal de 5 números →
+                                                                <code>pattern="\d{5}"</code>
+                                                            </li>
+
+                                                            <li>Contraseña con mínimo 8 caracteres →
+                                                                <code>pattern=".{8,}"</code>
+                                                            </li>
+
+                                                            <li>Contraseña con mayúscula, minúscula, número y símbolo →
+                                                                <code>pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}"</code>
+                                                            </li>
+
+                                                            <li>Texto que empiece por una letra →
+                                                                <code>pattern="^[A-Za-z].*"</code>
+                                                            </li>
+
+                                                            <li>Teléfono de 9 dígitos → <code>pattern="\d{9}"</code>
+                                                            </li>
+
+                                                            <li>Fecha en formato DD/MM/YYYY →
+                                                                <code>pattern="\d{2}/\d{2}/\d{4}"</code>
+                                                            </li>
+
+                                                            <li>Nombre sin números (incluye acentos y ñ) →
+                                                                <code>pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]+"</code>
+                                                            </li>
+
+                                                            <li>Placa de coche ABC-123 →
+                                                                <code>pattern="[A-Za-z]{3}-\d{3}"</code>
+                                                            </li>
+
+                                                            <li>Color hexadecimal (#RRGGBB) →
+                                                                <code>pattern="#[0-9A-Fa-f]{6}"</code>
+                                                            </li>
+
+                                                            <li>Aceptar solo “sí” o “no” →
+                                                                <code>pattern="sí|si|no"</code>
+                                                            </li>
+
+                                                        </ul>
+                                                    </details>
+                                                </li>
+                                                <li><code>list</code><br>Lista de sugerencias, es abierta puedes
+                                                    escribir
+                                                    otra cosa que no sea las sugerencias. <br>JUNTO A DATALIST. Se crea
+                                                    con
+                                                    datalist una serie de
+                                                    opciones a modo:
+                                                    <pre>&lt;datalist id="nacionalidadLista">
+                &lt;option>Españita&lt;/option>
+                &lt;option>Italia&lt;/option>
+                &lt;option>Japan&lt;/option>
+                &lt;option>Portugal&lt;/option>
+                &lt;option>Eslovaquia&lt;/option>
+            </datalist></pre> se pone en el atributo list del input la ID del datalsit.
+                                                </li>
+                                            </ol>
+                                        </details>
+                                    </li>
+                                    <li>Casillas para marcar<br> tipos radiobutton los circulares y checkbox.
+                                        <br>Atributo:
+                                        <code>checked</code>,
+                                        booleano, por defecto se muestra marcado a no ser que el user lo cambie.
+                                        <br>La diferencia entre check y
+                                        radio es que el radio se sincroniza entre todos no pueden haber dos
+                                        marcados, al marcar uno se desmarca
+                                        el otro.
+                                    </li>
+                                    <li>number<br>tipo numericos aparecen con flechiutas para subir y bajar. Impide
+                                        el uso de cualquier cosa que
+                                        no sean numeros, incluyendo comas. Atributos: <ul>
+                                            <li><code>step</code><br>INdica el intervalo que sube o baja. Facilita
+                                                que puedan usarse decimales.
+                                            </li>
+                                            <li><code>min/max</code><br>indica e numero minimo o máximo que se puede
+                                                meter.</li>
+                                            <li><code></code><br></li>
+                                        </ul>
+                                    </li>
+                                    <li><code>range</code><br>Da una barra para poner ul punto en la barra, como lo
+                                        del volumen. Problema: NO se ve el porcentaje o valor que se está
+                                        seleccionando.Se hace a ojímetro. <br>Para apañar esto hay que meter un
+                                        putput y JS que muestre el valor. </li>
+                                    <li>fecha y hora<br>Es un monton de follon.. como es muy complicadotenemos
+                                        diferentes tipos para esto: <ul>
+                                            <li><code>date</code><br> Solo fecha</li>
+                                            <li><code>time</code><br>hora</li>
+                                            <li><code>month</code><br>mes</li>
+                                            <li><code>week</code><br>semana del mes</li>
+                                            <li><code>datetime</code><br>fecha y hora</li>
+                                            <li><code>datetime-local</code><br>la fecha y hora local.</li>
+                                        </ul>
+                                        Atributos <code>min, max</code> basicamente dando un rango de dias en lo que
+                                        se puede seleccionar. Obbvio el valor de estos vendrá en base a lo que estes
+                                        limitando (fechas, horas etc..) <br>Para poner la fecha de hoy se mete en
+                                        value.
+                                    </li>
+                                    <li><code>color</code><br>Para escogerun colo, el value se puede poner en
+                                        hexadecimal</li>
+                                    <li><code>file</code><br>Para subir archivos. Es lo tipico de adjuntar un
+                                        fichero,no de lo de arrarstrarlo... <br>TIENES QUE TENER EL ENCTYPE EL FORM
+                                        DE multipart/form-data !!<br>atributos <ul>
+                                            <li><code>accept</code><br>En base a los tipos MIME. Esto viene a ser
+                                                poner solo una extension de archivos (tipo .pdf) o algo como
+                                                image/*. <br>Notese que puedes meter varios separandolos con comas:
+                                                <code>accept=".pdf, video/*, .zip"</code> Así aceptaria cualquier
+                                                tipo de archivo de video y pdf y zip.
+                                            </li>
+                                            <li><code>multiple</code><br>Boolean, está o no, permite seleccionar más
+                                                de un archivo a la vez.
+                                                <br>!!! No limita la cantidad de archivos (eso se
+                                                controla con JS o backend).Tampoco agrupa los archivos: simplemente
+                                                los devuelve como lista. <br>!! HAY que meterle en el name unos []
+                                                indicando que es un array
+                                            </li>
+                                            <li><code>capture</code><br>Para dispositivos móviles bc Cuando abres el
+                                                input, en lugar de mostrar el selector de archivos, abra
+                                                directamente la cámara, el micrófono o la grabadora de vídeo.
+                                                <br>Valores que admite: <ul>
+                                                    <li><code>camera</code>Camadra de fotos</li>
+                                                    <li><code>camcorder</code>Camara de video</li>
+                                                    <li><code>microphone</code>microfono</li>
+                                                </ul>
+                                                Notese que tiene que estar de acorde con los formatos que se
+                                                aceptan, no vas a aceptar pdf y querer capturar un audio LOL
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><code>hidden</code><br>Envia datos sin que el usuario la ponga, tipo fecha y
+                                        hiora del envio del form o wtv. Ovs el usuario no ve que lo está enviando.
+                                        Esto se hace con PHP o JS</li>
+                                    <li><code>image</code><br>ya no se usa segun él(??) No se envian Actuan coo
+                                        boton tipo submit. Por defecto se usa como boton de enviar debido a eso,
+                                        PERO Al asignar name se envia las coordenada de la imagen donde se ha hecho
+                                        click.</li>
+                                    <li>Botones!! Tipos: <ul>
+                                            <li><code>button</code><br>Botón genérico que **no hace nada por sí
+                                                solo**. Se
+                                                suele usar para ejecutar código JavaScript con <code>onclick</code>
+                                                o
+                                                eventos similares. </li>
+                                            <li><code>submit</code><br>Botón para **enviar un formulario**. Por
+                                                defecto
+                                                envía los datos al <code>action</code> del formulario usando el
+                                                <code>method</code> definido. Atributos específicos: <ul>
+                                                    <li><code>formaction</code><br>URL alternativa a la que se
+                                                        enviará el
+                                                        formulario al pulsar este botón. Sobrescribe el
+                                                        <code>action</code>
+                                                        del form.
+                                                    </li>
+                                                    <li><code>formmethod</code><br>Metodo de envío (<code>get</code>
+                                                        o
+                                                        <code>post</code>). Sobrescribe el <code>method</code> del
+                                                        form.
+                                                    </li>
+                                                    <li><code>formenctype</code><br>Tipo de codificación de datos
+                                                        (<code>multipart/form-data</code>,
+                                                        <code>application/x-www-form-urlencoded</code>,
+                                                        <code>text/plain</code>). Sobrescribe el
+                                                        <code>enctype</code> del
+                                                        form.
+                                                    </li>
+                                                    <li><code>formtarget</code><br>Ventana donde se abrirá la
+                                                        respuesta
+                                                        (<code>_self</code>, <code>_blank</code>, etc.). Sobrescribe
+                                                        el
+                                                        <code>target</code> del form.
+                                                    </li>
+                                                    <li><code>formnovalidate</code><br>Booleano, permite **omitir la
+                                                        validación HTML5** de los campos al enviar con este botón.
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><code>reset</code><br>Botón para **restablecer los campos del
+                                                formulario** a
+                                                sus valores iniciales. No envía datos, simplemente borra lo que el
+                                                usuario
+                                                ha escrito y vuelve a los valores originales definidos en el HTML.
+                                            </li>
+                                        </ul>
+
+                                    </li>
+
+                                    <li><code>url</code><br>chackea que tenga http://, no más</li>
+
+
+
+
+                                </ul>
+                            </details>
+
+                        </li>
+                        <li><code>name</code><br>NOmbre interno del campo. MUY IMPORTANTE, si no tiene un name no se
+                            envia a traves del form. AKA es como el receptor reconocerá la info.</li>
+                        <li><code>autofocus</code><br>Atributo boolean, está o no. hace Que el cursor se pone
+                            automaticamente en el campo. Solo UNO en el form, de havber dos se enfocará en el ultimo
+                            puesto, modo cascada, el ultimo escrito es el que vale (?) Lo normal sería ponerlo en el
+                            primer campo, digo yo,...</li>
+                        <li><code>tabindex</code><br>Orden en el cual se mueve el foco cuando aprietas tabulador. Por
+                            defecto es el que está escrito el form. De tenerlo debe aparecer en todos los campos del
+                            form y recibe un valor numérico entero. Apretando el tabulador irá en ese orden, aunque no
+                            sean seguidos, irá al siguiente numero en la escala. Si Se
+                            planta en el 2 al presionar TAB irá al campo 3. De no haber el numero tres irá al siguiente
+                            numero disponible. <br>No se sule usar a no ser que hayamos hecho un estilo diferente</li>
+                        <li><code>value</code><br>Indica el valor por defecto que se va a cargar en el campo de no
+                            modificarse por el usuario. Aparece escrito en el campo cuando se carga la pagina.</li>
+                        <li><code>disabled</code><br>No habilitado, ese campo no puede recibir el foco, ala no puedes
+                            escrbir nada. Normlamente se modifica con JS normalmente qcuando no quieres que alguien
+                            acceda a ese campo en algun momento, bajo a saber que circunstancia. P.e no le puedes dar
+                            cerar cuenta si no le has dado al aceptar terminos y condiciopnes</li>
+                        <li><code>form</code><br>Para los de diseño moderno done los campos estan por ahi, hace
+                            refernecia al form al que se van a enviar las cosas. Señala al ID del form.</li>
+                    </ol>
+                </details>
+            </li>
+            <li>Tipo Áreas de texto<br>Para mas de una linea de texto. Atributos<ul>
+                    <li><code>wrap</code></li> valores on y off, de si el texto se va para abjo o se sigue en la misma
+                    linea.
+                    <li><code>cols </code></li> dimension en horizontal, numeros eteros-
+                    <li><code>rows</code></li> dimension en verical, numeros eteros-
+                </ul>
+                El diseño se puede cambiar desde css, la letra por defecto es courier new, en css, se puede poner resize
+                si no queremos que se pueda cambiar. <br>NO admite el atributo value, pero se puede escribir entre las
+                etiquetas a modo: <code>&lt;textarea>bla bla bla&lt;/textarea></code>
+            </li>
+            <li>Listas de selección <code>select</code><br>Controlamos las opciones que puedan seleccionar. Desplegables
+                normalmente. <br>
+                La diferentcia con la lista otra es que lka otra son sugerencias, en estas no se admiten otras opciones.
+                <details>
+                    <summary>atributos aplicables:</summary>
+                    <ul>
+                        <li><code>multiple</code><br>Que podamos poner varios apretando la tecla ctrl</li>
+                        <li><code>size</code><br>Lo que permitimos que se vea, aunque hayan mas opciones, se
+                            veran con barra de desplazamiento, se mide en lineas</li>
+                        <li><code>autofocus</code></li>
+                        <li><code>disabled</code></li>
+                        <li><code>form</code></li>
+                        <li><code>name</code></li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>Parametros</summary>
+                    <ul>
+                        <li><code>option</code><br>Opcion seleccionable, el label y el value no es exactamente lo misom,
+                            el label es lo que ve el usuario, y el value es lo que se eenvia a la base de datos.</li>
+                        <li><code>optiongroup</code><br>NOs e usan mucho, agrupaciones de opciones, etiqueta general. No
+                            hace nada, pero visualemtne se ve más organizado
+                        </li>
+                    </ul>
+                </details>
+
+            </li>
+
+            <li>AGRUPACIÓN DE CAMPOS<br>Similar a un div???</li>
+
+            <li>Botones<br>????</li>
+            <li>Tipo output<br>NEW!! (b4 tipo input: read-only)Modo para dar un resultado, como una calculadora, el
+                resultado seria de tipo output. Likely necesitaremos JS</li>
+        </ul>
+
+    </section>
+    <section id="cssForm">
+        <h2>CSS</h2>
+        <a href="practica.html#cssForm">Link a práctica</a>
+    </section>
+    <section id="formularioClasico">
+        <h2>Forms clasicos</h2>
+        <a href="index.html#formularioClasico">Link a teoría</a>
+    </section>
+    <section id="formModerno">
+        <h2>Formularios modernos</h2>
+        <a href="index.html#formularioClasico">Link a teoría</a>
+    </section>
+
+
+    <!-- NAv butons -->
+    <div id="down"></div>
+    <section id="navBTN"><a href="#">^</a><a href="#down">v</a></section>
+</body>
+
+</html>

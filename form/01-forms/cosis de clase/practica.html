@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRACTICA Formularios</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./JS/script.js"></script>
+</head>
+
+<body>
+    <h1>Formularios</h1>
+    <a href="index.html">Link a teoría</a>
+    <section id="formularioClasico">
+        <h2>Forms clásicos</h2>
+        <a href="index.html#formularioClasico">Link a teoría</a>
+        <form action="procesar.php" method="post" target="salidaForm">
+            <div>
+                <label for="nick">User: </label>
+                <input type="text" name="nick" id="nick">
+            </div>
+            <div>
+                <label for="pass">Password: </label>
+                <input type="password" name="pass" id="pass">
+            </div>
+            <div class="botones">
+                <input type="submit" value="Enviar">
+                <button type="submit">Enviar btn</button>
+            </div>
+        </form>
+        <iframe src="" frameborder="0" style="width: 80vw; height: 300px; border: 5px solid aliceblue;"
+            name="salidaForm"></iframe>
+    </section>
+
+
+
+    <!-- ******************* -->
+    <section id="formModerno">
+        <h2>Formularios modernos</h2>
+        <a href="index.html#formularioClasico">Link a teoría</a>
+        <div>
+            <label for="nick">User: </label>
+            <input type="text" name="nick" id="nick" form="formMod2">
+        </div><!-- El primer input del form -->
+        <form action="procesar.php" target="salidaFormModerno" name="formModerno" id="formMod2"></form>
+        <iframe src="" frameborder="0" style="width: 80vw; height: 300px; border: 5px solid aliceblue;"
+            name="salidaFormModerno"></iframe>
+        <!-- notee el iframe se conecta a los resultados del form a traves del name del form que va ene l name del iframe. -->
+        <div>
+            <label for="passMod">Password: </label>
+            <input type="password" name="passMod" id="passMod" form="formMod2">
+        </div><!-- El segundo input del form -->
+
+        <!-- NOtese que los campos y los pbotones estan enlazados con el form por la ID del form no el name( podria ser el mismo, sí, pero aquiestá diferente para ver la especificacaion) -->
+
+        <div class="botones">
+            <input type="submit" value="Enviar" form="formMod2" formmethod="get">
+            <button type="submit" form="formMod2" formmethod="post">Enviar btn</button>
+        </div> <!-- los bontones de enviar el form -->
+        <!-- poner fecha -->
+        <div>
+            <label for="fecha">Fecha nacimiento:</label>
+            <input type="date" name="fecha" id="fecha" form="formMod2">
+        </div>
+    </section>
+
+
+    <!-- FORMULARIO DE PRUEBAS -->
+    <section id="labels">
+        <h2> Purebas etiquetas</h2>
+        <form action="procesar.php" method="post" target="pruebasLabels" enctype="multipart/form-data">
+            <div class="label">
+                <label for="nombre">NOmbre</label>
+                <input type="text" name="nombre" id="nombre" tabindex="10" autocomplete="on">
+            </div>
+            <div class="label">
+                <label for="apellidos">Apellidos</label>
+                <input type="text" name="apellidos" id="apellidos" autofocus tabindex="1" autocomplete="on">
+            </div>
+            <div class="label">
+                <label for="nacionalidad">nacionalidad</label>
+                <input type="text" name="nacionalidad" id="nacionalidad" tabindex="31" list="nacionalidadLista">
+            </div>
+            <div class="label">
+                <label for="cantante">cantante Fav</label>
+                <input type="text" name="cantante" id="cantante" tabindex="445"
+                    value="Stray Kids"><!-- poniendo value si el user no escribe nada se envia SKZ -->
+            </div>
+            <!-- disabled -->
+            <div class="label">
+                <label for="si">si?</label>
+                <input type="text" name="si" id="si" tabindex="44" disabled>
+            </div>
+            <!-- placeholder -->
+            <div class="label">
+                <label for="edad"></label>
+                <input type="text" name="edad" id="edad" tabindex="25" placeholder="Escribe tu edad">
+            </div>
+
+            <!-- contraseñas, required, min y max legth -->
+            <div class="label">
+                <label for="pass1">Contraseña</label>
+                <input type="password" name="pass1" id="pass1" tabindex="45" required minlength="5" maxlength="20">
+            </div>
+            <div class="label">
+                <label for="pass2">Repetir ontraseña</label>
+                <input type="password" name="pass2" id="pass2" tabindex="46" required minlength="5" maxlength="20">
+            </div>
+
+            <!-- campo tipo busqueda -->
+            <div class="label">
+                <label for="busqueda">MIra loq ue quieras</label>
+                <input type="search" name="busqueda" id="busqueda" tabindex="35">
+            </div>
+
+            <!-- min-max legnth iguales para indicar que ni mas ni menos y pattern -->
+            <div class="label">
+                <label for="codPost">Codigo postal</label>
+                <input type="search" name="codPost" id="codPost" tabindex="22" minlength="5" maxlength="5"
+                    pattern="[0-9]{5}"
+                    placeholder="46001"><!-- notese el patter tien entre corchetes los valores que se pueden esribir y tntre curlies la cantidad de caracteres que se pueden poner -->
+            </div>
+
+            <datalist id="nacionalidadLista">
+                <option>Españita</option>
+                <option>Italia</option>
+                <option>Japan</option>
+                <option>Portugal</option>
+                <option>Eslovaquia</option>
+            </datalist>
+            <div class="areaDeTexo">
+                <label for="anotaciones">Anotaciones</label>
+                <textarea name="anotaciones" id="anotaciones"></textarea>
+            </div>
+
+            <!-- casillas a marcar -->
+            <div class="radio">
+                <span>Dispone de carné?</span>
+                <label><input type="radio" name="disponeCarne" id="disponecarneSi" value="si">Sí</label><label>
+                    <input type="radio" name="disponeCarne" id="disponecarneNo" value="no" checked>No</label>
+            </div>
+            <div class="chekcbox ">
+                <span>Colores favs: </span>
+                <label><input type="checkbox" name="colorFav[]" id="" value="azul">azul</label>
+                <label><input type="checkbox" name="colorFav[]" id="" value="amarillo">amarillo</label>
+                <label><input type="checkbox" name="colorFav[]" id="" value="marron">marron</label>
+                <label><input type="checkbox" name="colorFav[]" id="" value="verde" checked>verde</label>
+            </div>
+
+            <!-- number -->
+            <div class="unidades">
+                <label for="unidades">Unidades</label>
+                <input type="number" value="5" name="unidades" step="0,01" min="0" max="10">
+            </div>
+
+            <!-- range -->
+            <div class="rango">
+                <label for="rango">Cuanto quieres?</label>
+                <input type="range" id="rangoINput"><output id="rangoOutput"></output><!-- output pairing with range -->
+            </div>
+
+            <!-- Fechas -->
+            <div><label for="fechaReserva">Fecha reserva</label>
+                <input type="date" name="fechaReserva" id="fechaReserva" value="2025-11-19" min="2025-01-31"
+                    max="2025-11-23">
+            </div>
+            <!-- Fechay hora -->
+            <div><label for="entradaReserva">Fecha y hora entrada</label>
+                <input type="datetime-local" name="entradaReserva" id="entradaReserva" value="2025-11-19 00:00:00"
+                    min="2025-01-31 00:00:00" max="2025-11-23 23:59:59">
+            </div>
+            <!-- semana -->
+            <div class="semana">
+                <label for="semana">semana</label>
+                <input type="week" name="semana" id="semana" value="2025-W42" min="2025-W40" max="2025-W50">
+            </div>
+
+            <!-- Seleciona color -->
+            <div class="color"><label for="fondo">Color de fondo</label><input type="color" name="fondo" id="fondo"
+                    value="#005500"></div>
+
+            <!-- Adjuntar archivo -->
+            <div class="adjuntar">
+                <label for="adjuntar">Adjunta archivo</label>
+                <input type="file" name="adjuntar[]" id="adjuntar" accept="image/*" multiple>
+            </div>
+
+            <!-- campo oculto -->
+            <div class="ocultp">
+                <!-- sin lablel porque el usuario lo veria -->
+                <input type="hidden" name="location" id="location"
+                    value=""><!-- esto lo suele meter con ls botonespero como vamos a ver mas cosas puesperecita moverlo lol -->
+            </div>
+
+            <!-- campo tipos botones?? -->
+            <div class="botonsitos"></div>
+
+
+            <!-- listas de seleccion -->
+            <h3>Listas de selección</h3>
+            <div>
+                <label for="listaProvincias">Lista Provincias</label>
+                <select name="listaProvincias" id="listaProvincias" size="8">
+                    <option value="0" disabled>Seleccione su provincia</option>
+                    <!-- forma antigua -->
+                    <option value="L">Lleida</option>
+                    <option value="G">Girona</option>
+                    <option value="T">Tarragona</option>
+                    <option value="B">Barcelona</option>
+
+                    <!-- forma moderna -->
+                    <option value="VL" label="Valencia"></option>
+                    <option value="AL" label="Alicante"></option>
+                    <option value="CS" label="Castellon"></option>
+                </select>
+            </div>
+
+            <div><label for="listaProvVivir">Lista Provincias donde quiere vivir</label>
+                <select name="listaProvVivir" id="listaProvVivir" size="8" multiple>
+                    <option value="0" disabled>Seleccione donde quiere vivir</option>
+                    <!-- forma antigua -->
+                    <optgroup label="Cataluña">
+                        <option value="L">Lleida</option>
+                        <option value="G">Girona</option>
+                        <option value="T">Tarragona</option>
+                        <option value="B">Barcelona</option>
+                    </optgroup>
+
+                    <!-- forma moderna -->
+                    <Optgroup label="Comunidad Valenciana">
+                        <option value="VL" label="Valencia"></option>
+                        <option value="AL" label="Alicante"></option>
+                        <option value="CS" label="Castellon"></option>
+                    </Optgroup>
+
+                </select>
+            </div>
+
+
+
+
+
+
+            <!-- BOTONOES DE ENVIAR -->
+            <div class="botones">
+                <input type="submit" value="Enviar"><!-- el imput boton no se envia porque no tiene un name -->
+                <button type="submit">Enviar btn</button>
+            </div>
+        </form>
+        <iframe src="" frameborder="0" style="width: 80vw; height: 300px; border: 5px solid aliceblue;"
+            name="pruebasLabels"></iframe>
+    </section>
+    <section id="calculadora">
+        <h3>Mini multiplicadora</h3>
+        <input type="number" name="operando1" id="operando1">
+        <input type="number" name="operando2" id="operando2">
+        <input type="button" value="Multiplica" id="calcular">
+        <output id="resultado">20</output>
+    </section>
+    <!-- NAv btn -->
+    <div id="down"></div>
+    <section id="navBTN"><a href="#">^</a><a href="#down">v</a></section>
+</body>
+</body>
+
+</html>
