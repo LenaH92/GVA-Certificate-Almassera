@@ -251,6 +251,8 @@
         <iframe src="" frameborder="0" style="width: 80vw; height: 300px; border: 5px solid aliceblue;"
             name="pruebasLabels"></iframe>
     </section>
+
+    <!-- minicalculadora -->
     <section id="calculadora">
         <h3>Mini multiplicadora</h3>
         <input type="number" name="operando1" id="operando1">
@@ -258,6 +260,148 @@
         <input type="button" value="Multiplica" id="calcular">
         <output id="resultado">20</output>
     </section>
+
+    <!-- PRuebas CSS -->
+    <section id="CSS">
+        <h2> Purebas CSS</h2>
+        <form action="procesar.php" method="post" target="pruebasCSS" enctype="multipart/form-data" id="formCSS">
+
+            <fieldset id="fildset12">
+                <legend>Datos personales I guess</legend>
+                <div class="label">
+                    <label for="nombre2">NOmbre</label>
+                    <input type="text" name="2nombre" id="nombre2" tabindex="10" autocomplete="on"
+                        placeholder="Maria de la B" required>
+                </div>
+                <div class="label" id="apellidos2">
+                    <label for=" apellidos2">Apellidos</label>
+                    <input type="text" name="2apellidos" autofocus tabindex=" 1" autocomplete="on"
+                        placeholder="Gomexz Jimenez de la Rosa Ramirez">
+                </div>
+                <div class="label">
+                    <label for="nacionalidad2">nacionalidad</label>
+                    <input type="text" name="2nacionalidad" id="nacionalidad2" tabindex="31" list="nacionalidadLista2">
+                </div>
+                <div class="label">
+                    <label for="cantante2">cantante Fav</label>
+                    <input type="text" name="2cantante" id="cantante2" tabindex="445" value="Stray Kids">
+                </div>
+            </fieldset>
+
+            <!-- disabled -->
+            <div class="label">
+                <label for="si2">si?</label>
+                <input type="text" name="2si" id="si2" tabindex="44" disabled>
+            </div>
+            <!-- placeholder -->
+            <div class="label">
+                <label for="edad2"></label>
+                <input type="text" name="2edad" id="edad2" tabindex="25" placeholder="Escribe tu edad">
+            </div>
+
+            <!-- contraseñas, required, min y max legth -->
+            <div class="label">
+                <label for="pass12">Contraseña</label>
+                <input type="password" name="2pass1" id="pass12" tabindex="45" required minlength="5" maxlength="20">
+            </div>
+            <div class="label">
+                <label for="pass22">Repetir contraseña</label>
+                <input type="password" name="2pass2" id="pass22" tabindex="46" required minlength="5" maxlength="20">
+            </div>
+
+            <!-- campo tipo busqueda -->
+            <div class="label">
+                <label for="busqueda2">Mira lo que quieras</label>
+                <input type="search" name="2busqueda" id="busqueda2" tabindex="35">
+            </div>
+
+            <!-- min-max legnth iguales para indicar que ni más ni menos y pattern -->
+            <div class="label">
+                <label for="codPost2">Codigo postal</label>
+                <input type="search" name="2codPost" id="codPost2" tabindex="22" minlength="5" maxlength="5"
+                    pattern="[0-9]{5}" placeholder="46001">
+            </div>
+
+            <datalist id="nacionalidadLista2">
+                <option>Españita</option>
+                <option>Italia</option>
+                <option>Japan</option>
+                <option>Portugal</option>
+                <option>Eslovaquia</option>
+            </datalist>
+            <div class="areaDeTexo">
+                <label for="anotaciones2">Anotaciones</label>
+                <textarea name="2anotaciones" id="anotaciones2"></textarea>
+            </div>
+
+            <!-- casillas a marcar -->
+            <div class="radio">
+                <span>Dispone de carné?</span>
+                <label><input type="radio" name="2disponeCarne" id="disponecarneSi2" value="si">Sí</label>
+                <label><input type="radio" name="2disponeCarne" id="disponecarneNo2" value="no" checked>No</label>
+            </div>
+            <div class="chekcbox ">
+                <span>Colores favs: </span>
+                <label><input type="checkbox" name="2colorFav[]" id="colorAzul2" value="azul">azul</label>
+                <label><input type="checkbox" name="2colorFav[]" id="colorAmarillo2" value="amarillo">amarillo</label>
+                <label><input type="checkbox" name="2colorFav[]" id="colorMarron2" value="marron">marron</label>
+                <label><input type="checkbox" name="2colorFav[]" id="colorVerde2" value="verde" checked>verde</label>
+            </div>
+
+            <!-- number -->
+            <div class="unidades">
+                <label for="unidades2">Unidades</label>
+                <input type="number" value="5" name="2unidades" id="unidades2" step="0,01" min="0" max="10">
+            </div>
+
+            <!-- range -->
+            <div class="rango">
+                <label for="rango2">Cuanto quieres?</label>
+                <input type="range" id="rangoInput2"><output id="rangoOutput2"></output>
+            </div>
+
+            <!-- Fechas -->
+            <div><label for="fechaReserva2">Fecha reserva</label>
+                <input type="date" name="2fechaReserva" id="fechaReserva2" value="2025-11-19" min="2025-01-31"
+                    max="2025-11-23">
+            </div>
+            <!-- Fechay hora -->
+            <div><label for="entradaReserva2">Fecha y hora entrada</label>
+                <input type="datetime-local" name="2entradaReserva" id="entradaReserva2" value="2025-11-19 00:00:00"
+                    min="2025-01-31 00:00:00" max="2025-11-23 23:59:59">
+            </div>
+            <!-- semana -->
+            <div class="semana">
+                <label for="semana2">semana</label>
+                <input type="week" name="2semana" id="semana2" value="2025-W42" min="2025-W40" max="2025-W50">
+            </div>
+
+            <!-- Selecciona color -->
+            <div class="color"><label for="fondo2">Color de fondo</label><input type="color" name="2fondo" id="fondo2"
+                    value="#005500"></div>
+
+            <!-- Adjuntar archivo -->
+            <div class="adjuntar">
+                <label for="adjuntar2">Adjunta archivo</label>
+                <input type="file" name="2adjuntar[]" id="adjuntar2" accept="image/*" multiple>
+            </div>
+
+            <!-- campo oculto -->
+            <div class="ocultp">
+                <input type="hidden" name="2location" id="location2" value="">
+            </div>
+
+            <!-- BOTONES DE ENVIAR -->
+            <div class="botones">
+                <input type="submit" value="Enviar">
+                <button type="submit">Enviar btn</button>
+            </div>
+        </form>
+
+        <iframe src="" frameborder="0" style="width: 80vw; height: 300px; border: 5px solid aliceblue;"
+            name="pruebasCSS"></iframe>
+    </section>
+
     <!-- NAv btn -->
     <div id="down"></div>
     <section id="navBTN"><a href="#">^</a><a href="#down">v</a></section>

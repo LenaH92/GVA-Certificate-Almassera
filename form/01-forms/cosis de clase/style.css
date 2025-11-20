@@ -47,5 +47,53 @@ h1 {
 /* otros */
 
 label {
-    margin-top: 30px;
+    display: block;
+    margin: 10px 0;
+}
+
+/* Estileando el Form ultimo */
+#formCSS {
+    margin: 2rem auto;
+    padding: 20px;
+    border: 2px solid wheat;
+    background-color: aliceblue;
+    display: block;
+}
+
+/* 
+#formCSS>* {} */
+
+#fildset12 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px 30px;
+}
+
+#fildset12 legend {
+    padding: 0 10px;
+    color: brown;
+}
+
+#fildset12 input {
+    width: 100%;
+    padding: 5px 2px;
+}
+
+#fildset12 input::placeholder {
+    color: tomato;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#fildset12 input:focus {
+    outline: 1px dashed lime;
+    background-color: thistle;
+}
+
+#fildset12 input:invalid {
+    background-color: rgba(198, 144, 241, 0.658);
+}
+
+#apellidos2 {
+    grid-column-start: 2;
+    grid-column-end: 4;
 }

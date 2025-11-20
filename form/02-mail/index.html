@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Correo electrónico</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./js/script.js"></script>
+</head>
+
+<body>
+    <h1>Formulario</h1>
+
+    <form action="./inc/proc_email.php" enctype="multipart/form-data" method="post" target="formViewer">
+
+        <fieldset id="cabeceraMail">
+            <legend>Datos de contacto</legend>
+            <div id="nombre">
+                <label for="nombre">Nombre y apellidos: <span>*</span></label>
+                <input type="text" name="nombre" required minlength="3">
+            </div>
+
+            <div id="tlf">
+                <label for="tlf">Teléfono:</label>
+                <input type="tel" name="tlf" pattern="[0-9]{3} [0-9]{3} [0-9]{3}" placeholder="655 605 579">
+            </div>
+
+            <div id="emailTo">
+                <label for="emailTo">Correo electrónico: <span>*</span></label>
+                <input type="email" name="emailTo" required placeholder="nombre@servidor.com">
+            </div>
+        </fieldset>
+
+
+        <fieldset id="mailContent">
+            <legend>Contenido del correo</legend>
+            <div id="asunto">
+                <label for="asunto">Asunto: <span>*</span></label>
+                <input type="text" name="asunto" required minlength="5">
+            </div>
+
+            <div id="adjuntar">
+                <label for="adjuntar">Adjunte fichero:</label>
+                <input type="file" name="adjuntar">
+            </div>
+
+            <div id="contenido">
+                <label for="contenido">Texto del correo <span>*</span></label>
+                <textarea name="contenido" placeholder="Escriba aquí su correo electrónico" required
+                    minlength="25"></textarea>
+            </div>
+        </fieldset>
+
+
+        <fieldset id="pieForm">
+            <div id="acptar">
+                <label for="aceptar"><input type="checkbox" name="aceptar" required value="Aceptadas"> He leido y
+                    aceoptado
+                    los <a href="termaAndConditions.html">Términos y Condiciones del Servicio</a>.
+                    <span>*</span></label>
+            </div>
+
+            <!-- botones de reiniciar y enviar -->
+            <div id="action">
+                <input type="reset" value="Reiniciar datos">
+                <input type="submit" value="Enviar correo" disabled>
+            </div>
+        </fieldset>
+
+    </form>
+
+    <iframe name="formViewer" frameborder="0"></iframe>
+</body>
+
+</html>

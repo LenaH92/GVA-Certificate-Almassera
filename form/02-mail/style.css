@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+}
+
+body,
+textarea {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    width: 80%;
+    margin: 30px auto;
+    max-width: 700px;
+    min-width: 600px;
+}
+
+form>fieldset {
+    padding: 20px;
+    margin-bottom: 20px;
+    display: grid;
+    gap: 1rem;
+}
+
+form>fieldset:last-child {
+    margin-bottom: 0;
+    border: none;
+}
+
+form>fieldset>legend {
+    font-size: 0.85rem;
+    font-style: italic;
+    padding: 0 1rem;
+}
+
+form div>label {
+    margin-bottom: 0.4rem;
+    display: block;
+    font-size: 0.9;
+    font-weight: 600;
+}
+
+form div>label>span {
+    color: red;
+    padding-left: 1rem;
+}
+
+form div>input[type="text"],
+form div>input[type="email"],
+form div>input[type="tel"],
+form div>textarea {
+    width: 100%;
+    padding: 5px 7px;
+}
+
+/* cabecera */
+form>#cabeceraMail {
+    grid-template-columns: 70% 1fr;
+}
+
+form>#cabeceraMail input[type="tel"] {
+    text-align: center;
+}
+
+form>#cabeceraMail>#emailTo {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    /* es lo mismo a efectos practicos que:
+     grid-column: span 2; */
+}
+
+/* contenido */
+form>#mailContent textarea {
+    height: 200px;
+    resize: none;
+}
+
+
+/* pie */
+form>#pieForm label {
+    font-weight: 400;
+}
+
+form>#pieForm #action>input {
+    padding: 7px 15px
+}
+
+form>#pieForm #action>input:first-child {
+    margin-right: 20px;
+}
+
+iframe {
+    min-height: 300px;
+    border: 2px solid aliceblue;
+}
+
+@media (max-width: 767px) {
+
+    form {
+        min-width: 380px;
+    }
+
+    form>#cabeceraMail {
+        padding: 20px 10px;
+        grid-template-columns: 1fr;
+    }
+
+    form>#cabeceraMail>#emailTo {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    form>#cabeceraMail input[type="tel"] {
+        text-align: left;
+    }
+
+    form>#pieForm #acptar {
+        font-size: 0.85rem;
+    }
+
+    form>#pieForm #action {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    form>#pieForm #action>input:first-child {
+        margin-right: 0;
+    }
+}
