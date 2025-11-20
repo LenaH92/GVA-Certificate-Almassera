@@ -225,11 +225,13 @@ main>div::after {
     display: block;
     object-position: top;
     object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
 .equipos>.tarjeta>h3 {
     margin: 1rem 0;
     color: var(--colorOscuro);
+    transition: transform 0.3s ease;
 }
 
 .equipos>.tarjeta ul {
@@ -239,6 +241,7 @@ main>div::after {
 .equipos>.tarjeta li {
     display: inline-block;
     margin: 0 5%;
+    transition: transform 0.3s ease;
 }
 
 .equipos>.tarjeta a {
@@ -361,4 +364,32 @@ details>table i {
 
 .horarios>section:last-child dt {
     margin-bottom: 1rem;
+}
+
+/* Animaciones  y tal */
+
+/* aside propaganda */
+aside img:hover {
+    border: 2px solid var(--colorSecundario);
+    box-shadow: 0 0 20px var(--colorPrincipal);
+}
+
+/* tajetas */
+.equipos>.tarjeta:hover img {
+    transform: scale(1.1);
+}
+
+.equipos>.tarjeta:hover h3 {
+    text-decoration: underline;
+    color: var(--colorTercero);
+}
+
+.equipos>.tarjeta li:hover i {
+    color: var(--colorPrincipal);
+}
+
+/* horarios */
+
+.horarios details[open] summary {
+    text-decoration: overline underline;
 }
