@@ -1,2 +1,4 @@
 **/fontawesome/
 **/fAwesomeDown/
+.gitignore
+proc_email.php
