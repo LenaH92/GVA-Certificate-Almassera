@@ -40,14 +40,14 @@
         $miCorreo->SMTPSecure='ssl';
         $miCorreo->SMTPAuth = true;
 
-        $miCorreo->Host='mail.technicalelearning.com';
+        $miCorreo->Host='/* hostname */';
         $miCorreo->Port=465; //o 25 (por cosas suyas idk)
-        $miCorreo->Username ='cpwalmassera@technicalelearning.com';
-        $miCorreo->Password='CPWAlmassera_25';
+        $miCorreo->Username =/*' email '*/;
+        $miCorreo->Password=/* 'password' */;
 
 
         $miCorreo->Fromname=$nombre;
-        $miCorreo->AddAdress('cpwalmassera@technicalelearning.com');//de haber mas de una cuenta se puede copiar las que hagan falta.
+        $miCorreo->AddAdress(/*' email '*/;);//de haber mas de una cuenta se puede copiar las que hagan falta.
         //$miCorreo->AddCC($emailTo); //una copia
         //$miCorreo->AddBCC($emailTo); //copia oculta
 
