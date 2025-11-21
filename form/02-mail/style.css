@@ -96,6 +96,8 @@ form>#pieForm #action>input:first-child {
 iframe {
     min-height: 300px;
     border: 2px solid aliceblue;
+    width: 80%;
+    margin: 0 auto;
 }
 
 @media (max-width: 767px) {
