@@ -35,21 +35,21 @@
 
         //PASO 3 --- config params serv
 
-        $miCorreo = new phpmailer(); //creado un objeto
+        $miCorreo = new PHPMailer(); //creado un objeto
 
-        //$miCorreo->PluginDir = '../PHPMailer-master/src'; OBSOLETO
+        //$miCorreo->PluginDir = '../PHPMailer-master/src';
         $miCorreo->setLanguage('es','../PHPMailer-master/language');
         $miCorreo->CharSet='UTF-8';
         $miCorreo->Timeout =30; //en segundos
-        $miCorreo->isHTML(true);
-        $miCorreo->isSMTP(); //protocolo por el que se envia
-        $miCorreo->SMTPSecure='ssl'; //el protocolo es seguro lol (lo tiene que decior el servido)
+        $miCorreo->IsHTML(true); //Indica si utilizamos correo de tipo texto o true
+        $miCorreo->Mailer = 'smtp'; //Establece el protocolo de envío SMTP
+        $miCorreo->SMTPSecure = 'ssl'; //Establece el sistema de seguridad SSL para los correos electrónicos
         $miCorreo->SMTPAuth = true;
 
-        $miCorreo->Host='/* hostname */';
+        $miCorreo->Host='mail.technicalelearning.com';
         $miCorreo->Port=465; //o 25 (por cosas suyas idk)
-        $miCorreo->Username =/*' email '*/;
-        $miCorreo->Password=/* 'password' */;
+        $miCorreo->Username ='cpwalmassera@technicalelearning.com';
+        $miCorreo->Password=/* 'contraseña' */;
 
 
         //PASO 4 --- rellenar campos correo
@@ -57,7 +57,7 @@
         $miCorreo->setFrom($emailTo, $nombre);
 
         $miCorreo->Subject =$asunto;
-        $miCorreo->addAddress(/*' email aquí '*/;);//de haber mas de una cuenta se puede copiar las que hagan falta.
+        $miCorreo->addAddress('cpwalmassera@technicalelearning.com');//de haber mas de una cuenta se puede copiar las que hagan falta.
         //$miCorreo->AddCC($emailTo); //una copia
         //$miCorreo->AddBCC($emailTo); //copia oculta
 
@@ -65,7 +65,16 @@
             $miCorreo->addAttachment($adjuntar['tmp_name'],$adjuntar['name']);
         } //adjuntar archivos
 
-        $miCorreo->Body = $contenido;
+        //haciendo que el body incluya los datos del telefono
+        $contenidoFinal ='';
+        $contenidoFinal .= '
+        <strong>Teléfono: </strong>' .$tlf.'<br>';
+        $contenidoFinal .= '
+        <strong>De: </strong>' .$emailTo.'<br>';$contenidoFinal .= '
+        <strong>Contenido</strong>' .$contenido.'<br>';
+
+
+        $miCorreo->Body = $contenidoFinal;
 
         $miCorreo->addReplyTo($emailTo, $nombre); //Para cuando responda la persona que le llegue finalmente. 
 
@@ -82,8 +91,5 @@
     } else{
         echo'<p>El Teléfonono NO es correcto</p>';
     }
-
-    
-
 
 ?>
