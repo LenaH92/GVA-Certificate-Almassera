@@ -49,18 +49,32 @@
         $miCorreo->Password=/* 'password' */;
 
 
+        //PASO 4 --- rellenar campos correo
+
         $miCorreo->FromName=$nombre;
-        $miCorreo->AddAddress(/*' email '*/;);//de haber mas de una cuenta se puede copiar las que hagan falta.
+        $miCorreo->From =$emailTo;
+        $miCorreo->Subject =$asunto;
+        $miCorreo->addAddress(/*' email aquí '*/;);//de haber mas de una cuenta se puede copiar las que hagan falta.
         //$miCorreo->AddCC($emailTo); //una copia
         //$miCorreo->AddBCC($emailTo); //copia oculta
 
-        $miCorreo->Subject =$asunto;
+        if(count($fichero)>0){
+            $miCorreo->addAttachemnt($fichero['tmp_name'],$fichero['name'])
+        } //adjuntar archivos
 
-        //PASO 4 --- rellenar campos correo
+        $miCorreo->Body = $contenido;
+
+        $miCorreo->replayTo($email); //Para cuando responda la persona que le llegue finalmente. 
 
 
         //PASO 5 --- config sello de confirmacion de envio o no
 
+        if ($miCorreo->send()) {
+            echo(' <p> Su correo ha sido enmviado </p>');
+        } else {
+            echo $miCorreo->ErrorInfo; //mandando el error
+        }
+        
 
 
     } else{
