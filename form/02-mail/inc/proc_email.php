@@ -1,9 +1,12 @@
 <?php
     //enlazando libreria
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
+
+
     include('../PHPMailer-master/src/PHPMailer.php');
     include('../PHPMailer-master/src/SMTP.php');
     include('../PHPMailer-master/src/Exception.php');
-    use PHPMailer\PHPMailer\PHPMailer;
 
 
     //////////* 5 passos *////////////
@@ -34,12 +37,12 @@
 
         $miCorreo = new phpmailer(); //creado un objeto
 
-        $miCorreo->SetLanguage('es','../PHPMailer-master/language');
         //$miCorreo->PluginDir = '../PHPMailer-master/src'; OBSOLETO
-        $miCorreo->CharSet='utf-8';
-        $miCorreo->Timeout ='30'; //en segundos
-        $miCorreo->IsHTML(true);
-         $miCorreo->Mailer='smtp'; //protocolo por el que se envia
+        $miCorreo->setLanguage('es','../PHPMailer-master/language');
+        $miCorreo->CharSet='UTF-8';
+        $miCorreo->Timeout =30; //en segundos
+        $miCorreo->isHTML(true);
+        $miCorreo->isSMTP(); //protocolo por el que se envia
         $miCorreo->SMTPSecure='ssl'; //el protocolo es seguro lol (lo tiene que decior el servido)
         $miCorreo->SMTPAuth = true;
 
@@ -51,21 +54,20 @@
 
         //PASO 4 --- rellenar campos correo
 
-        $miCorreo->FromName=$nombre;
-        $miCorreo->From =$emailTo;
+        $miCorreo->setFrom($emailTo, $nombre);
+
         $miCorreo->Subject =$asunto;
         $miCorreo->addAddress(/*' email aquí '*/;);//de haber mas de una cuenta se puede copiar las que hagan falta.
         //$miCorreo->AddCC($emailTo); //una copia
         //$miCorreo->AddBCC($emailTo); //copia oculta
 
-        if(count($fichero)>0){
-            $miCorreo->addAttachemnt($fichero['tmp_name'],$fichero['name'])
+        if($adjuntar['error'] === UPLOAD_ERR_OK){
+            $miCorreo->addAttachment($adjuntar['tmp_name'],$adjuntar['name']);
         } //adjuntar archivos
 
         $miCorreo->Body = $contenido;
 
-        $miCorreo->replayTo($email); //Para cuando responda la persona que le llegue finalmente. 
-
+        $miCorreo->addReplyTo($emailTo, $nombre); //Para cuando responda la persona que le llegue finalmente. 
 
         //PASO 5 --- config sello de confirmacion de envio o no
 
