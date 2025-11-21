@@ -1,6 +1,9 @@
 <?php
     //enlazando libreria
-    include('../lib_php_mailer/class.phpmailer.php');
+    include('../PHPMailer-master/src/PHPMailer.php');
+    include('../PHPMailer-master/src/SMTP.php');
+    include('../PHPMailer-master/src/Exception.php');
+    use PHPMailer\PHPMailer\PHPMailer;
 
 
     //////////* 5 passos *////////////
@@ -31,13 +34,13 @@
 
         $miCorreo = new phpmailer(); //creado un objeto
 
-        $miCorreo->SetLanguage('es','../lib_php_mailer');
-        $miCorreo->PluginDir = '../lib_php_mailer';
+        $miCorreo->SetLanguage('es','../PHPMailer-master/language');
+        //$miCorreo->PluginDir = '../PHPMailer-master/src'; OBSOLETO
         $miCorreo->CharSet='utf-8';
         $miCorreo->Timeout ='30'; //en segundos
         $miCorreo->IsHTML(true);
-        $miCorreo->Mailer='smtp';
-        $miCorreo->SMTPSecure='ssl';
+         $miCorreo->Mailer='smtp'; //protocolo por el que se envia
+        $miCorreo->SMTPSecure='ssl'; //el protocolo es seguro lol (lo tiene que decior el servido)
         $miCorreo->SMTPAuth = true;
 
         $miCorreo->Host='/* hostname */';
