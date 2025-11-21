@@ -49,8 +49,8 @@
         $miCorreo->Password=/* 'password' */;
 
 
-        $miCorreo->Fromname=$nombre;
-        $miCorreo->AddAdress(/*' email '*/;);//de haber mas de una cuenta se puede copiar las que hagan falta.
+        $miCorreo->FromName=$nombre;
+        $miCorreo->AddAddress(/*' email '*/;);//de haber mas de una cuenta se puede copiar las que hagan falta.
         //$miCorreo->AddCC($emailTo); //una copia
         //$miCorreo->AddBCC($emailTo); //copia oculta
 
