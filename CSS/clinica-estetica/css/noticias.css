@@ -204,3 +204,30 @@
     opacity: 0.7;
     font-size: 0.95rem;
 }
+
+
+
+
+/*************************************************
+************  ESCALANDO  *************************
+**************************************************/
+
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+    /* estilos para tablet */
+    /* Sin cambios notables */
+}
+
+/* Móviles */
+@media (max-width: 600px) {
+    /* estilos para móvil */
+
+    .blog-container {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar-destacadas {
+        margin-bottom: 2rem;
+    }
+}

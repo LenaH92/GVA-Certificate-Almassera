@@ -82,16 +82,15 @@ h6 {
 header {
     position: sticky;
     top: 0;
-    bottom: 0;
     border: 1px solid black;
     padding: 10px 2vw;
     background-color: var(--bg);
-    /* transition: background-color 1.3s ease; */
     color: var(--colorPrincipal);
     display: flex;
     gap: 3rem;
-    align-items: flex-end;
+    align-items: center;
     z-index: 500;
+    align-items: stretch;
 }
 
 header img {
@@ -375,8 +374,15 @@ section.noticias article.noticia {
     background-color: #fff;
 }
 
-section.noticias article.noticia>img {
-    width: 35%;
+section.noticias article.noticia>div:first-child {
+    flex: 0 0 35%;
+    overflow: hidden;
+}
+
+section.noticias article.noticia>div:first-child img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 15px 0 0 15px;
     transition: transform 0.3s ease;
 }
@@ -390,6 +396,7 @@ section.noticias article.noticia:hover h3 {
 }
 
 section.noticias article.noticia>div.noticiaInfo {
+    flex: 1;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -433,4 +440,51 @@ section.final::before {
 
 section.final>* {
     z-index: 2
+}
+
+
+
+/*************************************************
+************  ESCALANDO  *************************
+**************************************************/
+
+
+/* Tablets entre 600 y 1024*/
+@media (max-width: 1024px) {
+
+    /* estilos para tablet */
+    main {
+        width: 100%;
+        max-width: 1024px;
+    }
+
+    /* header */
+    header span {
+        display: none;
+    }
+
+    header div.headerDown {
+        gap: 10px;
+    }
+
+
+    header div.headerDown ul {
+        gap: 10px;
+    }
+
+    header div.headerDown ul li {
+        padding: 5px
+    }
+
+    header a.btn {
+        padding: 0.4rem;
+    }
+
+}
+
+
+
+/* Móviles */
+@media (max-width: 600px) {
+    /* estilos para móvil */
 }

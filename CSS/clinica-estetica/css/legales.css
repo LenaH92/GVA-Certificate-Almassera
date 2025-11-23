@@ -84,3 +84,21 @@ thead th:first-child {
 thead th:last-child {
     border-top-right-radius: 12px;
 }
+
+
+
+
+/*************************************************
+************  ESCALANDO  *************************
+**************************************************/
+
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+    /* estilos para tablet */
+}
+
+/* Móviles */
+@media (max-width: 600px) {
+    /* estilos para móvil */
+}

@@ -89,3 +89,45 @@ section.galeria .imagenesGaleria div:nth-child(3) img {
 section.galeria .imagenesGaleria div img:hover {
     transform: scale(1.1);
 }
+
+
+
+
+/*************************************************
+************  ESCALANDO  *************************
+**************************************************/
+
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .fichasEquipo {
+        gap: 30px;
+    }
+
+    article.empleado {
+        width: 40%;
+    }
+
+    .infoEmpleado {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    article.empleado * {
+        margin-bottom: 10px;
+    }
+}
+
+/* Móviles */
+@media (max-width: 600px) {
+    .fichasEquipo {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+
+    article.empleado {
+        width: 90%;
+    }
+}
