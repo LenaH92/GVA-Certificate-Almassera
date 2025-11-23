@@ -17,12 +17,20 @@
             579</span></a><a href="mailto:info@estesi.com"><i
             class="fa-regular fa-envelope"></i><span>info@estesi.com</span></a><a
           href="https://maps.app.goo.gl/CAnYsRQJEku4Dm8M7"><i class="fa-solid fa-location-dot"></i><span>Mapa</span></a>
-        <p><i class="fa-regular fa-calendar-days"></i><span>Horario: </span>M-D 9am ~6pm</p>
+        <p><i class="fa-regular fa-calendar-days"></i><span>Horario: </span>M-D:9h~18h</p>
       </div>
 
       <div class="headerDown">
         <nav>
-          <ul>
+          <input type="checkbox" name="activeSideBar" id="activeSideBar">
+          <label for="activeSideBar" class="abrirSidebar">
+            <i class="fa-solid fa-bars"></i> <!-- abrir menu -->
+          </label>
+
+          <ul class="menuCont">
+            <label for="activeSideBar" class="cerrarSidebar">
+              <i class="fa-solid fa-xmark"></i> <!-- cerrar menu -->
+            </label>
             <li><a href="/index.html" target="_self">Inicio</a></li>
             <li><a href="/pages/tratamientos.html" target="_self">Tratamientos</a></li>
             <li><a href="/pages/aboutUs.html" target="_self"><span> Sobre </span>Nosotros</a></li>
@@ -35,6 +43,7 @@
     </div>
 
   </header>
+
 
   <main>
     <!-- Sección de bienvenida -->
@@ -136,7 +145,10 @@
 
 
   <footer>
-    <nav><a href="/"><img src="/images/logo280.png" alt="logo de Este sí 100"></a>
+    <nav>
+
+      <a href="/"><img src="/images/logo280.png" alt="logo de Este sí 100"></a>
+
       <ul class="redesSociales">
         <li><a href="https://www.facebook.com/estesiclinica" target="sns"><i class="fa-brands fa-facebook"></i></a></li>
         <li><a href="https://www.instagram.com/estesiclinica" target="sns"><i class="fa-brands fa-instagram"></i></a>
@@ -144,6 +156,7 @@
         <li><a href="https://x.com/estesiclinica" target="sns"><i class="fa-brands fa-x-twitter"></i></a></li>
         <li><a href="https://www.tiktok.com/@estesiclinica" target="sns"><i class="fa-brands fa-tiktok"></i></a></li>
       </ul>
+
       <ul class="avisosLegales">
         <li><a href="/pages/legal/privacidad.html" target="legal">Politica de privacidad</a></li>
         <li><a href="/pages/legal/cookies.html" target="legal">Cookies</a></li>
@@ -151,6 +164,7 @@
         <li><a href="/pages/legal/avisos-legales.html" target="legal">Avisos Legales</a></li>
       </ul>
     </nav>
+
     <p>&copy;2025 Clinica Estética Este Sí 100</p>
     <div id="down"></div>
     <section id="navBTN"><a href="#"><i class="fa-solid fa-arrow-up"></i></a><a href="#down"><i

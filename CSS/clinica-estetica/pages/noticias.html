@@ -13,18 +13,25 @@
 <body>
     <header><img src="/images/logo280.png" alt="logo de Este sí 100">
         <div>
-            <div class="headerUp">
-                <a href="tel:0034655605579"><i class="fa-solid fa-phone"></i> <span>(+34) 655 605
-                        579</span></a>
-                <a href="mailto:info@estesi.com"><i class="fa-regular fa-envelope"></i><span>info@estesi.com</span></a>
-                <a href="https://maps.app.goo.gl/CAnYsRQJEku4Dm8M7"><i
+            <div class="headerUp"><a href="tel:0034655605579"><i class="fa-solid fa-phone"></i> <span>(+34) 655 605
+                        579</span></a><a href="mailto:info@estesi.com"><i
+                        class="fa-regular fa-envelope"></i><span>info@estesi.com</span></a><a
+                    href="https://maps.app.goo.gl/CAnYsRQJEku4Dm8M7"><i
                         class="fa-solid fa-location-dot"></i><span>Mapa</span></a>
-                <p><i class="fa-regular fa-calendar-days"></i><span>Horario: </span>M-D 9am ~6pm</p>
+                <p><i class="fa-regular fa-calendar-days"></i><span>Horario: </span>M-D:9h~18h</p>
             </div>
 
             <div class="headerDown">
                 <nav>
-                    <ul>
+                    <input type="checkbox" name="activeSideBar" id="activeSideBar">
+                    <label for="activeSideBar" class="abrirSidebar">
+                        <i class="fa-solid fa-bars"></i> <!-- abrir menu -->
+                    </label>
+
+                    <ul class="menuCont">
+                        <label for="activeSideBar" class="cerrarSidebar">
+                            <i class="fa-solid fa-xmark"></i> <!-- cerrar menu -->
+                        </label>
                         <li><a href="/index.html" target="_self">Inicio</a></li>
                         <li><a href="/pages/tratamientos.html" target="_self">Tratamientos</a></li>
                         <li><a href="/pages/aboutUs.html" target="_self"><span> Sobre </span>Nosotros</a></li>

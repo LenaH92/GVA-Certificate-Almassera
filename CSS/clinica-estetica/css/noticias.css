@@ -1,4 +1,4 @@
-.blog-layout h1 {
+h1 {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
 }
@@ -130,6 +130,8 @@
 **********************************
 ***********************************
 **********PAGINA CONTACTO******** */
+
+
 .contactInfo {
     display: flex;
     justify-content: space-between;
@@ -214,14 +216,16 @@
 
 
 /* Tablets */
-@media (min-width: 601px) and (max-width: 1024px) {
+@media (max-width: 1024px) {
     /* estilos para tablet */
-    /* Sin cambios notables */
+    /* Noticias: Sin cambios notables */
+    /* contacto: Sin cambios notables */
 }
 
 /* Móviles */
 @media (max-width: 600px) {
     /* estilos para móvil */
+    /* noticias */
 
     .blog-container {
         grid-template-columns: 1fr;
@@ -229,5 +233,10 @@
 
     .sidebar-destacadas {
         margin-bottom: 2rem;
+    }
+
+    /* contacto */
+    .contactInfo {
+        flex-direction: column;
     }
 }

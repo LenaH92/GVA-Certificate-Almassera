@@ -94,8 +94,14 @@ thead th:last-child {
 
 
 /* Tablets */
-@media (min-width: 601px) and (max-width: 1024px) {
+@media (max-width: 1024px) {
+
     /* estilos para tablet */
+    .cookiesMain>section:nth-of-type(2)>h3:nth-of-type(4),
+    table {
+        display: none;
+    }
+
 }
 
 /* Móviles */
